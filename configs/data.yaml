@@ -1,0 +1,181 @@
+# TokJhalLM data configuration (Prompt 2). Decisions D6–D12 in docs/decisions.md.
+# Every source below was verified against its live API on 2026-11-07; revisions
+# and checksums are pinned so downloads are reproducible.
+
+paths:
+  raw_dir: data/raw
+  processed_dir: data/processed       # Arrow IPC shards, memory-mappable (gitignored)
+  splits_dir: data/splits             # committed split manifests
+  manifest: data/MANIFEST.json        # committed: sha256 / bytes / revision per file
+  audit_json: data/audit.json         # committed: machine-readable audit stats
+  leakage_hits: docs/leakage_hits.jsonl
+  cache_dir: D:/tokjhallm_cache       # HF_HOME + TMP; never C: (≈5 GB free)
+
+hf_download:
+  max_workers: 4
+
+sources:
+  bnsentmix:
+    kind: hf_file
+    repo: aplycaebous/BnSentMix
+    revision: 0e6d8a275ce4a54c428dff018577342e7d741a3d
+    files: [dataset.csv]
+    role: finetune_primary            # train split text also enters pretraining
+    license: MIT
+    url: https://huggingface.co/datasets/aplycaebous/BnSentMix
+
+  vashantor:
+    kind: url_file
+    url: https://data.mendeley.com/public-files/datasets/bj5jgk878b/files/ff221f8b-b38d-4db1-b579-fe310fc92b4a/file_downloaded
+    filename: Vashantor_CSV_Format.zip
+    sha256: 5abb437220ad6fede5344b974f1abe48f4be8d5a9c250b807c0fea6fe4899919
+    role: pretrain_dialect            # D10: substitutes for the unavailable 600-instance set
+    license: see Mendeley page (DOI 10.17632/bj5jgk878b.2)
+    page: https://data.mendeley.com/datasets/bj5jgk878b/2
+
+  banglishdepyt:
+    kind: hf_file
+    repo: AyonRoy29/BanglishDepYT
+    revision: 342a2ae70701d64cf058022f89bfba4e3ce236a7
+    files: [unlabeled/youtube_collected_raw.csv, labeled/yt_train.csv, labeled/yt_val.csv, labeled/yt_test.csv]
+    role: pretrain_target
+    license: Apache-2.0
+    url: https://huggingface.co/datasets/AyonRoy29/BanglishDepYT
+
+  banglishrev:
+    kind: hf_file
+    repo: BanglishRev/bangla-english-and-code-mixed-ecommerce-review-dataset
+    revision: 38c97cd4255799359b612bafb721e3c442bc0851
+    files: ["reviews v1.json"]        # text only; the ~52 GB of review images are not downloaded
+    role: pretrain_target
+    license: CC BY-NC-SA 4.0          # D12: released weights inherit this restriction
+    url: https://huggingface.co/datasets/BanglishRev/bangla-english-and-code-mixed-ecommerce-review-dataset
+
+  fineweb2_ben_latn:
+    kind: hf_file
+    repo: HuggingFaceFW/fineweb-2
+    revision: af9c13333eb981300149d5ca60a8e9d659b276b9
+    files: [data/ben_Latn/train/000_00000.parquet, data/ben_Latn/test/000_00000.parquet]
+    role: pretrain_target
+    license: ODC-By
+    url: https://huggingface.co/datasets/HuggingFaceFW/fineweb-2
+    nsfw_filter: true
+
+  wikipedia_bn:
+    kind: hf_file
+    repo: wikimedia/wikipedia
+    revision: b04c8d1ceb2f5cd4588862100d08de323dccfbaa
+    files: [20231101.bn/train-00000-of-00002.parquet, 20231101.bn/train-00001-of-00002.parquet]
+    role: pretrain_general
+    license: CC BY-SA 3.0 / GFDL
+    url: https://huggingface.co/datasets/wikimedia/wikipedia
+
+  fineweb2_ben_beng:
+    kind: hf_parquet_sample           # streamed: evenly spaced row groups across all files
+    repo: HuggingFaceFW/fineweb-2
+    revision: af9c13333eb981300149d5ca60a8e9d659b276b9
+    files:
+      - data/ben_Beng/train/000_00000.parquet
+      - data/ben_Beng/train/001_00000.parquet
+      - data/ben_Beng/train/002_00000.parquet
+      - data/ben_Beng/train/003_00000.parquet
+      - data/ben_Beng/train/004_00000.parquet
+    columns: [text, id, url, language_score]
+    cap_compressed_bytes: 500000000   # D6 as amended: 0.5 GB compressed
+    seed: 42
+    role: pretrain_general            # also the source pool for transliteration (D7)
+    license: ODC-By
+    url: https://huggingface.co/datasets/HuggingFaceFW/fineweb-2
+    nsfw_filter: true
+
+  aksharantar_ben:
+    kind: hf_file
+    repo: ai4bharat/Aksharantar
+    revision: e418c1fc928d9f5393af33268472cf20c1891be8
+    files: [ben.zip]
+    role: transliteration_reference   # Prompt 3 lexicon/validation; NOT pretraining text
+    license: CC0 (mined) / CC-BY (manually collected), per dataset card
+    url: https://huggingface.co/datasets/ai4bharat/Aksharantar
+
+excluded:
+  polcsbd: "D8: no paper, no inter-annotator agreement; not a benchmark"
+  regional_tinystories_bn: "D9: synthetic, formal Bengali script; excluded by default"
+  depressivetext: "not publicly available; authors emailed (D11)"
+  bangla_dialect_600: "not publicly available; authors emailed; Vashantor substitutes as pretraining text (D10)"
+  tensorlabco_c4_bn: "no dataset card or license; FineWeb-2 ben_Beng used instead"
+
+bnsentmix:
+  text_column: Sentence
+  label_column: Label
+  # CSV labels are 0-3; the dataset card lists 1-4. Mapping verified by reading samples.
+  label_names: {0: positive, 1: negative, 2: neutral, 3: mixed}
+  split:
+    n_folds: 10        # StratifiedKFold over near-dup clusters: fold 0 → test, fold 1 → dev, rest → train
+    seed: 42
+  near_dup_jaccard: 0.8
+
+cleaning:
+  min_words: 3                        # pretraining docs shorter than this are dropped
+  max_newlines: 2                     # collapse longer runs of blank lines
+  repeat_char_squash: 3               # in match-normalization only: runs of >=3 identical chars -> 2
+  # PRD §7.2 says strip emojis; §6.2 adds byte fallback so emoji never become <unk>.
+  # The stored corpus KEEPS emoji (a superset); whether to strip is decided at
+  # tokenizer/fine-tune time (Prompt 3). Match-normalization always removes them.
+  keep_emoji_in_corpus: true
+
+script:
+  bengali_range: ["\u0980", "\u09FF"]
+  dominant_fraction: 0.8              # >=80% of letters in one script -> that script, else "mixed"
+
+nsfw:
+  # Romanized-Bengali adult content is common in FineWeb-2 ben_Latn (3 of 6 sampled docs).
+  url_substrings: [choti, chod, chud, sex, porn, xxx, gandi, nude, adult, kamuk, chuda]
+  # Unambiguous terms only: "gud" (= good), "mal" (= product), "dhon", "bara" are
+  # deliberately excluded because they are common in ordinary Banglish.
+  romanized_terms: [choda, chodar, chodlam, chudlam, chudte, chodachudi, chuda, chude, choti, magi, khanki, sex, sexy, porn]
+  terms_per_100_words: 1.0            # drop a doc at or above this density of terms
+  spot_check_samples: 50
+
+minhash:
+  shingle_chars: 5
+  num_perm: 128
+  bands: 32                           # 32 bands x 4 rows: candidate threshold ≈ 0.42, verified with exact Jaccard
+  seed: 1234
+
+leakage:
+  splits_checked: [dev, test]
+  # D14 specificity gate: a dev/test sample is FORMULAIC (logged, never gated) if it is on the
+  # allowlist, or if it matched >= min_doc_frequency distinct pretraining documents.
+  # Common text is common by definition; a real leak is rare. Word count does not gate.
+  formulaic:
+    max_words: null             # no length cap (Akib, D14): frequency is the only escape
+    min_doc_frequency: 5
+    allowlist:
+      - assalamu alaikum
+      - assalamu alaikum wa rahmatullah
+      - assalamualaikum
+      - walaikum assalam
+      - inshallah
+      - in sha allah
+      - alhamdulillah
+      - mashallah
+      - subhanallah
+      - khub valo laglo
+      - valo khub valo
+  ngram_max: 8
+  min_words_for_ngrams: 5             # shorter samples are checked by exact line match only
+  containment_fraction: 0.5           # flag if >= this share of a sample's n-grams occur in one doc
+  near_dup_jaccard: 0.8
+  near_dup_max_words: 64              # near-duplicate check applies to comment-length docs
+
+tokens:
+  # Estimate only. Exact counts come from the trained tokenizers in Prompt 3.
+  per_word_mid: 2.0
+  per_word_low: 1.6
+  per_word_high: 2.5
+  training_budget: 300000000          # PRD §7.1 commitment target
+  model_params: {30M: 30000000, 50M: 50700000}
+
+output:
+  shard_max_docs: 200000
+  write_batch_docs: 5000

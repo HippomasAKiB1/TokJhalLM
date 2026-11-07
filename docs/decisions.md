@@ -62,12 +62,106 @@ Every Phase 0 candidate is fine-tuned with ≥3 seeds
 (`evaluation.finetune_seeds`). Report mean ± std. If candidates' 3-seed
 intervals overlap, treat as a tie and apply the smaller/faster preference.
 
-## D6 — BanglaC4 stream cap
+## D6 — BanglaC4 stream cap (amended 2026-11-07, Prompt 2 plan)
 
-Cap the BanglaC4/OSCAR stream at 1 GB compressed. If the Prompt 2 audit shows
-total pretraining tokens < 300M after Wikipedia + task data + this stream,
-the cap may be raised, but only after reporting the token total. No further
-download without that report.
+Original: cap the BanglaC4/OSCAR stream at 1 GB compressed. If the Prompt 2
+audit shows total pretraining tokens < 300M after Wikipedia + task data + this
+stream, the cap may be raised, but only after reporting the token total. No
+further download without that report.
+
+**Amendment:** "BanglaC4" is not a canonical dataset. The source is
+**FineWeb-2 `ben_Beng`** (HuggingFaceFW/fineweb-2, ODC-By), streamed as evenly
+spaced row groups across all five files, capped at **0.5 GB compressed**
+(≈ 240M tokens at 4.1× compression). The "report before downloading more" rule
+still applies.
+
+## D7 — Data strategy: romanized text is the scarce resource; transliteration is central
+
+BnSentMix is 100% Latin-script (romanized) Banglish; most Bengali corpora are
+Bengali script, and a 12K vocab shares almost no subwords across scripts.
+
+- Every verified real romanized/code-mixed source is used (BanglishRev,
+  BanglishDepYT, FineWeb-2 `ben_Latn` after NSFW filtering, Vashantor,
+  BnSentMix train).
+- **Transliteration augmentation (PRD §7.1) is the primary mechanism** for
+  scaling target-script data, and the first deliverable of Prompt 3, before
+  tokenizer training (the tokenizers must see transliterated text).
+- Design: lexicon-first, rules-second. Word romanizations are sampled from
+  attested spellings (Vashantor's parallel Bengali↔Banglish sentences, which
+  use natural Banglish spelling, e.g. "valo"; Aksharantar word pairs, which are
+  more scholarly, e.g. "akalpaneey"), with a rule-based mapper (inherent-vowel
+  and schwa-deletion heuristics) for unseen words, and stochastic spelling
+  variants so the model sees Banglish's real spelling noise. Validated by
+  character error rate against the held-out Vashantor test split.
+- Framing: tokens/param is set by the compute budget (300M → 10.0 at 30M,
+  6.0 at 50M). Transliteration fixes *repetition*: it lets the romanized share
+  of that budget be fresh text instead of re-reading the ~60M real romanized
+  tokens. Transliterated text carries formal register and no English
+  code-mixing, so real Banglish stays upweighted.
+
+## D8 — PolCSBD: skipped
+
+No paper, no inter-annotator agreement; not a benchmark. Not downloaded.
+
+## D9 — Regional-TinyStories: excluded by default
+
+Synthetic, formal Bengali-script children's fiction; wrong script and register.
+Revisit only if transliteration augmentation needs a clean regularization
+source (then 250 MB prefix at 0–5%).
+
+## D10 — Dialect data
+
+The 600-instance dialect sentiment set (Jawad et al., BLP-2025) is not public;
+Akib emails the authors. **Vashantor** (Mendeley DOI 10.17632/bj5jgk878b.2;
+arXiv 2311.11142) is used as dialect pretraining text (train + validation
+splits). Its test split is held out for transliteration evaluation (D7). No
+dialect-sentiment claim until labeled data exists.
+
+## D11 — DepressiveText
+
+Not publicly available; Akib emails the authors. If no data before Phase 3,
+compare against the paper's published numbers with explicit caveats. Always a
+secondary metric with a CI; never a headline (702-sample test set).
+
+## D12 — BanglishRev license
+
+BanglishRev is CC BY-NC-SA 4.0. Released weights are CC BY-NC-SA 4.0 or
+research-only. Model card states: "trained in part on BanglishRev (CC BY-NC-SA
+4.0); released weights inherit this restriction."
+
+## D13 — Phase 3 baselines
+
+**BanglishBERT** (csebuetnlp/banglishbert) is the primary self-run baseline
+for the romanized task, implemented in Prompt 7. BanglaBERT was pretrained on
+Bengali script only; using it as the headline comparison on a romanized task
+is a category error. It may be reported as context.
+
+## D14 — Specificity-based leakage gate
+
+The 8-word threshold (proposal 1a) would have excluded 41% of dev 
+(810/1,975) and 41% of test (813/1,970) samples from leakage checking, 
+including many distinctive ones. Rejected. The specificity gate (1b) 
+classes a sample as formulaic only if (a) it appears on an explicit 
+allowlist of common greetings, OR (b) it appears in >= 5 distinct 
+pretraining documents. Formulaic text is common by definition; a real 
+test-set leak is rare. Doc-frequency separates signal from noise; 
+word-count does not. Every non-gated hit remains in _leakage_all.jsonl 
+and is tabulated in the audit report for transparency.
+
+Implementation notes:
+- Config: `configs/data.yaml: leakage.formulaic` (`allowlist`,
+  `min_doc_frequency: 5`, `max_words: null`). The 1b draft capped formulaic
+  samples at 7 words; per Akib's acceptance tests (an 8-word phrase in 6 docs
+  does not gate), there is no length cap: doc frequency is the only escape.
+- "Distinct documents" = distinct (source, doc_id) pairs among hard matches
+  (exact, containment, near_dup ≥ 0.8), counted after global exact dedup.
+- Samples with doc frequency 2–4 are reported to Akib individually.
+- Every 8+ word sample excused by doc frequency is listed in the audit report:
+  a long, specific sentence in 5+ docs may be a widely copied leak rather than
+  a common phrase.
+- Remediation for real leaks: never touch the test set or split manifests;
+  remove the offending pretraining docs, logged in docs/leakage_removals.md
+  (doc_id, source, reason, sha256), after Akib approves the removal list.
 
 ---
 

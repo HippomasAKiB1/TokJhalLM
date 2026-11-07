@@ -71,11 +71,22 @@ deduplicated, with frozen splits. No tokenizer yet.
 - **Exit:** audit doc committed; split manifests committed; leakage = 0;
   RAM stays under ~6 GB throughout (stream, never load Wikipedia whole).
 
-### Prompt 3 — Tokenizers + data pipeline (PRD Phase 1)
+### Prompt 3 — Transliteration + tokenizers + data pipeline (PRD Phase 1)
+- **First deliverable: transliteration augmentation (D7).** Bengali-script →
+  romanized Banglish, lexicon-first (attested spellings from Vashantor
+  train/val parallel sentences and Aksharantar word pairs, sampled
+  stochastically) with a rule-based fallback for unseen words. Exit: character
+  error rate vs. the held-out Vashantor test split's Banglish column reported,
+  plus 50 hand-checked outputs. Then transliterate a disjoint slice of
+  Wikipedia/FineWeb-2 `ben_Beng`, sized from the Prompt 2 token audit.
+- Mix decision (recorded in config): real romanized (upsampled ≤ ~2 epochs),
+  transliterated, native Bengali script.
 - `tokenizer/train.py`: BPE (`tokenizers`) and Unigram (`sentencepiece`), both
-  12K vocab with byte fallback, trained from scratch on the PRD §6.2 mix
-  (task-heavy + 5–10% Wikipedia/BanglaC4). Needs Prompt 2's cleaned corpus,
-  so only tooling overlaps with Prompt 2.
+  12K vocab with byte fallback, trained from scratch on the final mix,
+  including transliterated text. Emoji policy (keep vs. strip; PRD §6.2 vs.
+  §7.2) decided here.
+- Exact token counts for every source with both tokenizers; the Prompt 2
+  report's estimated token table is replaced.
 - Tokenizer report: fertility (tokens/word) on Bengali-script vs. Romanized
   Banglish vs. dialect text; `<unk>` rate (must be 0); the 20 hand-picked
   sentence splits (PRD Phase 1 exit criterion) for both tokenizers.
@@ -131,8 +142,10 @@ deduplicated, with frozen splits. No tokenizer yet.
   110M teacher never shares VRAM with the student. Pin the fine-tune spec
   (pooling, head, dropout, label smoothing, focal α/γ, class weights; PRD §11)
   in config before training.
-- **Prompt 7:** BnSentMix distillation fine-tune (soft + hard loss),
-  imbalance-aware; kill-criteria check (PRD §9.5).
+- **Prompt 7:** BanglishBERT (csebuetnlp/banglishbert) self-run baseline on
+  the frozen splits, the primary comparison for the romanized task (D13);
+  BnSentMix distillation fine-tune (soft + hard loss), imbalance-aware;
+  kill-criteria check (PRD §9.5).
 - **Prompt 8:** secondary tasks in priority order: depression → dialect
   sentiment → counter-speech.
 
