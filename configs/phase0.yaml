@@ -1,0 +1,48 @@
+# Phase 0 Pre-Commitment Ablation Configuration (PRD §5.0)
+# Sequential ablation structure to determine objective, parameter scale, and tokenizer.
+# Note: Sequential execution requires 4 new runs total (PRD §5.0 mentions 6 runs colloquially,
+# but the 50M run and BPE run are reused from previous stages):
+# - Stage (a): 2 runs (mlm_50m_bpe, electra_50m_bpe)
+# - Stage (b): 1 new run (winning_30m_bpe) — 50M run reused from stage (a)
+# - Stage (c): 1 new run (winning_obj_<size>_unigram) — BPE run reused from stage (b)
+
+f1_floor: 0.40  # Minimum viable macro-F1 gate on BnSentMix dev set before promoting to full pretraining
+
+evaluation:
+  metric: dev_macro_f1_per_flop
+  margin_preference: 0.5  # If within 0.5 F1 points, prefer smaller/faster model
+  dataset: bnsentmix
+  max_context_len: 128
+
+runs:
+  # Stage (a): MLM vs. ELECTRA objective at 50M params with BPE tokenizer (2 runs)
+  stage_a:
+    run_1_mlm_50m_bpe:
+      objective: mlm
+      params: 50M
+      tokenizer: bpe
+      vocab_size: 12000
+    run_2_electra_50m_bpe:
+      objective: electra
+      params: 50M
+      tokenizer: bpe
+      vocab_size: 12000
+
+  # Stage (b): 30M vs. 50M at winning objective with BPE tokenizer (1 new run; 50M reused from Stage a)
+  stage_b:
+    reused_from_stage_a: winning_objective_50m_bpe
+    run_3_winning_30m_bpe:
+      objective: winning_from_stage_a
+      params: 30M
+      tokenizer: bpe
+      vocab_size: 12000
+
+  # Stage (c): BPE vs. Unigram at winning objective and winning size (1 new run; BPE reused from Stage b)
+  stage_c:
+    reused_from_stage_b: winning_objective_winning_size_bpe
+    run_4_winning_obj_size_unigram:
+      # task and size placeholders: filled after Stage (a) and (b) identify winning objective and size
+      task: TBD
+      size: TBD
+      tokenizer: unigram
+      vocab_size: 12000

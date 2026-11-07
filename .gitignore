@@ -1,0 +1,34 @@
+# Runs and checkpoints
+runs/*
+!runs/.gitkeep
+*.pt
+*.bin
+
+# Datasets and processed data
+data/raw/
+data/processed/
+*.arrow
+
+# Experiment tracking
+wandb/
+
+# Python environment and caches
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+*.egg-info/
+dist/
+build/
+
+# Testing and linting caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# OS files
+.DS_Store
+Thumbs.db
