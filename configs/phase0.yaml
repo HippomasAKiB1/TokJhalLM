@@ -5,14 +5,45 @@
 # - Stage (a): 2 runs (mlm_50m_bpe, electra_50m_bpe)
 # - Stage (b): 1 new run (winning_30m_bpe) — 50M run reused from stage (a)
 # - Stage (c): 1 new run (winning_obj_<size>_unigram) — BPE run reused from stage (b)
+# Decisions D2–D5 referenced below are recorded in docs/decisions.md.
 
 f1_floor: 0.40  # Minimum viable macro-F1 gate on BnSentMix dev set before promoting to full pretraining
 
 evaluation:
   metric: dev_macro_f1_per_flop
+  flops_formula: 6NT   # N = all trained params incl. ELECTRA generator, T = pretraining tokens
   margin_preference: 0.5  # If within 0.5 F1 points, prefer smaller/faster model
   dataset: bnsentmix
   max_context_len: 128
+  # D5 (mandatory): every candidate fine-tuned with >= 3 seeds; report mean ± std.
+  # If candidates' 3-seed intervals overlap, treat as a tie → smaller/faster wins.
+  finetune_seeds: [42, 43, 44]
+
+# D4: per-run pretraining budget. 25M is the default; reset at the end of Prompt 4
+# from WARM (post-10-min sustained load) throughput so that all 4 runs + all
+# fine-tunes finish within max_wall_hours.
+budget:
+  tokens_per_run: 25000000
+  max_wall_hours: 48
+  throughput_basis: warm
+
+# D2: concrete dims for each `params` label used below (standalone model configs).
+model_sizes:
+  50M: configs/model_50m.yaml
+  30M: configs/model_30m.yaml
+
+# D3: ELECTRA generator. Shares token embeddings with the discriminator.
+# Only the discriminator counts toward reported params; generator FLOPs count
+# toward the winning rule. ~1.25x compute vs. MLM.
+electra:
+  generator_layers: 2
+  generator_hidden: same_as_discriminator
+  share_embeddings: true
+  mask_prob: 0.15
+  rtd_loss_weight: 50.0
+
+mlm:
+  mask_prob: 0.15
 
 runs:
   # Stage (a): MLM vs. ELECTRA objective at 50M params with BPE tokenizer (2 runs)
@@ -41,8 +72,8 @@ runs:
   stage_c:
     reused_from_stage_b: winning_objective_winning_size_bpe
     run_4_winning_obj_size_unigram:
-      # task and size placeholders: filled after Stage (a) and (b) identify winning objective and size
-      task: TBD
-      size: TBD
+      # objective and params placeholders: filled after Stage (a) and (b) identify the winners
+      objective: TBD
+      params: TBD
       tokenizer: unigram
       vocab_size: 12000

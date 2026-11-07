@@ -4,7 +4,8 @@ Validates that:
 1. Base configuration schema (configs/base.yaml) contains all required keys.
 2. CUDA is available, identifies GPU device name and total VRAM in GB.
 3. Evaluates hardware bf16 support and falls back to fp16 on Turing (sm_75) GPUs.
-4. Executes a GPU forward + backward pass using the effective precision.
+4. Executes a GPU forward + backward + optimizer step using the effective precision
+   (fp16 path goes through torch.amp.GradScaler, exactly as training will).
 5. Verifies bitsandbytes imports and creates an 8-bit AdamW optimizer on GPU.
 6. Verifies wandb imports.
 """
@@ -23,6 +24,7 @@ REQUIRED_CONFIG_KEYS: dict[str, list[str]] = {
         "layers",
         "hidden",
         "heads",
+        "ffn_hidden",
         "vocab_size",
         "context_len",
         "tied_embeddings",
@@ -136,12 +138,18 @@ def verify_precision_forward_backward(bf16_supported: bool) -> str:
     ).to(device)
 
     dummy_input = torch.randn(2, 16, device=device)
+    optimizer = torch.optim.SGD(toy_model.parameters(), lr=1e-3)
+    # fp16 has a narrow exponent range: gradients must be loss-scaled or they underflow.
+    # bf16 shares fp32's exponent range, so the scaler is a no-op there.
+    scaler = torch.amp.GradScaler("cuda", enabled=(dtype == torch.float16))
 
     with torch.amp.autocast("cuda", dtype=dtype):
         output = toy_model(dummy_input)
-        loss = output.sum()
+        loss = output.float().sum()
 
-    loss.backward()
+    scaler.scale(loss).backward()
+    scaler.step(optimizer)
+    scaler.update()
 
     return effective_precision
 

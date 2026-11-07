@@ -1,7 +1,8 @@
 model:
   layers: 8
   hidden: 640
-  heads: 8
+  heads: 8            # head_dim 80 (PRD §6.1)
+  ffn_hidden: 1920    # SwiGLU inner dim = 3 × hidden → ~50.7M params (mirrors configs/model_50m.yaml)
   vocab_size: 12000
   context_len: 128
   tied_embeddings: true
@@ -18,12 +19,12 @@ training:
   weight_decay: 0.01
   optimizer: adamw_8bit
   grad_clip: 1.0
-  # Fallback: if torch.cuda.is_bf16_supported() is False on target GPU 
-  # (likely on GTX 1650 / Turing without Tensor Cores), set to fp16.
-  # On GTX 1650 (Turing sm_75): bf16 is NOT supported (needs sm_80+). 
-  # fp16 is the correct precision and uses real Tensor Cores on this GPU. 
-  # The smoke test will fall back to fp16 automatically.
-  precision: bf16
+  # D1 (docs/decisions.md): fp32 primary, fp16 fallback for OOM only.
+  # GTX 1650 (TU117, sm_75): no bf16 (needs sm_80+), no Tensor Cores. Measured
+  # (scripts/bench_precision.py): fp16 is 1.4-1.6x slower than fp32 with negligible
+  # memory difference at 50M scale. fp16 requires torch.amp.GradScaler; fp32 does not.
+  # Confirm on the real 50M model at Prompt 4.
+  precision: fp32  # fp32 | fp16
   gradient_checkpointing: true
   seed: 42
 
@@ -32,3 +33,11 @@ logging:
   log_every: 50
   ckpt_every: 500
   val_every: 500
+
+# Thermal guard for multi-day runs (docs/decisions.md C1). Do NOT touch GPU clocks/voltage from code.
+monitoring:
+  gpu_log_every_s: 30          # temp + SM clock to wandb
+  temp_limit_c: 85
+  temp_sustain_s: 300          # over limit this long → reduce micro-batch by 1
+  min_batch_size: 1            # still over limit at this size → pause run and report
+  keep_effective_batch: true   # raise grad_accum when micro-batch drops
