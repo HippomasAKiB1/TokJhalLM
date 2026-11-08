@@ -1,0 +1,79 @@
+# Transliteration (Bengali script -> romanized Banglish): Prompt 3, D7-amended, D17.
+# Paths are relative to the repo root unless absolute.
+
+paths:
+  vashantor_zip: data/raw/vashantor/Vashantor_CSV_Format.zip
+  aksharantar_zip: data/raw/aksharantar_ben/ben.zip
+  model_dir: runs/translit                 # gitignored; checkpoint sha256 goes in the stage-0 JSON
+  stage0_json: data/translit_stage0.json   # committed metrics
+  stage0_report: docs/translit_stage0.md   # committed report
+
+# ---------------------------------------------------------------------------
+# D17 GATE — PRE-REGISTERED (committed before Stage 0 runs; not negotiated after).
+# Both rows are evaluated: "full system, standard rows" on Vashantor test, and
+# "projected bulk". The WORST band of the two rows governs.
+#   WER < 0.20 AND chrF > 0.70        -> target 200M tokens
+#   WER 0.20-0.30 OR chrF 0.55-0.70   -> target 150M tokens (with Stage 0.5 calibration)
+#   WER >= 0.30 OR chrF < 0.55        -> STOP, propose alternative (Prompt 3 plan §4)
+# Stage 0.5 calibration (its own gate, after Stage 0): 500 random Wikipedia docs,
+# 50 hand-rated; Good+Marginal >= 40 -> as planned; 30-39 -> target x 0.75; < 30 -> STOP.
+gate:
+  pass_wer_below: 0.20
+  pass_chrf_above: 0.70
+  stop_wer_at_or_above: 0.30
+  stop_chrf_below: 0.55
+  target_tokens_pass: 200000000
+  target_tokens_middle: 150000000
+  calibration:
+    docs_transliterated: 500
+    docs_reviewed: 50
+    proceed_min_good_or_marginal: 40
+    reduce_min_good_or_marginal: 30
+    reduce_factor: 0.75
+# ---------------------------------------------------------------------------
+
+metrics:
+  chrf_max_order: 6      # chrF character n-grams 1..6 (Popović 2015)
+  chrf_beta: 2.0
+  # The bulk-coverage estimate c is measured on this many docs per pool source,
+  # taken at an even stride across all shards. The projection uses the LOWEST c
+  # among pool sources (worst case).
+  coverage_docs_per_source: 20000
+  coverage_sources: [wikipedia_bn, fineweb2_ben_beng]
+  coverage_filter_levels: [0.6, 0.7, 0.8]   # §4 option 1, measured up front
+  examples_test: 10
+  examples_bulk: 10
+  seed: 20261108
+
+lexicon:
+  splits: [Train, Validation]   # Vashantor Test is NEVER used to build anything
+  # Sampled mode picks among attested spellings with p ∝ count^(1/temperature).
+  sample_temperature: 1.0
+
+model:                          # T2: character-level encoder-decoder, trained from scratch
+  d_model: 256
+  n_heads: 4
+  enc_layers: 3
+  dec_layers: 3
+  ffn: 1024
+  dropout: 0.1
+  max_src_chars: 32
+  max_tgt_chars: 40
+  seed: 1234
+  # Word types that occur in the Vashantor TEST split are removed from ALL T2
+  # training data (Aksharantar and Vashantor), so the fallback is always
+  # evaluated on words it has never seen.
+  exclude_test_words: true
+  pretrain:                     # Aksharantar ben_train (all sources)
+    epochs: 3
+    batch_size: 512
+    lr: 0.001
+    warmup_steps: 500
+  finetune:                     # Vashantor train+val word pairs (attested natural spelling)
+    epochs: 30
+    batch_size: 128
+    lr: 0.0003
+    warmup_steps: 100
+    dev_fraction: 0.1           # word types held out for checkpoint selection (not test)
+  grad_clip: 1.0
+  log_every_steps: 200
