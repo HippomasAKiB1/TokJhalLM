@@ -5,7 +5,7 @@ Execution plan for the prompt sequence. docs/PRD.md is the source of truth for
 file tracks *how and in what order*. Current state lives in
 docs/EXECUTION_PROTOCOL.md.
 
-Last updated: 2026-11-07 (decisions D1–D6, amendment A1, constraint C1 approved).
+Last updated: 2026-11-08 (decisions D1–D16, amendment A1, constraint C1 approved; Prompt 2 complete).
 
 ---
 
@@ -14,10 +14,10 @@ Last updated: 2026-11-07 (decisions D1–D6, amendment A1, constraint C1 approve
 | Step | Scope | PRD phase | Status |
 | --- | --- | --- | --- |
 | Prompt 1 | Repo scaffold, env, configs, smoke test | — | ✅ Done |
-| Prompt 2 | Data download + audit | §14 step 1, §7 | ⏭ Next |
-| Prompt 3 | Tokenizers (BPE + Unigram) + streaming data pipeline | Phase 1 | Planned (tooling can overlap Prompt 2) |
+| Prompt 2 | Data download + audit | §14 step 1, §7 | ✅ Done (report: docs/prompt2_report.md) |
+| Prompt 3 | Transliteration (critical path, D15) + tokenizers (BPE + Unigram) + streaming data pipeline | Phase 1 | ⏭ Next |
 | Prompt 4 | Encoder, MLM/ELECTRA pretraining loop, fine-tune harness, precision + thermal benchmarks | Phase 0 prerequisites | Planned |
-| Phase 0 | 4 ablation runs + 3-seed fine-tunes, ≤48 h wall time | Phase 0 (§5.0) | Planned |
+| Phase 0 | 3 ablation runs at 30M (D15) + 3-seed fine-tunes, ≤48 h wall time | Phase 0 (§5.0) | Planned |
 | Prompt 5 | Full pretraining | Phase 2 | Planned |
 | Prompts 6–8 | Fine-tuning (baseline, distillation, secondary tasks) | Phase 3 | Planned |
 | Prompt 9 | Evaluation | Phase 4 | Planned |
@@ -34,12 +34,17 @@ ordering moved. The split inside Prompts 6–8 (§3) is proposed and can change.
 | ID | Decision | Where it lives |
 | --- | --- | --- |
 | D1 | fp32 primary, fp16 fallback (OOM only); confirm on the real 50M model at Prompt 4 | `base.yaml: training.precision` |
-| D2 | 50M = 8L/640/8h/FFN 1920 (50.7M); 30M = 8L/480/6h/FFN 1440 (30.0M) | `configs/model_50m.yaml`, `configs/model_30m.yaml` |
+| D2 | 30M = 8L/480/6h/FFN 1440 (30.0M), selected; 50M = 8L/640/8h/FFN 1920 (50.7M), not selected (D15) | `configs/model_30m.yaml`, `configs/model_50m.yaml` |
 | D3 | ELECTRA generator: 2 layers, shared embeddings, mask 0.15, λ = 50 | `phase0.yaml: electra` |
 | D4 | 25M tokens/run default; reset from warm throughput so Phase 0 fits ≤48 h | `phase0.yaml: budget` |
 | D5 | ≥3 fine-tune seeds per candidate, mean ± std; overlap = tie → smaller wins | `phase0.yaml: evaluation.finetune_seeds` |
 | D6 | BanglaC4/OSCAR stream capped at 1 GB compressed; report tokens before raising | Prompt 2 data config |
 | C1 | GPU temp logged every 30 s; >85 °C for 5 min → micro-batch −1; still hot → pause + report | `base.yaml: monitoring` |
+| D7 | Romanized text is the scarce resource; transliteration is central | Prompt 3 |
+| D8–D13 | PolCSBD skipped; TinyStories excluded; Vashantor for dialect text; DepressiveText/dialect authors emailed; BanglishRev NC license; BanglishBERT baseline | `configs/data.yaml`, decisions.md |
+| D14 | Specificity leakage gate (allowlist or ≥ 5 docs) | `data.yaml: leakage.formulaic` |
+| D15 | Phase 0 = 3 runs at 30M; 50M not selected; transliteration ≥ 121M tokens | `phase0.yaml`, Prompt 3 |
+| D16 | NSFW filter fix (word-boundary URL tokens, drop `sex`/`chud`, Bengali term check) | Prompt 3 |
 
 ---
 
@@ -75,10 +80,15 @@ deduplicated, with frozen splits. No tokenizer yet.
 - **First deliverable: transliteration augmentation (D7).** Bengali-script →
   romanized Banglish, lexicon-first (attested spellings from Vashantor
   train/val parallel sentences and Aksharantar word pairs, sampled
-  stochastically) with a rule-based fallback for unseen words. Exit: character
-  error rate vs. the held-out Vashantor test split's Banglish column reported,
-  plus 50 hand-checked outputs. Then transliterate a disjoint slice of
-  Wikipedia/FineWeb-2 `ben_Beng`, sized from the Prompt 2 token audit.
+  stochastically) with a rule-based fallback for unseen words. **This is the
+  critical path (D15): budget 3–4 days.** Target ≥ 121M transliterated tokens
+  (≈150M target-script ≈ 5 tokens/param at 30M); stretch 200M. Exit: word
+  error rate vs. the held-out Vashantor test split's Banglish column below a
+  threshold set in the Prompt 3 plan (e.g. < 20%), plus 50 hand-checked
+  outputs. Then transliterate a disjoint slice of Wikipedia/FineWeb-2
+  `ben_Beng` (≈330M Bengali-script tokens available). Transliterated text is
+  never committed; it is regenerated from the source shards.
+- NSFW filter fix (D16) with a re-run of `scripts/nsfw_spotcheck.py`.
 - Mix decision (recorded in config): real romanized (upsampled ≤ ~2 epochs),
   transliterated, native Bengali script.
 - `tokenizer/train.py`: BPE (`tokenizers`) and Unigram (`sentencepiece`), both
@@ -110,19 +120,21 @@ deduplicated, with frozen splits. No tokenizer yet.
 - `training/finetune.py`: classification head (mean pooling, dropout 0.1,
   class-weighted CE), multi-seed runner (D5); reused in Prompts 6–8.
 - **Measurements (all must be reported):**
-  1. D1: real 50M model, fp32 vs. fp16, forward + backward + optimizer step at
-     B=2, T=128, grad checkpointing on → peak VRAM + step time. fp32 fits and
-     is faster → lock in; fp32 OOMs → fp16, recorded in decisions.md.
-  2. D4 + C1: throughput for 30M and 50M, 30 s sustained at target batch,
-     **cold** (idle start) and **warm** (after 10 min sustained load). Warm
-     < 80% of cold = throttling signal. Report both.
-  3. Set `budget.tokens_per_run` from warm throughput so 4 runs + 12+
+  1. D1: real 30M model (selected, D15; 50M optional for reference), fp32 vs.
+     fp16, forward + backward + optimizer step at B=2, T=128, grad
+     checkpointing on → peak VRAM + step time. fp32 fits and is faster → lock
+     in; fp32 OOMs → fp16, recorded in decisions.md.
+  2. D4 + C1: throughput for 30M (MLM and ELECTRA), 30 s sustained at target
+     batch, **cold** (idle start) and **warm** (after 10 min sustained load).
+     Warm < 80% of cold = throttling signal. Report both.
+  3. Set `budget.tokens_per_run` from warm throughput so 3 runs + 9
      fine-tunes fit in ≤48 h.
 - **Exit:** tests green; measurements table in `docs/phase0_report.md`;
   budget set in config.
 
 ### Phase 0 — Ablation execution
-- Stages a → b → c per `phase0.yaml`; each candidate fine-tuned with 3 seeds.
+- Stages a → b per `phase0.yaml` (3 runs, all 30M, D15); each candidate
+  fine-tuned with 3 seeds.
 - `docs/phase0_report.md`: F1 (mean ± std) per FLOP table (6NT incl. ELECTRA
   generator), winning-rule application, tie handling (D5), floor check.
 - **Exit:** winning config written into `phase0.yaml` (TBDs filled), or the

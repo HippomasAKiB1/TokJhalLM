@@ -43,7 +43,7 @@ Per amendment A1 (docs/decisions.md):
 | Prompt 2 | Data download + audit (splits, leakage, manifest, report) |
 | Prompt 3 | Transliteration augmentation + tokenizers (BPE, Unigram) + streaming data pipeline |
 | Prompt 4 | Encoder, MLM/ELECTRA pretraining loop, fine-tune harness, precision + thermal benchmarks |
-| Phase 0 | 4 ablation runs + 3-seed fine-tunes (≤48 h wall time) |
+| Phase 0 | 3 ablation runs at 30M (D15) + 3-seed fine-tunes (≤48 h wall time) |
 | Prompt 5 | Full pretraining |
 | Prompts 6–8 | Fine-tuning: baselines (BanglishBERT, BanglaBERT), distillation, secondary tasks |
 | Prompt 9 | Evaluation (bootstrap CIs, INT8, latency, error analysis) |
@@ -187,10 +187,15 @@ A new session (or a new agent) resumes by:
 
 ## Part 11 — Current State
 
-Phase 1 complete. Prompt 2 (data download + audit) is next. Phase 0 
-ordering corrected to follow Prompt 4. Precision decision pending 
-Prompt 4 validation: fp32 primary, fp16 fallback.
+Prompt 2 (data download + audit) complete; report docs/prompt2_report.md 
+awaiting Akib's review. Leakage gate PASS (0 gating hits). Corpus ≈ 370M 
+tokens (estimate), of which ≈ 29M target-script. Phase 0 reduced to 3 runs 
+at 30M (D15). Prompt 3 (transliteration, critical path, + tokenizers) is 
+next and does not start until the Prompt 2 report is reviewed. Precision: 
+fp32 primary, fp16 fallback, to be confirmed at Prompt 4.
 
-Last updated: 2026-11-07, on main after fast-forward to 1c9073c. Prompt 2
-plan approved (with transliteration augmentation central; see
-docs/decisions.md D7–D12); execution in progress.
+Open items for Akib: confirm the 1 extra leakage exclusion (exact copy of
+approved #5); confirm NSFW spot-check verdicts; send the two author emails
+(drafts in the report, §8).
+
+Last updated: 2026-11-08, after the Prompt 2 commits on main.

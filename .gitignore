@@ -33,3 +33,6 @@ htmlcov/
 .DS_Store
 Thumbs.db
 
+
+# NSFW spot check: contains explicit excerpts; kept local only (D16)
+docs/nsfw_spotcheck.md

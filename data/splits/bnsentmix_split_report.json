@@ -1,0 +1,263 @@
+{
+  "source_csv_sha256": "148f23eb3dc40c1012a973efec920eaccc39700a74e5bcfb56806b0bf389029d",
+  "source_revision": "0e6d8a275ce4a54c428dff018577342e7d741a3d",
+  "dedup": {
+    "input_rows": 20015,
+    "duplicate_groups": 252,
+    "rows_collapsed": 237,
+    "conflicting_label_groups": 19,
+    "rows_dropped_conflicting": 38,
+    "rows_dropped_empty": 0,
+    "kept_rows": 19740,
+    "conflicts": [
+      {
+        "rows": [
+          71,
+          8814
+        ],
+        "labels": [
+          1,
+          3
+        ],
+        "text": "valo kono offer nei..gp ei valo..1 takay 100 mb 2 takay 200 mb ..Robi te valo kono offer e nai.."
+      },
+      {
+        "rows": [
+          261,
+          16095
+        ],
+        "labels": [
+          0,
+          3
+        ],
+        "text": "Robi app ta sohoj Mone hoy. Airtel o Robi app same thakle valo hoto."
+      },
+      {
+        "rows": [
+          579,
+          5223
+        ],
+        "labels": [
+          2,
+          3
+        ],
+        "text": "Jdi kom dame aro valo offer pawya jaito valo hoto onk beshi tk lage ar valoi ase ar lone ta beshi pawya gele valo hoto"
+      },
+      {
+        "rows": [
+          740,
+          11865
+        ],
+        "labels": [
+          1,
+          3
+        ],
+        "text": "Faltu sim proti month ei price barai dicche... Age skitto onk valo chilo...."
+      },
+      {
+        "rows": [
+          741,
+          11868
+        ],
+        "labels": [
+          1,
+          3
+        ],
+        "text": "Faltu sim ato beshi tk mb lage er thke Aritel onk vlo 450 tk 30 gb abr 800 mb atai bettar"
+      },
+      {
+        "rows": [
+          749,
+          11962
+        ],
+        "labels": [
+          1,
+          3
+        ],
+        "text": "Faltu akta sim. Aage onk valo cilo. Mb ar dam komate hobe"
+      },
+      {
+        "rows": [
+          786,
+          12115
+        ],
+        "labels": [
+          1,
+          3
+        ],
+        "text": "era interneter khub valo offer dey kintu kom takar jonno kinben na. speed eto kom je mobile chure marte mon chay."
+      },
+      {
+        "rows": [
+          824,
+          12250
+        ],
+        "labels": [
+          1,
+          3
+        ],
+        "text": "Ei virson ta akdom valo hoi ni agerta beshi valo chilo ami request korchi jate ager moto abar kore den tate amader onek upokar hobe. thank you !"
+      },
+      {
+        "rows": [
+          1380,
+          14198
+        ],
+        "labels": [
+          1,
+          3
+        ],
+        "text": "aj theke amar internet cholche na ki korbo doya kore bolen ati theke to my gp valo"
+      },
+      {
+        "rows": [
+          1387,
+          8022
+        ],
+        "labels": [
+          2,
+          3
+        ],
+        "text": "Airtel app aa jeee vlo vlo offer dey blink aa taa deowaa hoy naa App user dr jonno kisutaa special pack rakhaa uchit"
+      },
+      {
+        "rows": [
+          1412,
+          19871
+        ],
+        "labels": [
+          0,
+          3
+        ],
+        "text": "ager ceye valo.. kintu aro fast houya dorkar"
+      },
+      {
+        "rows": [
+          3262,
+          9113
+        ],
+        "labels": [
+          1,
+          2
+        ],
+        "text": "Vai 100 takar moddea kono valo mb pack naii kn valo kono mb pack dan 100 takar moddeaa nailea airtel arr chalamoo naa"
+      },
+      {
+        "rows": [
+          4665,
+          10603
+        ],
+        "labels": [
+          1,
+          2
+        ],
+        "text": "net chara colle vlo hoto"
+      },
+      {
+        "rows": [
+          7040,
+          18764
+        ],
+        "labels": [
+          0,
+          2
+        ],
+        "text": "Assalamualaikum."
+      },
+      {
+        "rows": [
+          7428,
+          13654
+        ],
+        "labels": [
+          1,
+          2
+        ],
+        "text": "Apps tay aro kisu mb offer dile vlo hoto ...pasapasi fb r jnne ,imur jnne, you tube ar jnne alada ...ami mb kini r block dey ..tk mair ...aisob ki ...tk ki ure asche"
+      },
+      {
+        "rows": [
+          8487,
+          14659
+        ],
+        "labels": [
+          1,
+          2
+        ],
+        "text": "05 tarikh e ami 36 tk lod disi...amr account e 2gb + 5 minute asar kotha.... Kintu amr account e 600 mb + 5minute ascche...... Baki mb gula kivabe pabo?????"
+      },
+      {
+        "rows": [
+          9098,
+          15326
+        ],
+        "labels": [
+          0,
+          1
+        ],
+        "text": "Vai ami game kheltai parcina vai net eto kharap vai bujcialm bangalink onak valo tai ami gp sim sere bangalink sim kinci akhon dekhi net e pai na free fire khelte parcina"
+      },
+      {
+        "rows": [
+          11252,
+          17366
+        ],
+        "labels": [
+          0,
+          1
+        ],
+        "text": "Khub akTa Valo Na"
+      },
+      {
+        "rows": [
+          13109,
+          18581
+        ],
+        "labels": [
+          0,
+          1
+        ],
+        "text": "BANGLALINK APP AR MOTO TEMON VALO NA,"
+      }
+    ]
+  },
+  "near_dup": {
+    "jaccard": 0.8,
+    "clusters": 19640,
+    "multi_member_clusters": 90,
+    "rows_in_multi_member_clusters": 190,
+    "largest_cluster": 7
+  },
+  "splits": {
+    "train": {
+      "rows": 15795,
+      "share": 0.8002,
+      "labels": {
+        "positive": 4259,
+        "negative": 4858,
+        "neutral": 5277,
+        "mixed": 1401
+      }
+    },
+    "dev": {
+      "rows": 1975,
+      "share": 0.1001,
+      "labels": {
+        "positive": 532,
+        "negative": 606,
+        "neutral": 662,
+        "mixed": 175
+      }
+    },
+    "test": {
+      "rows": 1970,
+      "share": 0.0998,
+      "labels": {
+        "positive": 533,
+        "negative": 604,
+        "neutral": 658,
+        "mixed": 175
+      }
+    }
+  }
+}

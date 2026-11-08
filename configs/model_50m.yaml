@@ -1,3 +1,4 @@
+# NOT SELECTED for training run; kept for reference and future work. (D15, docs/decisions.md)
 # TokJhalLM encoder — 50M variant (decision D2, docs/decisions.md).
 # Depth 8 and head_dim 80 held fixed per PRD §6.1; only width varies across variants.
 # est_params_m assumes tied embeddings, bias-free attention + SwiGLU, RMSNorm,

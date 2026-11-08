@@ -1,8 +1,8 @@
 model:
   layers: 8
-  hidden: 640
-  heads: 8            # head_dim 80 (PRD §6.1)
-  ffn_hidden: 1920    # SwiGLU inner dim = 3 × hidden → ~50.7M params (mirrors configs/model_50m.yaml)
+  hidden: 480
+  heads: 6            # head_dim 80 (PRD §6.1)
+  ffn_hidden: 1440    # SwiGLU inner dim = 3 × hidden → ~30.0M params (mirrors configs/model_30m.yaml; D15)
   vocab_size: 12000
   context_len: 128
   tied_embeddings: true

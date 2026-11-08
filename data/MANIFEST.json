@@ -1,0 +1,2427 @@
+{
+  "sources": {
+    "bnsentmix": {
+      "kind": "hf_file",
+      "role": "finetune_primary",
+      "license": "MIT",
+      "url": "https://huggingface.co/datasets/aplycaebous/BnSentMix",
+      "files": [
+        {
+          "path": "data/raw/bnsentmix/dataset.csv",
+          "bytes": 1338916,
+          "sha256": "148f23eb3dc40c1012a973efec920eaccc39700a74e5bcfb56806b0bf389029d",
+          "repo": "aplycaebous/BnSentMix",
+          "revision": "0e6d8a275ce4a54c428dff018577342e7d741a3d",
+          "remote_path": "dataset.csv"
+        }
+      ],
+      "bytes": 1338916
+    },
+    "vashantor": {
+      "kind": "url_file",
+      "role": "pretrain_dialect",
+      "license": "see Mendeley page (DOI 10.17632/bj5jgk878b.2)",
+      "url": "https://data.mendeley.com/public-files/datasets/bj5jgk878b/files/ff221f8b-b38d-4db1-b579-fe310fc92b4a/file_downloaded",
+      "files": [
+        {
+          "path": "data/raw/vashantor/Vashantor_CSV_Format.zip",
+          "bytes": 1073445,
+          "sha256": "5abb437220ad6fede5344b974f1abe48f4be8d5a9c250b807c0fea6fe4899919",
+          "url": "https://data.mendeley.com/public-files/datasets/bj5jgk878b/files/ff221f8b-b38d-4db1-b579-fe310fc92b4a/file_downloaded",
+          "published_sha256": "5abb437220ad6fede5344b974f1abe48f4be8d5a9c250b807c0fea6fe4899919"
+        }
+      ],
+      "bytes": 1073445
+    },
+    "fineweb2_ben_latn": {
+      "kind": "hf_file",
+      "role": "pretrain_target",
+      "license": "ODC-By",
+      "url": "https://huggingface.co/datasets/HuggingFaceFW/fineweb-2",
+      "files": [
+        {
+          "path": "data/raw/fineweb2_ben_latn/data/ben_Latn/train/000_00000.parquet",
+          "bytes": 32545716,
+          "sha256": "3fb3f88dd19ff82249b5e8db11d97de94865596569c27f2c7e1e0721f6ddd727",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9",
+          "remote_path": "data/ben_Latn/train/000_00000.parquet"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_latn/data/ben_Latn/test/000_00000.parquet",
+          "bytes": 394422,
+          "sha256": "a5e355e48cf18e0d468f4b0f49b8dcff68ca4adfd543688109733d28075d7cf3",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9",
+          "remote_path": "data/ben_Latn/test/000_00000.parquet"
+        }
+      ],
+      "bytes": 32940138
+    },
+    "aksharantar_ben": {
+      "kind": "hf_file",
+      "role": "transliteration_reference",
+      "license": "CC0 (mined) / CC-BY (manually collected), per dataset card",
+      "url": "https://huggingface.co/datasets/ai4bharat/Aksharantar",
+      "files": [
+        {
+          "path": "data/raw/aksharantar_ben/ben.zip",
+          "bytes": 33167377,
+          "sha256": "4ab6edcc6ab556040d8f43ee75eec73cc25af0cf72d09e4650dab26b196d5fe7",
+          "repo": "ai4bharat/Aksharantar",
+          "revision": "e418c1fc928d9f5393af33268472cf20c1891be8",
+          "remote_path": "ben.zip"
+        }
+      ],
+      "bytes": 33167377
+    },
+    "banglishdepyt": {
+      "kind": "hf_file",
+      "role": "pretrain_target",
+      "license": "Apache-2.0",
+      "url": "https://huggingface.co/datasets/AyonRoy29/BanglishDepYT",
+      "files": [
+        {
+          "path": "data/raw/banglishdepyt/unlabeled/youtube_collected_raw.csv",
+          "bytes": 103357915,
+          "sha256": "d0b298056b7fd2ec471306121fd0afd2fed488bf64c9bf4dcc8e1eaa46bdfb9d",
+          "repo": "AyonRoy29/BanglishDepYT",
+          "revision": "342a2ae70701d64cf058022f89bfba4e3ce236a7",
+          "remote_path": "unlabeled/youtube_collected_raw.csv"
+        },
+        {
+          "path": "data/raw/banglishdepyt/labeled/yt_train.csv",
+          "bytes": 203148,
+          "sha256": "ea42311c592b61382cd0ba4628c52415bcf3b2b0ab8ba7b9c4684872d03d845c",
+          "repo": "AyonRoy29/BanglishDepYT",
+          "revision": "342a2ae70701d64cf058022f89bfba4e3ce236a7",
+          "remote_path": "labeled/yt_train.csv"
+        },
+        {
+          "path": "data/raw/banglishdepyt/labeled/yt_val.csv",
+          "bytes": 39204,
+          "sha256": "d1b3adeea0f993c0aa1bb666ec83c61395361b89abd99872ef0ae67b96813a33",
+          "repo": "AyonRoy29/BanglishDepYT",
+          "revision": "342a2ae70701d64cf058022f89bfba4e3ce236a7",
+          "remote_path": "labeled/yt_val.csv"
+        },
+        {
+          "path": "data/raw/banglishdepyt/labeled/yt_test.csv",
+          "bytes": 46185,
+          "sha256": "10f4314a2381ce16dafc65c022c6c6a11fafcef49a203449a4e5cce4791efa31",
+          "repo": "AyonRoy29/BanglishDepYT",
+          "revision": "342a2ae70701d64cf058022f89bfba4e3ce236a7",
+          "remote_path": "labeled/yt_test.csv"
+        }
+      ],
+      "bytes": 103646452
+    },
+    "banglishrev": {
+      "kind": "hf_file",
+      "role": "pretrain_target",
+      "license": "CC BY-NC-SA 4.0",
+      "url": "https://huggingface.co/datasets/BanglishRev/bangla-english-and-code-mixed-ecommerce-review-dataset",
+      "files": [
+        {
+          "path": "data/raw/banglishrev/reviews v1.json",
+          "bytes": 2046416253,
+          "sha256": "3966722c049fccbce232243b657d21fa1a1177c61f29c212eaa2a0dec4651bde",
+          "repo": "BanglishRev/bangla-english-and-code-mixed-ecommerce-review-dataset",
+          "revision": "38c97cd4255799359b612bafb721e3c442bc0851",
+          "remote_path": "reviews v1.json"
+        }
+      ],
+      "bytes": 2046416253
+    },
+    "wikipedia_bn": {
+      "kind": "hf_file",
+      "role": "pretrain_general",
+      "license": "CC BY-SA 3.0 / GFDL",
+      "url": "https://huggingface.co/datasets/wikimedia/wikipedia",
+      "files": [
+        {
+          "path": "data/raw/wikipedia_bn/20231101.bn/train-00000-of-00002.parquet",
+          "bytes": 192390559,
+          "sha256": "98a8189cf1d0e4b41d647b3d88bd6201e571e002344b5648496c6bfda402841b",
+          "repo": "wikimedia/wikipedia",
+          "revision": "b04c8d1ceb2f5cd4588862100d08de323dccfbaa",
+          "remote_path": "20231101.bn/train-00000-of-00002.parquet"
+        },
+        {
+          "path": "data/raw/wikipedia_bn/20231101.bn/train-00001-of-00002.parquet",
+          "bytes": 151495440,
+          "sha256": "47c0095c58d6595f68d4bccc257ae6646f27a4669a7d259369c11626bd39565a",
+          "repo": "wikimedia/wikipedia",
+          "revision": "b04c8d1ceb2f5cd4588862100d08de323dccfbaa",
+          "remote_path": "20231101.bn/train-00001-of-00002.parquet"
+        }
+      ],
+      "bytes": 343885999
+    },
+    "fineweb2_ben_beng": {
+      "kind": "hf_parquet_sample",
+      "role": "pretrain_general",
+      "license": "ODC-By",
+      "url": "https://huggingface.co/datasets/HuggingFaceFW/fineweb-2",
+      "files": [
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00000.parquet",
+          "bytes": 1743980,
+          "sha256": "a5410de2de96bca456879b0c74efc9ea213fa05760bcd5a884fd1a19bbfc14e4",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00001.parquet",
+          "bytes": 1660298,
+          "sha256": "5ad36955017fbf1837b181e7bc63884d014675f3f9c6f52d03aff7bd75177040",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00002.parquet",
+          "bytes": 1765185,
+          "sha256": "f7439cc1cd2a66e9ddb81a23604c56a10a98ab3d8d5511e62953f77e4b6d5888",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00003.parquet",
+          "bytes": 1467729,
+          "sha256": "97f5614be8a9375d7e4bd9a4fe9101616c2247f2df50f43ad97f21dc62e68ef7",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00004.parquet",
+          "bytes": 1709749,
+          "sha256": "d349cb623e25e571a21530913990e9569871fc0a389969a241eb49312cf85e08",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00005.parquet",
+          "bytes": 1659909,
+          "sha256": "4cd6c3c835f14ef466323e9fc2296ddcfe87b3b925a38e6fa068937047eb72d6",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00006.parquet",
+          "bytes": 1634890,
+          "sha256": "8cebe7969855acd48cec634d502b696c10d3e9aa49314be00fbd7f5f5a7e1d67",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00007.parquet",
+          "bytes": 1596199,
+          "sha256": "2a27e8e64e7185e7fac354b84a2e0edfdd01c4b468de006f0e7ea0c60e2ef855",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00008.parquet",
+          "bytes": 1491766,
+          "sha256": "b4ecd4e01cca7a3328030fb65e7de4dce38c7c713be3bc581011e83c5eb5df73",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00009.parquet",
+          "bytes": 1438432,
+          "sha256": "0644fa48f35b7c3f45bf7b18887a37a628db4f7b3f1cbbb2782009a7809e0dfd",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00010.parquet",
+          "bytes": 1615195,
+          "sha256": "3d73da54712b46171a8744cd93c47e32a0bed635191b6e919a8ef7211d84d402",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00011.parquet",
+          "bytes": 1715976,
+          "sha256": "43d1593a0f825ef60ea448f46e575b9cc688e4a6eb2a8a396cf79b2d3e76ba3c",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00012.parquet",
+          "bytes": 1621475,
+          "sha256": "14c1d281f65d6e6e9f26c19dd9a181edecb4874348ab7a88130729897a9e7ab9",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00013.parquet",
+          "bytes": 1571850,
+          "sha256": "94accf39ea58051c41d940288f64812e777ffe2f87e5411872b7e73da7aee0eb",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00014.parquet",
+          "bytes": 1385797,
+          "sha256": "40dad091e5f166a656a70968cd2f54d5baa404f47abe24e4b5925f52b8984ec1",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00015.parquet",
+          "bytes": 1649715,
+          "sha256": "aa1e37fd14214bca334afe8eb594ef8d10dd10688161981bc26a382201d29706",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00016.parquet",
+          "bytes": 1479364,
+          "sha256": "a7ee3380dabba8d7024a482f4ab887a017bc3230284cbac93a6a74b12b78d8da",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00017.parquet",
+          "bytes": 1562740,
+          "sha256": "fab654dc0c4993bc1f3f45b07777188b9117945081ddfd53b7ed106c9310ca5e",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00018.parquet",
+          "bytes": 1487663,
+          "sha256": "7b0b6607c5b450cb3735d6b59065a15c2be868b3c52f089578b738c06227c4be",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00019.parquet",
+          "bytes": 1692557,
+          "sha256": "d6d8be572ca9953b083055c69795bbffdbead3607ac2b869e9520a2c4b3beeef",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00020.parquet",
+          "bytes": 1831570,
+          "sha256": "cc99b806705c9fba3a3ab7cb1ea34576971fa2044d00d49f64920102edf5172b",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00021.parquet",
+          "bytes": 1433270,
+          "sha256": "50a5d5cca4cf8dea77b8c5420d5dfb87c425f06a76b4b12a8a396adff2c3aa11",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00022.parquet",
+          "bytes": 1731337,
+          "sha256": "e7e4310b23b0d9b35cf6bf6b212636980ec17132f701345f1d5ee729607082d4",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00023.parquet",
+          "bytes": 1572044,
+          "sha256": "9b574d0bc8fe124a26c836a9ced6770ddb7512b066fee6a1bd39e457aba8801a",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00024.parquet",
+          "bytes": 1339995,
+          "sha256": "1f59e6ffe464e36a92be52ac21cd7148d8e9440d66a925cb9c2c10f7e6046132",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00025.parquet",
+          "bytes": 1949867,
+          "sha256": "bda44aa22fb9952c3e5b510d93c6517f34732f02bb8b0c6da4b11a2ccf225441",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00026.parquet",
+          "bytes": 2015095,
+          "sha256": "41f954b60b31163199a8f35ac52e0fbc9f0678518e3e408ad521df6e6e46e25e",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00027.parquet",
+          "bytes": 1607313,
+          "sha256": "d8cf4a48e1648d9862b2d86861f8b096fdc351c04ed7b5ae8419beaa53b74205",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00028.parquet",
+          "bytes": 1614707,
+          "sha256": "c15bc6eecb6cdc59f2cc8cb4b57bdfd4c848dcc4e42846858725b478ad7bef9f",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00029.parquet",
+          "bytes": 1625274,
+          "sha256": "96edc19601ae124d6a41cb6ddadacecd1714314f51f0d1ed428ca0a4988778cc",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00030.parquet",
+          "bytes": 1593776,
+          "sha256": "e0c4137921f741f48886bcf292e44fc999431651a01344e4fed4805f643133ca",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00031.parquet",
+          "bytes": 1793827,
+          "sha256": "7824d94db93160357d0742dfc8e1187ce2e7795a583897faf442ec926b3ab917",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00032.parquet",
+          "bytes": 1629071,
+          "sha256": "10d5ea56b7d97bc992b684708119ce9ab40e1852ec636396b1ebf9d5abfa9cb2",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00033.parquet",
+          "bytes": 1417691,
+          "sha256": "1f074e84cad8bf4120940c56af4d17195e7a6ea45c5c815b27f0ed6faf8a28ea",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00034.parquet",
+          "bytes": 1338924,
+          "sha256": "ff049911ba9c30df4db55cbc349cf840cf7cf6e2acb1b387b4b3a3e75f8b5687",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00035.parquet",
+          "bytes": 1719595,
+          "sha256": "3550b550eb448e3ed64aa675511a95d15bb14013ccf61a293b20549f9a5054db",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00036.parquet",
+          "bytes": 1620397,
+          "sha256": "a0b251caee0d10505979cda5376be0dd5f271b318de88af9a14053d6c264009f",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00037.parquet",
+          "bytes": 1524703,
+          "sha256": "1290f7b2d6ed2db27c7ea436868533e66ffb3763a04091ee8cff655262bf3bd9",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00038.parquet",
+          "bytes": 1396031,
+          "sha256": "36cd8551ef4b3cf3c79fa87e610c5cde92455f8083fdaf4d44c5847ac71b95e0",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00039.parquet",
+          "bytes": 1636767,
+          "sha256": "5ace634c5629a70c79d2eef48d994d9c25d746084dae39839543c8c9f82d4379",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00040.parquet",
+          "bytes": 1692760,
+          "sha256": "ca8f07884960388c3e346c194471499ad509c7f43f19cf102b46141f50ef6880",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00041.parquet",
+          "bytes": 1489190,
+          "sha256": "06eafb5d8ab7025f4b481699cb973933a5ecabcae6879888561f6daaab3e670c",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00042.parquet",
+          "bytes": 1413223,
+          "sha256": "3da7211cb7373e6495c2ab2f6aa5c514b29fdfce271e2b17502dd71f4918f55a",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00043.parquet",
+          "bytes": 1437490,
+          "sha256": "e2c504c9d2ef4fd447afc5c7b7f4c25208271ef624b611fe43da5786573517c8",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00044.parquet",
+          "bytes": 1518572,
+          "sha256": "ec7bcb7ea46e68e31a17cd3eb8aece603b4ba7900b1b6b90c75a6990a1e717a7",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00045.parquet",
+          "bytes": 1685143,
+          "sha256": "01bc11a3ce533a3cfcad9c623a42151cc238cc88103de365639f557cef8bbabd",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00046.parquet",
+          "bytes": 1543818,
+          "sha256": "bade9e74e9816f552e20661c9178d888e36acf0088c629acfaa5d4a02da26e31",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00047.parquet",
+          "bytes": 1623598,
+          "sha256": "1f874bb93efb179b75464424f2398ed3a964e282fcb846255c7ef8dfca39aeee",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00048.parquet",
+          "bytes": 1354792,
+          "sha256": "ce94f8910d5831868fbd2d8a5e5f8446010e3b0e753077363c506224f44ec5e0",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00049.parquet",
+          "bytes": 1814180,
+          "sha256": "5b40ad99a66270617f19486297a99f28ec994d7cc74f7956d3586efd7c2e64c1",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00050.parquet",
+          "bytes": 1707382,
+          "sha256": "0479d3296d12d7dbffa33fa5c6d698370a4357dbe3064164bc32ced4949b6f7c",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00051.parquet",
+          "bytes": 1689295,
+          "sha256": "c069fbebe3085ec294f6d94ec55c5931d1d962bd2cb59e11660665022e2753e3",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00052.parquet",
+          "bytes": 1628289,
+          "sha256": "5f09bd49e943c71654873625944aef9a1f1ace4a712cdf74cf792ea873129768",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00053.parquet",
+          "bytes": 1517125,
+          "sha256": "89aebdab20a1237c746862e93121821bd4db1b08e483cf71b1b9321e8b85cb78",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00054.parquet",
+          "bytes": 1651819,
+          "sha256": "b1f8c63cf287ea3600c1c4d1233a8f7d152c3cbec3577839da45d1387cb3240a",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00055.parquet",
+          "bytes": 1771054,
+          "sha256": "0531c7e0168405c6d1eea30a62ddbbf95afc83481757f81df65aa4481bd3d3f0",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00056.parquet",
+          "bytes": 1531018,
+          "sha256": "378909837ae48e47536f582582d72f4522dd1f31768f7520cc545f7b73132d02",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00057.parquet",
+          "bytes": 1867042,
+          "sha256": "e083e1eff2b03609c384196e78810a3e6c69a65790b9dd78be4e20d06f872a67",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00058.parquet",
+          "bytes": 1627834,
+          "sha256": "6a0d042ced8fdb340cbad869f33f79faf8eee3bd376ac2d7a5f53afcecf82134",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00059.parquet",
+          "bytes": 1506627,
+          "sha256": "9728b35520acb80bed75af74c3ec21ba5fcd63d3147d514ccf89b4b7c6c8de90",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00060.parquet",
+          "bytes": 1566055,
+          "sha256": "15ee9258c2d89660d2fff3b711d4c8aacbb330fc0915bb6870dc5657963ef635",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00061.parquet",
+          "bytes": 1475855,
+          "sha256": "a201ab2a27cf4e182c6b0067447125b70d4283d710698d48471ce5aed35eb079",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00062.parquet",
+          "bytes": 1551570,
+          "sha256": "89ad459cf691a2b8f8f28952f84b15abbcaef44ee28c2e92b613dcddb6bd77c5",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00063.parquet",
+          "bytes": 1393840,
+          "sha256": "91ac798be1d1cdc516247bf95662caf03aebfc4974aad5808c52c399be03162b",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00064.parquet",
+          "bytes": 1574394,
+          "sha256": "c0be29505f968f77b76e397665e00fd25876bda9d580d57c795fd1a8f4da3554",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00065.parquet",
+          "bytes": 1740518,
+          "sha256": "1b6012e6aeb430ece179b75e4861b29159912ac326133fa97e57b56e3e377bc6",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00066.parquet",
+          "bytes": 1520608,
+          "sha256": "5e48b59da8f4daf10ff70f3f43d9371807dac18be6c16285d1b7e8c87f357645",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00067.parquet",
+          "bytes": 1656513,
+          "sha256": "4d0267dea56f50745b800256a4ea6663942c2e23781ac7265f6dd22864970aef",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00068.parquet",
+          "bytes": 1405321,
+          "sha256": "8fd554750bde124fdd045d553485fb5d0df50447176276c8f8c32c80bcb00e35",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00069.parquet",
+          "bytes": 1409726,
+          "sha256": "a883d96113e3309a05155e126fbf5583779e2b1ea53b0abfeb87555dab22b223",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00070.parquet",
+          "bytes": 1783584,
+          "sha256": "dafec1c88ab5cc801a33d7f2ca69a44d5247809839b03195bb19f6ad62c67f92",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00071.parquet",
+          "bytes": 1482175,
+          "sha256": "bd46e2564f43eb6f53dfc2748f0bdfb951608498592b0d1f6e8837fdecdc711d",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00072.parquet",
+          "bytes": 1585036,
+          "sha256": "8d4ed87a218dc1d86b76d3cfa3ab0f811de53ed94e14fda2c4feb50515e72531",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00073.parquet",
+          "bytes": 1419693,
+          "sha256": "3a95ba94222c928109632e337c1bbafe983b4a1d0a7654128b3e8fbd4a500cda",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00074.parquet",
+          "bytes": 1576565,
+          "sha256": "7210255df0fd337dcd5b99d494dcc18e5c8fbe115bb395facd123d865f0e09b8",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00075.parquet",
+          "bytes": 1573616,
+          "sha256": "d3e1f843f22adb3cc59622cc963e6e43bd46449ef321e77482e11190016200a3",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00076.parquet",
+          "bytes": 1450885,
+          "sha256": "584a1fffe56c054bb2895ad4bce765971418541462381e60ec26426f469e4aaf",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00077.parquet",
+          "bytes": 1522400,
+          "sha256": "7fb38b78ab0caafbc68320c39815768865afb9d85e41d94f84aa36528465129f",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00078.parquet",
+          "bytes": 1587917,
+          "sha256": "d1a3d7b74f5f6a93dedd4df0ee61e434bcbc5d2208e058efeff6c1b359151f22",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00079.parquet",
+          "bytes": 1606019,
+          "sha256": "a0ab7a9524cc304d9a39cf0ed9e24c28ce720747c3661cd3cc01b652b145410d",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00080.parquet",
+          "bytes": 1627437,
+          "sha256": "7b6ded6fbc8e786c3db81083ac270f9bb2d75d8df0f488de9a3d1569248d020f",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00081.parquet",
+          "bytes": 1479401,
+          "sha256": "ec1fdfd3f2d4707b273c9d7433733fc91118828db448bc3ada785cbaf8468673",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00082.parquet",
+          "bytes": 1591958,
+          "sha256": "0fa7318a37e1180cf6d135a61c1f1176318054b90bf0e2e16c9d2050ad3f75e9",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00083.parquet",
+          "bytes": 1382987,
+          "sha256": "3d777193b470ac28b3b315ffa9405f6e697e3d8a52c142878812fdae0605adf3",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00084.parquet",
+          "bytes": 1543720,
+          "sha256": "125b346a9208ae38dbcc48b17bfd0ae403b56c6d912656227cc9b63ed6d5fba4",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00085.parquet",
+          "bytes": 1710312,
+          "sha256": "fb6ef4ca7ea3580768138fb1fc9867eb819c5b3f2ce79b1dfa04d0fe2e3b6687",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00086.parquet",
+          "bytes": 1575408,
+          "sha256": "898f9c91e8bd179e0b39c6525693117ae394276bf59085b7d773d92b7217554d",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00087.parquet",
+          "bytes": 1444020,
+          "sha256": "0ef3b00e2a94301aa7291a393a3a010bd5ea2975a75f4c7d7b00d54af426abbf",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00088.parquet",
+          "bytes": 1442336,
+          "sha256": "990eee7b3c8d781e335aac4b209ad63213045acfcc91246c94a9531beaee114e",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00089.parquet",
+          "bytes": 1583928,
+          "sha256": "1ca80765040875f2436ff51fc603bfd39b2b968cf082ea54ea333607ce087024",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00090.parquet",
+          "bytes": 1735514,
+          "sha256": "25b2797747550c0e3f11c3a58546664d4376c9b291efd16778a1524472746848",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00091.parquet",
+          "bytes": 1623305,
+          "sha256": "8a026403e6df30cb2b008d8193c840e82a1c7a58e91417d6463962dc98d53937",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00092.parquet",
+          "bytes": 1678181,
+          "sha256": "f2342214a564eaf0a0c7a0219983328ba08f43cb29f843711ac551b76d38c001",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00093.parquet",
+          "bytes": 1495342,
+          "sha256": "9223ef81e0dc4eefda22a10e21f5dacf96ac27abc05d6c3c7cccba713aaef60d",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00094.parquet",
+          "bytes": 1503415,
+          "sha256": "ef7edcde465494e7da9fa36cb06155e3b4a6d3fad0ff481dcb5f9882c4ba9b11",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00095.parquet",
+          "bytes": 1566670,
+          "sha256": "e17ac3238c51084ee20df44b0af7b6af1e932a5e990c1560817a121a7efae9b1",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00096.parquet",
+          "bytes": 1512001,
+          "sha256": "105130f62bdb7e8ee85583913ba8c0af877bd442ff7636ea50bf0ba08847eb3f",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00097.parquet",
+          "bytes": 1374985,
+          "sha256": "238baeb9931cca768cc13740ada7928a2e74e0f60c0b6bd2ef95e34758a59025",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00098.parquet",
+          "bytes": 1623847,
+          "sha256": "9d47d92d4f3f0944856594416f71ee7e98b39e673131219bda83ef3975a40916",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00099.parquet",
+          "bytes": 1462382,
+          "sha256": "9ee00763ac68166b3eee3b59687ad9fc61b0a4b5402e27d2e1fab47df1a50643",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00100.parquet",
+          "bytes": 1667579,
+          "sha256": "ef7cd8e9f4f32d1f0ac3f73418778cca9af853b609bddf9083103a9a35e18ea5",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00101.parquet",
+          "bytes": 1553336,
+          "sha256": "684fceeef4644a406841b895cc3e26b8b22dce195d40b2d11e081b67b5222fe6",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00102.parquet",
+          "bytes": 1585910,
+          "sha256": "b114126b5fe3e3bc326859049689f07ea549c3223e83ba63d249538a20c503a5",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00103.parquet",
+          "bytes": 2025056,
+          "sha256": "f92cf4bb83536d8cdcf8d791e1ef3ce23efd9ab3f7cba27d69ca004092e9ef68",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00104.parquet",
+          "bytes": 1527802,
+          "sha256": "d3305caa71e751c26a2dbc9b3460ffa4ce44812f834f2ba063c050fa8a81002f",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00105.parquet",
+          "bytes": 1709468,
+          "sha256": "af4a5b6a8ad3afdd064ca20c473fb8cbf293f6fe71c0b7b4a2cf81216e5a2d9e",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00106.parquet",
+          "bytes": 1595157,
+          "sha256": "8b4f96014e686cf252677f6e4e922f9c366b51740d85b6b432e372ce6bc15711",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00107.parquet",
+          "bytes": 1420172,
+          "sha256": "dcc1bb7b0c87cb123eb06533a139ca245cebb90a1e1ca0b74b01d8cb19ef7da8",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00108.parquet",
+          "bytes": 1471922,
+          "sha256": "7f9dc0ffeb9635c669671be80ad301ad7203415cdf32466c718bc5e5ddf315bb",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00109.parquet",
+          "bytes": 1871115,
+          "sha256": "c22bcc0412c6cd0095fca9804d2db3bc7e79c6b866c45853c3aaf238b2e94835",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00110.parquet",
+          "bytes": 1744341,
+          "sha256": "475ba6085aa2942b163bb0879c3e3ff912774eadd8253cf9a29c5a8000d5b372",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00111.parquet",
+          "bytes": 1557776,
+          "sha256": "ddce5e1f4fd86a3ced5df9701570d26620caa1010a9f9ea49699b211d41973c0",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00112.parquet",
+          "bytes": 1566834,
+          "sha256": "30ed2b6cb5d392ae154672f73558ac2aed6caac34c4c2f538ac9d68e0d1381e0",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00113.parquet",
+          "bytes": 1585542,
+          "sha256": "89e120f14a1c3473d05caba1f1ed67b89091490e647c2a56f163be841bb970cb",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00114.parquet",
+          "bytes": 1492762,
+          "sha256": "8abffd596970f8152fc4c4072712d09f1be30b44820281c71d32753324503cbb",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00115.parquet",
+          "bytes": 1584261,
+          "sha256": "c6f1472c84eb88fe7323cec14a4c1d0c3319b61af9aabdf70190dbc12866a8d5",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00116.parquet",
+          "bytes": 1567265,
+          "sha256": "4583105b5e6a92c3473190222cf1a3d5bcb9c6f7797e94ab7066d42afcb8df07",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00117.parquet",
+          "bytes": 1512260,
+          "sha256": "1e7f4623e923ed9c4fc1eb93840d243964524db09b1ea234405b71f34a207ddf",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00118.parquet",
+          "bytes": 1637334,
+          "sha256": "d69de8cbc0091c441b49daabf12025047ff5d460431989a49e35b69ee409521b",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00119.parquet",
+          "bytes": 1435743,
+          "sha256": "b94eedc5e67a90eccef22f3224fee26438dfb85cd02b60150eafd1f241526f97",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00120.parquet",
+          "bytes": 1629749,
+          "sha256": "44025f210e5b3687e573082239d1f883af191d8120af4c562f65a8f7ed849e08",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00121.parquet",
+          "bytes": 1706067,
+          "sha256": "c22d8eef7050c4725032d61be2f5e3934b34a948187311355d12420e759a1768",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00122.parquet",
+          "bytes": 1391426,
+          "sha256": "219397bdbcdb5aeddb3f66f90a98d2cd401ff68d6b110a95894db1cb69985d58",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00123.parquet",
+          "bytes": 1473421,
+          "sha256": "968b9fb430908263da0340e9b1e5dc948a3425af6475fa9fc72f943f6417861e",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00124.parquet",
+          "bytes": 1416380,
+          "sha256": "115e1a42891c44d1822daa245c8b09992e755335a95ea1506afa6ca5593f5b7a",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00125.parquet",
+          "bytes": 1686898,
+          "sha256": "0e5c51aa4dbc157f244ee6bc2e71cca57af2995706ceef68ad9c7c5c65d3246f",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00126.parquet",
+          "bytes": 1413853,
+          "sha256": "525d4b1de0b8a0507d80474c67d701dba6a0434e59e965bf2e2e41b6857527c7",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00127.parquet",
+          "bytes": 1549657,
+          "sha256": "d1fb3c4614b926254be8794e499c373517522418c4f2851e900c3492656db04a",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00128.parquet",
+          "bytes": 1376679,
+          "sha256": "9f397c7b74dff42c645f53d8180ce84555d895f0742d12fb6cc52243f67eda67",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00129.parquet",
+          "bytes": 1536808,
+          "sha256": "437ed5e0a80b7322061ddb661aa6d861bb9a64296bbfd8aeef228fe7afa53d36",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00130.parquet",
+          "bytes": 1470524,
+          "sha256": "a5c4463693df29eba3ec09b600fc5c5ee050da3c7c98c45f5efdac674771bc8c",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00131.parquet",
+          "bytes": 1636390,
+          "sha256": "2cf3d53e36614f56d6df53034e19ff4daf3fc6c06c952d419f95c3e0db4cf041",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00132.parquet",
+          "bytes": 1412105,
+          "sha256": "fa0c095025e2cb743d9dedad058925c9e927c1b61f8cef612d4061bb63f6e7f4",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00133.parquet",
+          "bytes": 1606459,
+          "sha256": "5208a27206969739a8d12cf3054d6a43d4a41a5d954deac34ca883c230266c07",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00134.parquet",
+          "bytes": 1462591,
+          "sha256": "3afecde0298c98aa1ef6415393f9419f11ea5e1c493ed6e0da1c6358de05d8d1",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00135.parquet",
+          "bytes": 1555719,
+          "sha256": "92038314ff392dd51f1b6361a3a02baecc585ed8db3979ab665d0062c1639e28",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00136.parquet",
+          "bytes": 1546366,
+          "sha256": "504e6ced693526e906c3b544259979f00a3ad8ed0c3e65d9a8ccd6acac038799",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00137.parquet",
+          "bytes": 1697091,
+          "sha256": "09b14c7e737d3541885d0fc4f8639cfd171d80e5b148f34a228b32ca12aff6a8",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00138.parquet",
+          "bytes": 1396906,
+          "sha256": "4304e81340766517c761cbef7460f0fe3e7d62bbdf82a1de84982292b9465fa4",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00139.parquet",
+          "bytes": 1414799,
+          "sha256": "4f8a047afb0d8a516531c857f8358369b55c601c094ad8727aa2a554fcf6f84d",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00140.parquet",
+          "bytes": 1687517,
+          "sha256": "d1bec1c78cd4c9bc4ebf1ef4960995518b5bbcfb00a363f077d76caaea5f19a8",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00141.parquet",
+          "bytes": 1532865,
+          "sha256": "304b8005af9b510d71bd511b7860296512f5dcfce426fc1e23dfbbb1b03db1dd",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00142.parquet",
+          "bytes": 1600312,
+          "sha256": "4e583757a42815617675638ae9d4c07b4ff164f94fff8f2d5ee5589d83c524b0",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00143.parquet",
+          "bytes": 1378973,
+          "sha256": "a5b1e2ac6816df0a90bad6a20fa6c49701094948dd23f925d90cbd373e1de410",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00144.parquet",
+          "bytes": 1435841,
+          "sha256": "d5da26da13ea5e8cb7a124f74116798c345f18d862903522ea4010e7307f2b59",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00145.parquet",
+          "bytes": 1796546,
+          "sha256": "df92d3b2dd29e701edfca6182b364884aa23c31109852f2b7e937b72d0372ce2",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00146.parquet",
+          "bytes": 1545198,
+          "sha256": "2e60e32084aca6386ab968000b654c6eb22f585124f2e60d57ade35ebe12c2a0",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00147.parquet",
+          "bytes": 1567903,
+          "sha256": "8386c2086ec75a8fb2793cf13e011e3c7daf463955388c089a3678ced26aeb91",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00148.parquet",
+          "bytes": 1565537,
+          "sha256": "66a97394198059a712f81e20e62b05680fc2b19918ab2e5506da3dc862c7f8ba",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00149.parquet",
+          "bytes": 1444113,
+          "sha256": "8ed0ff78d768eb360259e73756781db0958b4c137f821056bfd385bbf79a6e3a",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00150.parquet",
+          "bytes": 1696564,
+          "sha256": "5784f022278a1e1d4f07251a1b5bebb8be01d5b1040d7bc60fc726d1d3415992",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00151.parquet",
+          "bytes": 1522168,
+          "sha256": "27f24e9ad3b95686e28763e2e8f0bdcb87f058210c5b0363d00430498a79953a",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00152.parquet",
+          "bytes": 1653231,
+          "sha256": "96f7bd00260f7a2332d5b21075a969b8eb7134954c3260d03ae2f6f487cb56e8",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00153.parquet",
+          "bytes": 1625763,
+          "sha256": "7270d72e4d071dba57bffc6f67c1fed6356da7d10bced64d6777a1ece7b14215",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00154.parquet",
+          "bytes": 1662248,
+          "sha256": "89627d5d1c113e38ae69edc758abf04de565e2f664ebb73aad828f3a0f06e056",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00155.parquet",
+          "bytes": 1649260,
+          "sha256": "746a58fbd8496d0e205c68e99a80b1fd8846d2e8350d2a48baf5c42ef5998cbc",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00156.parquet",
+          "bytes": 1489351,
+          "sha256": "fd2630e6ef7f526174a42bcf93b8e3168e5e6b1aa7f040f4b59905d0c361a7b8",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00157.parquet",
+          "bytes": 1421693,
+          "sha256": "ecaffe981f89a42a72e1890df23607658eb9197598a0e4c2aae62906658d25fc",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00158.parquet",
+          "bytes": 1403801,
+          "sha256": "c3acaa7fd39072c4168a1c095f3fac2c08accb276db9f0c8589cc978adacd611",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00159.parquet",
+          "bytes": 1346391,
+          "sha256": "b03ee89aa0bda4d39ecf9354450eb4374b92188d31eeb7bf6a6b29ef00aef3c1",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00160.parquet",
+          "bytes": 1555068,
+          "sha256": "a4c9ca963908403fd0cdc8473052dac45200306fe9b456b877b8fb4121f1ccc7",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00161.parquet",
+          "bytes": 1535164,
+          "sha256": "3cabcd79c32b49b820cae86e394ad95b1035632d76fd3fb7ef3e0dd9b4e4db44",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00162.parquet",
+          "bytes": 1547365,
+          "sha256": "15145a0b278e611a9e97a7a217725e89b46ee31e288b312161d8bea665ecb9d8",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00163.parquet",
+          "bytes": 1341392,
+          "sha256": "7f9ab57b492d338bd109c3025396b5c5f3f2b7f36c424df3bda4908155eceb0e",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00164.parquet",
+          "bytes": 1586091,
+          "sha256": "4805c580bb52560ebdb65fd8f07aacb3af6696ce3f4f35175e27be6324faca23",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00165.parquet",
+          "bytes": 1467058,
+          "sha256": "5762cb5b712fb764635d08e01acf16e819e921ab78a4592e141408dce4d5f57c",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00166.parquet",
+          "bytes": 1480483,
+          "sha256": "83f1137f5f3340c08d6b01d7a57a96f8f340e42b6125a6c694477d36e1ccaa7d",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00167.parquet",
+          "bytes": 1543450,
+          "sha256": "76d36f48b9e4bb65ad0200764c001e007ef7dad95dd13ab0db36c43c85bc92c8",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00168.parquet",
+          "bytes": 1658763,
+          "sha256": "d0d77550c6d8abae4cde045c2cb2f709a1e3a141a2a3b02c69d3dfcd601b0d86",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00169.parquet",
+          "bytes": 1554381,
+          "sha256": "2bcdb6320cf66d5a10b5e66c03c2a10a576d4427597c3ac7d8c16d559f48668e",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00170.parquet",
+          "bytes": 1647785,
+          "sha256": "ce68004772e6a413ba74c94dfd61886510d63b64ccd8b098e9acd2fab6627d91",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00171.parquet",
+          "bytes": 1447113,
+          "sha256": "1e47b29088a8f4dd8ceae5ae67109d968643f585b49873a81ef93d19e65d960b",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00172.parquet",
+          "bytes": 1408468,
+          "sha256": "7faee7b38a9a619e9653c2ba2300408a57e5d27d3bfcea396ebe486113f9d881",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00173.parquet",
+          "bytes": 1398283,
+          "sha256": "b068d5daab3cbccd7e715beeff4b950dc1d320bf095ab0a4925c7478ca87ed15",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00174.parquet",
+          "bytes": 1673443,
+          "sha256": "3cbeb8813e8cc1e848b62f9af3a37a2112ddbcc507add72c3fcf6751531fe8a1",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00175.parquet",
+          "bytes": 1753115,
+          "sha256": "25ead973a0faa0b498cc77af8b1ca7aedb92c6477491f57ab5947d5980b805bf",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00176.parquet",
+          "bytes": 1475279,
+          "sha256": "59518bc7f1b0b910648edfc9ba06b631751e1a743e24799da662046694661fad",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00177.parquet",
+          "bytes": 1431843,
+          "sha256": "c71b8d82f19a3de10ce982f6888f1cdde46b0581f154db1035e36d5b28b96932",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00178.parquet",
+          "bytes": 1260954,
+          "sha256": "1bd261f9f3fcbd026ea2602d38d44a84d4b3145ba0135607ac4b46f0fcbf09d0",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00179.parquet",
+          "bytes": 1454364,
+          "sha256": "f49c770ae60ca0bfa020706dd15f4371d9cee9f1261ca2c0c6c9c7a45a87964c",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00180.parquet",
+          "bytes": 1666964,
+          "sha256": "037e67ba2b7602ccd2e3d5204a2ce649591a6a88d1d5c991950c98947ab02501",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00181.parquet",
+          "bytes": 1426173,
+          "sha256": "2ad2fd043aedbda5efff7c858cb842c19598bbe7e7a7a7c81e2349e608c777bf",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00182.parquet",
+          "bytes": 1591910,
+          "sha256": "63787ce1251904fbacd68bd05c505fd502ec1c099a345da762bbfe77facfa5fd",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00183.parquet",
+          "bytes": 1432493,
+          "sha256": "199b24436bfdcef8f178e66843af7ef3f6738636b17181060d6ce31ef6948168",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00184.parquet",
+          "bytes": 1480306,
+          "sha256": "5bc6749e8acbec64a4d8a938edca4b328a6f67954cee46a1631548cf69e0cbac",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00185.parquet",
+          "bytes": 1723803,
+          "sha256": "ae663f0fc8606c7b28b9da92abdda1045290d7d3928d0e4aefeb38ecd4a7e4d3",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00186.parquet",
+          "bytes": 1420744,
+          "sha256": "44b14e9b69d746daa539ad495a6b24cf14718636efc0a93f18091634d9be596c",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00187.parquet",
+          "bytes": 1690337,
+          "sha256": "d1e21d9e8acb0ff9baa6c93dfac4135f29a6edd0f683343f000dbb291d02a218",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00188.parquet",
+          "bytes": 1286998,
+          "sha256": "ca965fe774f63d25ab0dd4ab22108c796b431c88e2bafc230d76172e84faac24",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00189.parquet",
+          "bytes": 1564027,
+          "sha256": "f6f12b4c2cda1daae86c27694d1fd71b1d908ca225602786a843acdebe47919f",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00190.parquet",
+          "bytes": 1806830,
+          "sha256": "83f3992a60962381833195c731368f8550f142db577af7f22a67d30303a2ebcc",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00191.parquet",
+          "bytes": 1824019,
+          "sha256": "4d8494f7f01f79bf5c964a318b8ea8112067149926ec05f7e01098bbe00f8b85",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00192.parquet",
+          "bytes": 1476526,
+          "sha256": "d7af07013aee98d4e1172bb5f53a9ec3e7f8cdb5b197fbff0a88880203efacc9",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00193.parquet",
+          "bytes": 1537685,
+          "sha256": "9f0dafaca33f2edd7a016ff02c5bba6218d3520eb60af3ca17fb5b646dfda6f8",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00194.parquet",
+          "bytes": 1491355,
+          "sha256": "dc5f6324a923de30c297ac7c28f4c81531743240d934f553659d2b8309671bee",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00195.parquet",
+          "bytes": 1468118,
+          "sha256": "b11e31f6be2970746b5a6da1b07c1656ed00a826756cae195e6d4074f9b84ba0",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00196.parquet",
+          "bytes": 1958366,
+          "sha256": "e5e06a72bdc1baa214c7237d06266374f72b435b7c3b0c7cd4807ae7fc91291b",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00197.parquet",
+          "bytes": 1300621,
+          "sha256": "ad91d2d6804fdba3a32971d0a7cd82a4deccf40aaea77ed731338cae6dab1bbc",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00198.parquet",
+          "bytes": 1403990,
+          "sha256": "7b587eeeaa67cea5ccd6dec1daa05922cccdde242468360d34ff59d1d8fa17c7",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00199.parquet",
+          "bytes": 1514021,
+          "sha256": "84d3efa059eb2e2747f07340bbbd6fe3898a3807847e19e46d62cd5a85c63eff",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00200.parquet",
+          "bytes": 1617711,
+          "sha256": "315bd486faa912b86cf7941e9656af88da72a9c20782e3a224a022bd6d7df503",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00201.parquet",
+          "bytes": 1539201,
+          "sha256": "91fb52546522339425f0f356a26724cf78c165ad5fbf0ba376ed55f69be43ecf",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00202.parquet",
+          "bytes": 1625876,
+          "sha256": "ef40344b9d08a667f3e6ff45a8809bbd6ed2a966ef1116f29e184d23983b431f",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00203.parquet",
+          "bytes": 1511296,
+          "sha256": "60c105cc22ad764bfb3c95775c502444c06a296f106f2fb60c12e0af2d20e682",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00204.parquet",
+          "bytes": 1668102,
+          "sha256": "cd78dbf3926feb425486a368901f4f66c869d79cfa78d405a02959def215bfa2",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00205.parquet",
+          "bytes": 1599093,
+          "sha256": "b401438f3a5bc076249364bafd24c46c27e9e8b9d174c5aa59f5485f4837427d",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00206.parquet",
+          "bytes": 1486272,
+          "sha256": "b03f634054b9d2d4110379119d8513337714af4cd126ea95a7b1795656a546cb",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00207.parquet",
+          "bytes": 1546083,
+          "sha256": "d8542ccbe33bd439c3ded98e55e6cf00c88fe350971f44f57d991c385bbf6705",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00208.parquet",
+          "bytes": 1427702,
+          "sha256": "3a443a774927219befdbd1943721b4988df2bc87ecf22f635cc46d4eb143fe3e",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00209.parquet",
+          "bytes": 1300602,
+          "sha256": "5291124785eb81e5b894311f86c143f1ca11ac57464f14150debc8d9b75c826a",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00210.parquet",
+          "bytes": 1599714,
+          "sha256": "1f20433da9eb5b224c30c059869ec4603a658bf4677f084fca4329d56fd0fce8",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00211.parquet",
+          "bytes": 1621691,
+          "sha256": "7dacfb2ea112b333dd4352016774cf14c3cc9d41ddfe796a07a7a4d40308156e",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00212.parquet",
+          "bytes": 1396259,
+          "sha256": "d38b5ed8cdf73d348a991d123fd11eaa6e64c5e5066067fe9681d6f67999bda9",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00213.parquet",
+          "bytes": 1596710,
+          "sha256": "54f53b97b66cba1214678c3c8fb13915340196e7661c02445c318d03da112a98",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00214.parquet",
+          "bytes": 1463823,
+          "sha256": "82dd2f70fcf761bc308ced966472218ade2cf57a650be1ae4b17f9b82d8a5598",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00215.parquet",
+          "bytes": 1812488,
+          "sha256": "2e34e65870a3f5759b81a68216fb46c4d3a10cb8c7ad3df67a87e63688992c72",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00216.parquet",
+          "bytes": 1613496,
+          "sha256": "4af0d42a1da93dd275fda74c6c1f11a084ec6869aaae6675c740e5ec0c296dc0",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00217.parquet",
+          "bytes": 1560595,
+          "sha256": "697befe10c27fa901cccbcb4de44d6a47915c251283e9303435e99b06aeb4be8",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00218.parquet",
+          "bytes": 1433447,
+          "sha256": "d0a6859f2e518f24a0608d0704d38649561c0c044989b84d89e85c8d1ccbb128",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00219.parquet",
+          "bytes": 1478896,
+          "sha256": "b7f01a2b04777d1b18711087a86df2c01ec9f042853f20d68fbbd7a7fdfc0f53",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00220.parquet",
+          "bytes": 1679756,
+          "sha256": "8052d0786c355a33e60aaa6fe764a817402187411fe1695fa83f0425b9445296",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00221.parquet",
+          "bytes": 1385605,
+          "sha256": "fd7f64d299f891f8a8c1bf8857695c7ab19851b9e2bf56f14cfd777d512e3d29",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00222.parquet",
+          "bytes": 1526773,
+          "sha256": "fb6c656270af99e1aae4deddd45d827e0baf4c08f94ca5fd6cd397a85845fa2b",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00223.parquet",
+          "bytes": 1949097,
+          "sha256": "7d531b3a77cce3b9cf61f286b7e8213406eab9d4b08020cf67148d6b6757c6b2",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00224.parquet",
+          "bytes": 1583355,
+          "sha256": "906433fcb6338385c7629b0daaa1893b2ea1e79b547ef599ec5742cc181fb2bb",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00225.parquet",
+          "bytes": 1809450,
+          "sha256": "8ea6e1dd50daaadc415a87aee1ddd60028705207f9873dcd07580d0012ffe03a",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00226.parquet",
+          "bytes": 1481511,
+          "sha256": "0c179083656d7e10d9ef8f33c95b5e1c27487a9666b72f4a8a6f8ee12d392896",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00227.parquet",
+          "bytes": 1470606,
+          "sha256": "5729132babd5f178fe57c8aadc6756248e27b80a405c56411d4623b5e66f8f10",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00228.parquet",
+          "bytes": 1387464,
+          "sha256": "65c3c72fca68a77af562344b89a46cc623387da27d588415efdd5b115559a872",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00229.parquet",
+          "bytes": 1941783,
+          "sha256": "17059df94d4c34197d3ac799366c0ea1f48afe975210b355b7a4ee16e1ff1e0f",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00230.parquet",
+          "bytes": 1585393,
+          "sha256": "f688b4e63c613b5e9513254d17f3cdf24703a19dd492518754c01eab480cdb08",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00231.parquet",
+          "bytes": 1717587,
+          "sha256": "f10e6f29b49201730f78996c927b6c91c5069742120291547fedbebaae01835e",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00232.parquet",
+          "bytes": 1598637,
+          "sha256": "e927f62cea75da484923210ea621abbed493b2fb0259db0b743a4c4aa602d6a1",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00233.parquet",
+          "bytes": 1689614,
+          "sha256": "6b7a638876914dbb0dde1772d93e3a66337f02d31c6861d65a9db0d96c505f95",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00234.parquet",
+          "bytes": 1344182,
+          "sha256": "27c078e60a166b11d08a85a37974467cd9062f50d9f856f59ddd74571c75dd58",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00235.parquet",
+          "bytes": 1584249,
+          "sha256": "d271acc1663d77de19b49d135444a9a87ea97282eb650f325fbf8d6fa240f487",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00236.parquet",
+          "bytes": 1590230,
+          "sha256": "4a9b0a05d9017148b5201f6dcb08af47285711100f1839596ff1a9f2aceadf2e",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00237.parquet",
+          "bytes": 1515001,
+          "sha256": "3fb2950ce47eadf4135b60a9d429fe7c6869d7062fa50faaf124c0cacd8e26ca",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00238.parquet",
+          "bytes": 1651985,
+          "sha256": "a2efc82569d3f73e14a224df7f4be37697d6531ff6de5d6320604245e1c1a4f2",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00239.parquet",
+          "bytes": 1358039,
+          "sha256": "a799a1a787e8602c02226f18b1797cc2053d5e82fdf4eeaafea9dd1b7a04b0f9",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00240.parquet",
+          "bytes": 1768028,
+          "sha256": "6586aa348ad505b86f11b4c95b327f85590c7fb2eff69ad1ad410835ae00ddb6",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00241.parquet",
+          "bytes": 1809167,
+          "sha256": "246f3123f48492532d44749801eba6fb187e8d055261f0830746372dce2214a4",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00242.parquet",
+          "bytes": 1509473,
+          "sha256": "1fe92f6e96c37ebe21181cb34fdfc610ae5bac476e9579d0fc598a69c3746c58",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00243.parquet",
+          "bytes": 1473978,
+          "sha256": "6ca6a97b3f31046702f3f5e272bcb16c4974ba8ae2cde376dadefa128b7bf2af",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00244.parquet",
+          "bytes": 1437848,
+          "sha256": "940ce644ebd7f5c86f5f3a855eeb9e19a9df112777d786c945df13b04fd125f2",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00245.parquet",
+          "bytes": 1539650,
+          "sha256": "08d19406b39acfa62e52bae486d10be8fbec4c8bd9873b683adb84ad0334f5f7",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00246.parquet",
+          "bytes": 1581483,
+          "sha256": "8fb1e43b379586b05c39b82599d5b74edbe8cef41ea944135d411c05cdb01c52",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00247.parquet",
+          "bytes": 1635373,
+          "sha256": "dbe117c7f98ac7ea0dfa9d104a42bef56ce7665ede6d3612ef356a9689fd8b32",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00248.parquet",
+          "bytes": 1556675,
+          "sha256": "3a46386b5e21d19a8a7c071d6a17339a7fde13632d7369b678104e1d1c549dbd",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00249.parquet",
+          "bytes": 1494351,
+          "sha256": "6ad693295b4512ead71a79f92265abe056c72f13d92d09a80560bc82ced8d874",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00250.parquet",
+          "bytes": 1693149,
+          "sha256": "cd047eb7b435ca8a3e7ddca3f84012e657b50a91543ce2f9922e51ec46bc8ed1",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00251.parquet",
+          "bytes": 1566226,
+          "sha256": "6acb4cdd92d0c8206c824e39bc4bd9953ccc2e7d62e97b5cd817137ecadc786d",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00252.parquet",
+          "bytes": 1478954,
+          "sha256": "6a44b32342effed06d827ca75f6360c52e1fc4205033cb89f86c20e882cf0360",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00253.parquet",
+          "bytes": 1553186,
+          "sha256": "47cca31c3bf6872e2b6bc343e09807bc2200c15b8598c18d01273e6e6009e8c4",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00254.parquet",
+          "bytes": 1466313,
+          "sha256": "302dff1f73bd1881067157ca429dc93bd4c55ab3f540a328ba267e7ab60733be",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00255.parquet",
+          "bytes": 1420400,
+          "sha256": "abc8258dd0fd8a51db4379ddbd1f47eeae12b2184eeffe7c5ca750a95cab4ade",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00256.parquet",
+          "bytes": 1462757,
+          "sha256": "360ef8476fa809da67e0f562a09a1f1ca302e20c886cf84616a32b7385769a4a",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00257.parquet",
+          "bytes": 1414840,
+          "sha256": "c414d032ec6d8da6c4b4ded4a9187e51237ac6ab9994d7045605c7cad99c844f",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00258.parquet",
+          "bytes": 1481545,
+          "sha256": "c53c7f480d452305010696b8705f42aaf68c6e28059830e6ff43cf01a4906b50",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00259.parquet",
+          "bytes": 1250003,
+          "sha256": "3bcfccfa36a09981f65d3119f190bc3af7d112dfcd64e04a73d451a574a0db6a",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00260.parquet",
+          "bytes": 1656728,
+          "sha256": "fa735ad432038422d9876131fe91d0259f4a4b7abf7cc5bd02521c9450465d4f",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00261.parquet",
+          "bytes": 1504963,
+          "sha256": "ba9ec0594b84f423a5641277341d75e943c9b8464fc6b92daecc246cb565cfb2",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00262.parquet",
+          "bytes": 1394302,
+          "sha256": "d14608e4e3498e2aa0dfb7b42a4b3c31319a4d6c4023c886b0375ee539e61dcd",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00263.parquet",
+          "bytes": 1368118,
+          "sha256": "4eb7ca2ac95b25aa83f5e90838d84ab71373689b59b56b7912f2310b60b26658",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00264.parquet",
+          "bytes": 1333830,
+          "sha256": "f2245e9ee8e59ec4fb486f9979cc3f396f0f63b0a4bee7a8a199d017588f5076",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00265.parquet",
+          "bytes": 1537515,
+          "sha256": "a03c433d4daa8dba160744f6b084473f7bc948748dedb37860aecd08272e5aba",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00266.parquet",
+          "bytes": 1532889,
+          "sha256": "f70a7603d102828ab71de47514846092d0a84e285427e5fd99a2586ec3f9db06",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00267.parquet",
+          "bytes": 1689732,
+          "sha256": "875ed7d3d55b950be653ce32f6283f4f639d7924937dd369c4444f4475e6a576",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00268.parquet",
+          "bytes": 1536340,
+          "sha256": "1106bb69b510fc56b6688e55f346dd86f11b597bfc4c70fa3b59f5341cda6170",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00269.parquet",
+          "bytes": 1429207,
+          "sha256": "4b53d01451c2529ecd7496d124a51783faac728b55368f81ba9296bd3d69a5ab",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00270.parquet",
+          "bytes": 1535826,
+          "sha256": "8fdb4205118d691f1eec77b12db69908aa24c6ddb92ef7602f3564b8e2d3a67a",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00271.parquet",
+          "bytes": 1554938,
+          "sha256": "4803710f60fac058981a4611cde4bf03ae3e17cc5b9e124159b6658cf87330fe",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00272.parquet",
+          "bytes": 1334687,
+          "sha256": "f106f6601cb24a23d1c5d5cfe02b16d585f13cda70bc44c456a5d46894c45e21",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00273.parquet",
+          "bytes": 1353673,
+          "sha256": "156c662157357e0d54fe80b2ac028587c39a437487574911abdb0038c6a90ad4",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00274.parquet",
+          "bytes": 1484469,
+          "sha256": "5225d02fc7b1595c3b802e78811e2e799eb13b6a52956306926d7efdb13b4f13",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00275.parquet",
+          "bytes": 1890213,
+          "sha256": "f36782f72f1f6735192ce41b63f93cd105de7f8a1725a113849485029bafa537",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00276.parquet",
+          "bytes": 1390402,
+          "sha256": "6829ab4405bbb13004dcaca05ad84721701a83ffbd9143277a153a637f43f77e",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00277.parquet",
+          "bytes": 1727701,
+          "sha256": "d2afa1cf02ef025b4c9f821d4ed740fc13191a69392548edeaab6cbe0fc244a9",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00278.parquet",
+          "bytes": 1509969,
+          "sha256": "75a2d30e541aba4d23d18678df9fd4d42e83348eefaa7b8c90fdd5b70494092e",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00279.parquet",
+          "bytes": 1663022,
+          "sha256": "c5c1039c916a3702cb5f81a86eb302cd9befe57856e91320365fb960b218bcc7",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00280.parquet",
+          "bytes": 1774593,
+          "sha256": "9be145d8fb747e310ec95392bf3c5b6408ecfe7ff90837e11508109c1714dce8",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00281.parquet",
+          "bytes": 1522742,
+          "sha256": "985462475e2209cf822d97ce4dedfd969e6a2ccb00f0d6b37228d2c1c2e372f9",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00282.parquet",
+          "bytes": 1578870,
+          "sha256": "6e459b71a0297eb1ce49d6b2355c175f93e5ae180c7b1940e4ad28bc57ab1721",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00283.parquet",
+          "bytes": 1435967,
+          "sha256": "8374ec15ca4ece673b7dbef0582cf8b0195355110c3fb186e7d9451fd342b0be",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00284.parquet",
+          "bytes": 1628946,
+          "sha256": "070882c06c3aaf5b557d81725f0e75a8a1365696dbaa3c44d9c29a48bb1782bd",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00285.parquet",
+          "bytes": 1642523,
+          "sha256": "15bbb412e03a5c9b3041030de0fce9ef68b76fee4a9baff668077d6df4cf1f34",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00286.parquet",
+          "bytes": 1604055,
+          "sha256": "68c112aa71174d3de2dcaaef71a8f0ab7cf1c77f7dc7b4acfce5da1c4ac7acef",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00287.parquet",
+          "bytes": 1605707,
+          "sha256": "878baa77547c184059002cc9398b84f5094e3ba161cbc65a383d26fbf740cf38",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00288.parquet",
+          "bytes": 1783970,
+          "sha256": "c2f4134f243176ed055e02e801c8dd521b3dd2b6c7efc820268912cf22ded010",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00289.parquet",
+          "bytes": 1626115,
+          "sha256": "641eb02ff95ff498268243543f9115e5b4bba72f5e41f8617b4ab2f69498e374",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00290.parquet",
+          "bytes": 1727773,
+          "sha256": "a1861b00cecc9a12d40b5c5a2124e48e8ffdfb2f78d12f773ec4c2c0309878bd",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00291.parquet",
+          "bytes": 1588006,
+          "sha256": "014860fddcdcda5fab02746208e2e1c86f87186884b5c438e376c900abf29300",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00292.parquet",
+          "bytes": 1556635,
+          "sha256": "5678ebf3ea6b2593d5ab5096d0e433894b073b43306b7b282aeae675c99f60c9",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00293.parquet",
+          "bytes": 1592335,
+          "sha256": "4206c5c45f6414f07dd57d0de92ef50613704792d276ff00882f20719f7af3b0",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00294.parquet",
+          "bytes": 1631981,
+          "sha256": "d235a80a29a81c659c76f3599aead98fed2af6310ea030f0f98f0321a6107217",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00295.parquet",
+          "bytes": 1599288,
+          "sha256": "35dc6175a1e1a2558fedb7645b766f31e01c2a72b3e8fe6e92bc7e3372d26b45",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00296.parquet",
+          "bytes": 1485625,
+          "sha256": "6d8ee4049e628499cee1aada10b1b608c5e5c10cc53157f771dc37ae6d686850",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00297.parquet",
+          "bytes": 1509551,
+          "sha256": "e51e190c3956469e049f4570f2fc7e8653b910aad4fbb0afe25338c641487f37",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00298.parquet",
+          "bytes": 1665231,
+          "sha256": "6610c3445735beb7f33dc1ccc9754e258e56aad9d0a7de70ceb9cc7a3de3a845",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00299.parquet",
+          "bytes": 1441249,
+          "sha256": "2281aa44b04cd652b9bed8849d5e27fdd525204edbdbec5662818ff0c410418c",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00300.parquet",
+          "bytes": 1595755,
+          "sha256": "e939ebbe2765c7eb2d8c11bab0b651efdf5e46fb2078eee256331e5229f5b609",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00301.parquet",
+          "bytes": 1718822,
+          "sha256": "b17a1878c1c86af56392ba6dea37574aeac9b367828e0451fd14e10e660e7744",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00302.parquet",
+          "bytes": 1490422,
+          "sha256": "b5332cf65cec4c40da1eaabc14083bbe9a33b2a394b645397789afd06491c4d3",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00303.parquet",
+          "bytes": 1485371,
+          "sha256": "da2990e954763e92542fcc81044b97817b1018357e9dd49f9e3942a12ec3ecfd",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00304.parquet",
+          "bytes": 1673651,
+          "sha256": "a4f20a7d270b8887b4f875e3cef7894762d3b527220f5d42b52365d7201666a5",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00305.parquet",
+          "bytes": 1565535,
+          "sha256": "dd58a672420c18b22a0b41c9a0e85df8ff23c6a436f4689ac1086643f5026907",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00306.parquet",
+          "bytes": 1373956,
+          "sha256": "8e5d8bdee57c2684947a549f3e30c1944ed7f416614e6596d62bec7cd812c681",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00307.parquet",
+          "bytes": 1518645,
+          "sha256": "b950d0683d37b4f2f57480af499764e3650e64bbf4ecd0730608f0fa23f41fe7",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00308.parquet",
+          "bytes": 1584215,
+          "sha256": "41afdeefb51f9c5a943c8fa040e1202ad6c346678938e32a2584c935320063cf",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00309.parquet",
+          "bytes": 1490249,
+          "sha256": "8053a29ffbee7ed205c832537aca2bc65f4aa5c1d7ef9c6a6e3b90ea166680bb",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00310.parquet",
+          "bytes": 1575210,
+          "sha256": "9da616161c289537edabe7be462762c4ca2e433139b7e1977990a1ee27ade842",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00311.parquet",
+          "bytes": 1516008,
+          "sha256": "50fde445daf3e2f2b217001799da34c92392c5cfa2c5b9aa1995138a61d1b8c6",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00312.parquet",
+          "bytes": 1490662,
+          "sha256": "6cf40954a28b7e1111b5eb736a6fc59c2df9f55ddd46d4a52453097b5454efc6",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00313.parquet",
+          "bytes": 1379170,
+          "sha256": "f9921cf1f1e206ae7e0c769ab623b7aaaff06d9111dd0b79afa5041862cb9b28",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00314.parquet",
+          "bytes": 1563908,
+          "sha256": "539b101645dd076fbd604cf9cedbcfd383b838afff1e8ab9157a5b9e914ef720",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00315.parquet",
+          "bytes": 1525968,
+          "sha256": "37fb00746b0d509dacfe330e57ce15895d6492317e4ada6ce804e6dd82d9d370",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00316.parquet",
+          "bytes": 1479619,
+          "sha256": "e8f4e35d8438e4d4bca97e63dbebdf6645506e0bd74ded28eb55c3a190c6ab69",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00317.parquet",
+          "bytes": 1610615,
+          "sha256": "647e9dba313ae98e932fb0d126f8a920b41678a7e30392e85f59505b230ebaad",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00318.parquet",
+          "bytes": 1467985,
+          "sha256": "b18c6e3824eafd3f5dfcf7267d2e631c31aa6237d8055b35725b10768ba42370",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00319.parquet",
+          "bytes": 1653627,
+          "sha256": "60e41a8869683fb9d43d26bbe5fce3cc9eaeb3968009d2334b17d245415dcb02",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00320.parquet",
+          "bytes": 1728985,
+          "sha256": "928647f67f733e900d4fa73873ea89ba66a770c84b7667da06202517f4bac98e",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        },
+        {
+          "path": "data/raw/fineweb2_ben_beng/part-00321.parquet",
+          "bytes": 1504327,
+          "sha256": "aab269f2bfc63b86d4cd20f3979e40e06bde419b59a4aab01f9c8fb3c584d74e",
+          "repo": "HuggingFaceFW/fineweb-2",
+          "revision": "af9c13333eb981300149d5ca60a8e9d659b276b9"
+        }
+      ],
+      "bytes": 502818523
+    }
+  },
+  "total_download_bytes": 3065287103,
+  "generated": "2026-11-08T00:00:42"
+}

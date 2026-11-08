@@ -163,6 +163,51 @@ Implementation notes:
   remove the offending pretraining docs, logged in docs/leakage_removals.md
   (doc_id, source, reason, sha256), after Akib approves the removal list.
 
+## D15 — Phase 0 scope: 50M arm dropped
+
+D15 (Phase 0 scope): 50M arm of Phase 0 dropped. Audit found 29.2M 
+target-script tokens (0.58 tokens/param at 50M). Even with aggressive 
+transliteration, 50M would need 250M+ transliterated tokens to reach 
+5 tokens/param — unrealistic within the compute budget. Phase 0 
+now tests MLM vs ELECTRA at 30M/BPE, then BPE vs Unigram at the 
+winning objective. The 50M config remains in the repo but is not 
+promoted unless transliteration massively outperforms expectations.
+
+Implementation:
+- `configs/phase0.yaml`: 3 runs, all 30M (stage a: MLM vs ELECTRA / BPE;
+  stage b: Unigram at the winning objective, BPE run reused). `model_sizes`
+  lists only 30M; 50M moves to `not_selected`.
+- `configs/model_50m.yaml` header: "NOT SELECTED for training run; kept for
+  reference and future work."
+- `configs/base.yaml` model section now mirrors `model_30m.yaml` (was 50M),
+  so no default points at an unselected size.
+- Supersedes the size ablation in PRD §5.0 stage (b) and D2's role for 50M;
+  D4's 48 h budget now covers 3 runs + 9 fine-tunes.
+
+Corollary (Prompt 3 scope): transliteration is the critical path. Minimum
+121M transliterated tokens (≈150M target-script tokens ≈ 5 tokens/param at
+30M); stretch 200M (≈6.7 tokens/param). Budget 3–4 days. Validation: word
+error rate on Vashantor's held-out test split vs. its ground-truth Banglish,
+with a pre-set safety threshold (e.g. < 20% WER). Transliterated text is
+never committed; it is regenerated from the Bengali-script source shards.
+
+## D16 — NSFW filter fix (for Prompt 3; not applied in Prompt 2)
+
+The current filter has 0.3% absolute loss on 
+ben_Beng but systematically excludes Bengali reporting on gender, 
+health, and abuse (7/20 FPs in the spot check are legitimate news). 
+The bias is worse than the loss.
+
+Fix, executed in Prompt 3 with a re-run of scripts/nsfw_spotcheck.py:
+- Match URL tokens on word boundaries (hostname and path tokens), not raw
+  substrings.
+- Remove `sex` and `chud` from the URL list.
+- Add a Bengali-script explicit-term density check for `ben_Beng` (today the
+  term check only covers romanized text).
+
+The full spot-check file (docs/nsfw_spotcheck.md) contains explicit excerpts
+and stays local (gitignored); the committed report carries a redacted table.
+
 ---
 
 ## Amendment A1 — PRD §12 timeline

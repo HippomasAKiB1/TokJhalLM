@@ -1,11 +1,9 @@
-# Phase 0 Pre-Commitment Ablation Configuration (PRD §5.0)
-# Sequential ablation structure to determine objective, parameter scale, and tokenizer.
-# Note: Sequential execution requires 4 new runs total (PRD §5.0 mentions 6 runs colloquially,
-# but the 50M run and BPE run are reused from previous stages):
-# - Stage (a): 2 runs (mlm_50m_bpe, electra_50m_bpe)
-# - Stage (b): 1 new run (winning_30m_bpe) — 50M run reused from stage (a)
-# - Stage (c): 1 new run (winning_obj_<size>_unigram) — BPE run reused from stage (b)
-# Decisions D2–D5 referenced below are recorded in docs/decisions.md.
+# Phase 0 Pre-Commitment Ablation Configuration (PRD §5.0, as amended by D15)
+# Sequential ablation, 3 runs total, all at 30M params (D15: the 50M arm was dropped after the
+# Prompt 2 audit found only ~29M target-script tokens, 0.58 tokens/param at 50M):
+# - Stage (a): 2 runs, MLM vs ELECTRA at 30M / BPE
+# - Stage (b): 1 new run, BPE vs Unigram at the winning objective / 30M (BPE run reused from stage a)
+# Decisions D2-D5 and D15 are recorded in docs/decisions.md.
 
 f1_floor: 0.40  # Minimum viable macro-F1 gate on BnSentMix dev set before promoting to full pretraining
 
@@ -20,7 +18,7 @@ evaluation:
   finetune_seeds: [42, 43, 44]
 
 # D4: per-run pretraining budget. 25M is the default; reset at the end of Prompt 4
-# from WARM (post-10-min sustained load) throughput so that all 4 runs + all
+# from WARM (post-10-min sustained load) throughput so that all 3 runs (D15) + all
 # fine-tunes finish within max_wall_hours.
 budget:
   tokens_per_run: 25000000
@@ -29,8 +27,11 @@ budget:
 
 # D2: concrete dims for each `params` label used below (standalone model configs).
 model_sizes:
-  50M: configs/model_50m.yaml
   30M: configs/model_30m.yaml
+# D15: kept for reference and future work; not promoted unless transliteration
+# massively outperforms expectations.
+not_selected:
+  50M: configs/model_50m.yaml
 
 # D3: ELECTRA generator. Shares token embeddings with the discriminator.
 # Only the discriminator counts toward reported params; generator FLOPs count
@@ -46,34 +47,25 @@ mlm:
   mask_prob: 0.15
 
 runs:
-  # Stage (a): MLM vs. ELECTRA objective at 50M params with BPE tokenizer (2 runs)
+  # Stage (a): MLM vs. ELECTRA objective at 30M params with BPE tokenizer (2 runs)
   stage_a:
-    run_1_mlm_50m_bpe:
+    run_1_mlm_30m_bpe:
       objective: mlm
-      params: 50M
+      params: 30M
       tokenizer: bpe
       vocab_size: 12000
-    run_2_electra_50m_bpe:
+    run_2_electra_30m_bpe:
       objective: electra
-      params: 50M
-      tokenizer: bpe
-      vocab_size: 12000
-
-  # Stage (b): 30M vs. 50M at winning objective with BPE tokenizer (1 new run; 50M reused from Stage a)
-  stage_b:
-    reused_from_stage_a: winning_objective_50m_bpe
-    run_3_winning_30m_bpe:
-      objective: winning_from_stage_a
       params: 30M
       tokenizer: bpe
       vocab_size: 12000
 
-  # Stage (c): BPE vs. Unigram at winning objective and winning size (1 new run; BPE reused from Stage b)
-  stage_c:
-    reused_from_stage_b: winning_objective_winning_size_bpe
-    run_4_winning_obj_size_unigram:
-      # objective and params placeholders: filled after Stage (a) and (b) identify the winners
+  # Stage (b): BPE vs. Unigram at the winning objective, 30M (1 new run; BPE run reused from stage a)
+  stage_b:
+    reused_from_stage_a: winning_objective_30m_bpe
+    run_3_winning_obj_30m_unigram:
+      # objective placeholder: filled after stage (a) identifies the winner
       objective: TBD
-      params: TBD
+      params: 30M
       tokenizer: unigram
       vocab_size: 12000

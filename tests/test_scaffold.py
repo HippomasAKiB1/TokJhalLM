@@ -21,13 +21,13 @@ def test_base_yaml_exists_and_valid(repo_root: Path) -> None:
     assert "model" in REQUIRED_CONFIG_KEYS
     config = validate_config(base_yaml_path)
 
-    # Validate model parameters per PRD §6.1
+    # Validate model parameters per PRD §6.1; default size is 30M per D15
     model = config["model"]
     assert model["layers"] == 8
-    assert model["hidden"] == 640
-    assert model["heads"] == 8
+    assert model["hidden"] == 480
+    assert model["heads"] == 6
     assert model["hidden"] // model["heads"] == 80
-    assert model["ffn_hidden"] == 1920
+    assert model["ffn_hidden"] == 1440
     assert model["vocab_size"] == 12000
     assert model["context_len"] == 128
     assert model["tied_embeddings"] is True
@@ -52,7 +52,7 @@ def test_base_yaml_exists_and_valid(repo_root: Path) -> None:
 
 
 def test_phase0_yaml_structure(repo_root: Path) -> None:
-    """Verify configs/phase0.yaml exists and adheres to PRD §5.0 sequential structure."""
+    """Verify configs/phase0.yaml follows PRD §5.0 as amended by D15 (3 runs, all 30M)."""
     phase0_yaml_path = repo_root / "configs" / "phase0.yaml"
     assert phase0_yaml_path.is_file(), "configs/phase0.yaml does not exist"
 
@@ -63,35 +63,28 @@ def test_phase0_yaml_structure(repo_root: Path) -> None:
     assert config["f1_floor"] == 0.40
 
     runs = config.get("runs", {})
-    assert "stage_a" in runs
-    assert "stage_b" in runs
-    assert "stage_c" in runs
+    assert set(runs) == {"stage_a", "stage_b"}
 
-    # Stage a has 2 runs
+    # Stage a: MLM vs ELECTRA at 30M / BPE
     stage_a = runs["stage_a"]
-    assert "run_1_mlm_50m_bpe" in stage_a
-    assert "run_2_electra_50m_bpe" in stage_a
+    assert stage_a["run_1_mlm_30m_bpe"]["objective"] == "mlm"
+    assert stage_a["run_2_electra_30m_bpe"]["objective"] == "electra"
 
-    # Stage b has 1 new run + reuse reference
+    # Stage b: BPE vs Unigram at the winning objective, BPE run reused from stage a
     stage_b = runs["stage_b"]
-    assert "run_3_winning_30m_bpe" in stage_b
     assert "reused_from_stage_a" in stage_b
+    assert stage_b["run_3_winning_obj_30m_unigram"]["objective"] == "TBD"
+    assert stage_b["run_3_winning_obj_30m_unigram"]["tokenizer"] == "unigram"
 
-    # Stage c has 1 new run with TBD placeholders + reuse reference
-    stage_c = runs["stage_c"]
-    assert "run_4_winning_obj_size_unigram" in stage_c
-    assert "reused_from_stage_b" in stage_c
-    assert stage_c["run_4_winning_obj_size_unigram"]["objective"] == "TBD"
-    assert stage_c["run_4_winning_obj_size_unigram"]["params"] == "TBD"
-
-    # Every stage uses the same run-spec keys
+    # Every stage uses the same run-spec keys, and every run is 30M (D15)
     run_specs = [
         spec
         for stage in runs.values()
         for name, spec in stage.items()
         if name.startswith("run_")
     ]
-    assert len(run_specs) == 4
+    assert len(run_specs) == 3
+    assert all(spec["params"] == "30M" for spec in run_specs)
     for spec in run_specs:
         assert set(spec) == {"objective", "params", "tokenizer", "vocab_size"}
 
@@ -117,7 +110,8 @@ def test_phase0_model_sizes_hit_targets(repo_root: Path) -> None:
     """Verify each Phase 0 size label maps to a model config near its nominal size."""
     config = _load_yaml(repo_root / "configs" / "phase0.yaml")
     sizes = config["model_sizes"]
-    assert set(sizes.values()) == {"configs/model_50m.yaml", "configs/model_30m.yaml"}
+    assert sizes == {"30M": "configs/model_30m.yaml"}
+    assert config["not_selected"] == {"50M": "configs/model_50m.yaml"}  # D15: reference only
 
     # Every `params` label used by a concrete run must be defined
     for stage in config["runs"].values():
@@ -125,7 +119,7 @@ def test_phase0_model_sizes_hit_targets(repo_root: Path) -> None:
             if name.startswith("run_") and spec["params"] != "TBD":
                 assert spec["params"] in sizes
 
-    for label, rel_path in sizes.items():
+    for label, rel_path in {**sizes, **config["not_selected"]}.items():
         dims = _load_yaml(repo_root / rel_path)["model"]
         nominal_m = float(label.rstrip("M"))
         assert dims["layers"] == 8, "depth held fixed per PRD §6.1"
@@ -137,12 +131,12 @@ def test_phase0_model_sizes_hit_targets(repo_root: Path) -> None:
         assert abs(est_m - dims["est_params_m"]) < 0.1
 
 
-def test_base_model_matches_model_50m(repo_root: Path) -> None:
-    """base.yaml model section must mirror configs/model_50m.yaml (the default size)."""
+def test_base_model_matches_model_30m(repo_root: Path) -> None:
+    """base.yaml model section must mirror configs/model_30m.yaml (the selected size, D15)."""
     base = _load_yaml(repo_root / "configs" / "base.yaml")["model"]
-    model_50m = _load_yaml(repo_root / "configs" / "model_50m.yaml")["model"]
+    model_30m = _load_yaml(repo_root / "configs" / "model_30m.yaml")["model"]
     for key, value in base.items():
-        assert model_50m[key] == value, key
+        assert model_30m[key] == value, key
 
 
 def test_readme_contains_tagline(repo_root: Path) -> None:
