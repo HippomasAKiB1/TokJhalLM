@@ -192,9 +192,14 @@ gate PASS (0 gating hits). Corpus ≈ 370M tokens (estimate), of which ≈ 29M
 target-script. Phase 0 reduced to 3 runs at 30M (D15). D17 (WER-gated 
 transliteration target) and D18 (BanglishRev control experiment) recorded. 
 Prompt 3 plan APPROVED (2026-11-08; D7-amended, D17 gate definition, D18 
-branched control, D19, D20 recorded). Executing Stage A (NSFW fix) and 
-Stage 0 (transliteration quality gate), then STOP. Stage 0.5 (calibration), 
-Stage 1 (bulk) and later stages each need Akib's explicit approval. 
+branched control, D19, D20 recorded). Stage A (D16 NSFW fix) COMPLETE: 
+replay reproduced the Prompt 2 sample exactly, all 7 ben_Beng news FPs kept, 
+rebuild done, leakage gate PASS (docs/nsfw_replay.md). Stage 0 code written 
+and tested; thresholds pre-registered (commit 46e430e). Stage 0 BLOCKED: T2 
+GPU training stopped by the C1 thermal guard (> 85 °C for > 5 min at step 
+~800/7,200; GPU idles at 77–79 °C), awaiting Akib's decision (cooling, CPU 
+training ≈ 3.3 h, or another option). Stage 0.5, Stage 1 and later stages 
+each need Akib's explicit approval. 
 Precision: fp32 primary, fp16 fallback, to be confirmed at Prompt 4.
 
 Open items for Akib: send the two author emails (drafts in
