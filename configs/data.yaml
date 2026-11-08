@@ -9,6 +9,7 @@ paths:
   manifest: data/MANIFEST.json        # committed: sha256 / bytes / revision per file
   audit_json: data/audit.json         # committed: machine-readable audit stats
   leakage_hits: docs/leakage_hits.jsonl
+  leakage_exclusions: data/leakage_exclusions.json   # approved removals (D14), enforced by corpus.py
   cache_dir: D:/tokjhallm_cache       # HF_HOME + TMP; never C: (≈5 GB free)
 
 hf_download:

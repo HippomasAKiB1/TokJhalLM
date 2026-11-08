@@ -139,6 +139,38 @@ def test_gate_fails_on_planted_dev_test_leak_only(index: LeakageIndex) -> None:
     assert gating_hits(soft, checked, cfg) == []
 
 
+def test_exclusion_list_skips_doc_and_rejects_changed_text() -> None:
+    import hashlib
+
+    from data.corpus import is_excluded
+
+    text = "atto valo laglo na"
+    excl = {("banglishrev", "71425:32"): hashlib.sha256(text.encode("utf-8")).hexdigest()}
+    assert is_excluded("banglishrev", "71425:32", text, excl)
+    assert not is_excluded("banglishrev", "1:1", text, excl)
+    with pytest.raises(RuntimeError):
+        is_excluded("banglishrev", "71425:32", text + " edited", excl)
+
+
+def test_exclusion_covers_normalized_copies(cfg: dict) -> None:
+    from data.corpus import load_excluded_norm_keys, norm_key
+
+    keys = load_excluded_norm_keys(cfg)
+    # approved doc 'Masha Allah!\nkhub valo' and a later raw copy normalize identically
+    assert norm_key(normalize_for_match("masha allah❤️❤️❤️khub valo....")) in keys
+    assert norm_key(normalize_for_match("ei product ta khub valo")) not in keys
+
+
+def test_committed_exclusion_list_is_well_formed(cfg: dict) -> None:
+    from data.common import repo_path
+
+    data = json.loads(repo_path(cfg["paths"]["leakage_exclusions"]).read_text(encoding="utf-8"))
+    assert data["approved_by"] == "Akib"
+    for d in data["docs"]:
+        assert {"source", "doc_id", "sha256", "reason", "text"} <= set(d)
+        assert len(d["sha256"]) == 64
+
+
 # --- D14 specificity gate ------------------------------------------------
 
 def _hits(text: str, n_docs: int, split: str = "test", row_id: int = 1) -> list[dict]:

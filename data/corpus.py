@@ -90,6 +90,48 @@ class ShardWriter:
             self.writer.close()
 
 
+def load_exclusions(cfg: dict[str, Any]) -> dict[tuple[str, str], str]:
+    """Approved leakage removals: (source, doc_id) -> sha256 of the cleaned text."""
+    path = repo_path(cfg["paths"]["leakage_exclusions"])
+    if not path.is_file():
+        return {}
+    data = json.loads(path.read_text(encoding="utf-8"))
+    return {(d["source"], str(d["doc_id"])): d["sha256"] for d in data["docs"]}
+
+
+def norm_key(norm: str) -> int:
+    """64-bit key of match-normalized text (shared by dedup and exclusion)."""
+    return int.from_bytes(hashlib.blake2b(norm.encode("utf-8"), digest_size=8).digest(), "little")
+
+
+def load_excluded_norm_keys(cfg: dict[str, Any]) -> set[int]:
+    """Normalized-text keys of every excluded doc, so exact copies are excluded too.
+
+    Excluding only by doc_id is not enough: dedup keeps the FIRST copy of a text, so
+    removing that copy by id lets the next identical copy through.
+    """
+    path = repo_path(cfg["paths"]["leakage_exclusions"])
+    if not path.is_file():
+        return set()
+    data = json.loads(path.read_text(encoding="utf-8"))
+    return {norm_key(normalize_for_match(d["text"])) for d in data["docs"]}
+
+
+def is_excluded(name: str, doc_id: str, text: str, exclusions: dict[tuple[str, str], str]) -> bool:
+    """True if this doc is on the approved exclusion list.
+
+    Raises if the doc id matches but the text hash does not, which means the raw
+    source or the cleaning changed and the exclusion list must be re-reviewed.
+    """
+    expected = exclusions.get((name, doc_id))
+    if expected is None:
+        return False
+    actual = hashlib.sha256(text.encode("utf-8")).hexdigest()
+    if actual != expected:
+        raise RuntimeError(f"exclusion hash mismatch for {name}:{doc_id} ({actual} != {expected}); re-review leakage")
+    return True
+
+
 def _records(name: str, cfg: dict[str, Any]) -> Iterator[Record]:
     if name == "bnsentmix_train":
         from data.splits import load_split_rows
@@ -104,6 +146,9 @@ def build_source(
     name: str, cfg: dict[str, Any], index: LeakageIndex, seen: dict[int, int], source_no: int
 ) -> tuple[dict[str, Any], list[Hit]]:
     """Process one source; returns (stats, leakage hits)."""
+    exclusions = load_exclusions(cfg)
+    excluded_keys = load_excluded_norm_keys(cfg)
+    excluded_copies: list[str] = []
     src_cfg = cfg["sources"].get(name, {})
     nsfw_on = bool(src_cfg.get("nsfw_filter", False))
     min_words = int(cfg["cleaning"]["min_words"])
@@ -126,6 +171,9 @@ def build_source(
     for rec in _records(name, cfg):
         docs_in += 1
         text = clean_text(rec.text)
+        if is_excluded(name, rec.doc_id, text, exclusions):
+            drops["leakage_excluded"] += 1
+            continue
         nw = n_words(text)
         if nw < min_words:
             drops["too_short"] += 1
@@ -138,7 +186,11 @@ def build_source(
                     nsfw_sample.append(text[:200])
                 continue
         norm = normalize_for_match(text)
-        key = int.from_bytes(hashlib.blake2b(norm.encode("utf-8"), digest_size=8).digest(), "little")
+        key = norm_key(norm)
+        if key in excluded_keys:
+            drops["leakage_excluded_copy"] += 1
+            excluded_copies.append(rec.doc_id)
+            continue
         first = seen.get(key)
         if first is not None:
             drops["duplicate"] += 1
@@ -170,6 +222,7 @@ def build_source(
         "docs_kept": len(lengths),
         "dropped": dict(drops),
         "duplicates_first_seen_in": dict(dup_with),
+        "leakage_excluded_copy_ids": excluded_copies,
         "chars": chars,
         "words": words,
         "doc_script": dict(doc_scripts),

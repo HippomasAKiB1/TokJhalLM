@@ -1,0 +1,57 @@
+{
+  "approved_by": "Akib",
+  "approved": "2026-11-08",
+  "decision": "D14 remediation",
+  "docs": [
+    {
+      "source": "banglishrev",
+      "doc_id": "117135:3",
+      "sha256": "2b5e8a1b51a0444d0854265dfd7b20557e176588327d9bdbe27594370fcab97e",
+      "words": 4,
+      "text": "valoi to mone hosse",
+      "reason": "near_dup (0.875) of BnSentMix test row 14976",
+      "sample_text": "Valoi to mone hossa",
+      "shard": "shard-00004.arrow"
+    },
+    {
+      "source": "banglishrev",
+      "doc_id": "16632:1421",
+      "sha256": "e7f4f51a1356ea7783223aa68b729d83777c7f6a5081804ac99deaa39849873f",
+      "words": 5,
+      "text": "eto valo laglo na 💔💔",
+      "reason": "near_dup (0.8) of BnSentMix test row 13383",
+      "sample_text": "atto valo laglo na",
+      "shard": "shard-00000.arrow"
+    },
+    {
+      "source": "banglishrev",
+      "doc_id": "5474:6",
+      "sha256": "60c2e993297da2c92383a5688a97d0cb2e8ae36c84447526d29b4117d20f9dbe",
+      "words": 5,
+      "text": "price hisab a thik ace,",
+      "reason": "near_dup (0.85) of BnSentMix dev row 16188",
+      "sample_text": "Price hisab a thik acha",
+      "shard": "shard-00000.arrow"
+    },
+    {
+      "source": "banglishrev",
+      "doc_id": "71425:32",
+      "sha256": "05b32077844b498c0006d83f2b7cac8428603f9ed9684617b1b5fcdfa65dff62",
+      "words": 4,
+      "text": "atto valo laglo na",
+      "reason": "exact (1.0) of BnSentMix test row 13383",
+      "sample_text": "atto valo laglo na",
+      "shard": "shard-00002.arrow"
+    },
+    {
+      "source": "banglishrev",
+      "doc_id": "7818:229",
+      "sha256": "76e4eaa5251e00a50f2253b9433dcc03d65b76311d489f3afb77bd152755a82f",
+      "words": 4,
+      "text": "Masha Allah!\nkhub valo",
+      "reason": "exact (1.0) of BnSentMix test row 16924",
+      "sample_text": "MASHA ALLAH khub valo.......",
+      "shard": "shard-00000.arrow"
+    }
+  ]
+}
