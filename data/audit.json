@@ -293,8 +293,8 @@
         "median": 9,
         "p95": 29
       },
-      "seconds": 2.2,
-      "peak_rss_mb": 413.0,
+      "seconds": 1.2,
+      "peak_rss_mb": 412.9,
       "spot_check_kept": [
         "Apnera nijer sompoder kor din kina sheyta age nichid khon...",
         "Kalkei kinlam ajke review",
@@ -377,8 +377,8 @@
         "median": 6,
         "p95": 12
       },
-      "seconds": 6.2,
-      "peak_rss_mb": 418.3,
+      "seconds": 3.7,
+      "peak_rss_mb": 418.4,
       "spot_check_kept": [
         "afnar kita mon kharaf ni?",
         "tuyar eto ghum killay ayedde",
@@ -462,8 +462,8 @@
         "median": 11,
         "p95": 39
       },
-      "seconds": 52.3,
-      "peak_rss_mb": 435.0,
+      "seconds": 34.5,
+      "peak_rss_mb": 435.5,
       "spot_check_kept": [
         "আমারও তো সেইম কাহিনী",
         "When he says-\nযার উষ্ণ আচে,ভালোবাসা বাচে\nসে হৃদয় ভাঙ্গে তারা,তা মানিনা\nI felt that 💔",
@@ -554,8 +554,8 @@
         "median": 10,
         "p95": 38
       },
-      "seconds": 250.7,
-      "peak_rss_mb": 532.1,
+      "seconds": 194.4,
+      "peak_rss_mb": 547.2,
       "spot_check_kept": [
         "product onek fast paisi ....but bolsilo je 16 in 1 but 13 typer tool chilo.. but shomosh nai ..product bhalo",
         "Jemon ta caisilam thik temon tai peyesi size o thik ase jota tao onek valo Sukriya same ta deoyar jonno",
@@ -611,83 +611,84 @@
     },
     "fineweb2_ben_latn": {
       "docs_in": 10581,
-      "docs_kept": 6379,
+      "docs_kept": 6698,
       "dropped": {
-        "nsfw_url": 2897,
-        "nsfw_terms": 1305
+        "nsfw_url": 2333,
+        "nsfw_terms": 1548,
+        "nsfw_bengali_terms": 2
       },
       "duplicates_first_seen_in": {},
       "leakage_excluded_copy_ids": [],
-      "chars": 27164394,
-      "words": 4584818,
+      "chars": 30075874,
+      "words": 5092920,
       "doc_script": {
-        "latin": 6104,
-        "mixed": 275
+        "latin": 6420,
+        "mixed": 278
       },
       "word_script": {
-        "bengali": 74351,
-        "latin": 4366143,
-        "mixed": 1179,
-        "other": 143145
+        "bengali": 75255,
+        "latin": 4866950,
+        "mixed": 1183,
+        "other": 149532
       },
       "words_per_doc": {
-        "mean": 718.7,
-        "median": 188,
-        "p95": 3216
+        "mean": 760.4,
+        "median": 200,
+        "p95": 3760
       },
-      "seconds": 41.2,
-      "peak_rss_mb": 612.0,
+      "seconds": 43.0,
+      "peak_rss_mb": 611.8,
       "spot_check_kept": [
-        "HomeSher-o-ShayariBengali Shayarivalobasha toiri hoy valo laga theke valobasha toiri hoy valo laga theke Bengali Shayari valobasha toiri hoy valo laga theke, sopno toiri hoy kolpona theke, onuvob toir",
-        "Dure fele asha ek rash smriti gulo..druto palte jai..\nkothai chilam?\nkenoi ba chilam?\nkenoi ba mayai joralam?\nmithe kono ohonkar lukiye chilo mone..churno holo…\nskito chokher alingone…\nodure sei lampo",
-        "Priyo grahok, Apnar proshner jonno dhonnobad. Ami bujhte parchi je apnar kichu valo lagche na. Grahok, kotodin dhore emon hochhe? Apnar jibone ki kono netibachok ghotona ghoteche? Apnar koster kothagu",
-        "Amar priyo bondhu\n. × জয়েন প্রিয় Priyo Bondhu Anjan Dutto aaj hok na rong fakashey tomar amar aakashe chander hasi jotoi hok na klanto bristi namuk nai ba namuk jhar uthuk nai ba uyhuk ful futhuk na",
-        "Onek age aquarium er besh shokh cilo, tai kine cilam. 4-5 year hoye gelo, shokh ta o ar nei ar tar sathe kaj kormer prochondo pressure. chele belar moto ar time o free thake na je abar fish palon shur",
-        "amader sathe thakar jonno dhonnobad, amader ke bolben ki niye apnar Tension hoy? Tension beshi hole karo sathe share korben. ete somadhaner poth khuje paoa jete pare, nijeke halka lage. niyomito ebong",
-        "Best doctor in the whole wide world\nChoto bela thekei ammu amake onar kache niye jeto monthly cheakup er jonno. Ekdin amar ekta accident hoy ar ei jonno amar matha kete jay . Tai ammu onar kache amake",
-        "jeneva vittek annotjatik onnon songta the worldwide alaynce for imfrov newtroson gain deshi o bidesh jonoble nigog biggote dese protistan ti doi catagori pode lokebole nigog debe agroy prati online ab",
+        "Artcell – Oniket Prantor chords\nChords\nTranspose:\nGm FTobu ei deyaler shorir eEb FJoto chera rong , dhuye jawya manushGm FPeshadar protihingsha tomar chetonarEb FJoto udvhashito alor rongGm FAkash er ",
+        "Darun plan using 10000 worker and make billion dollar blog site October 11, 2017 admin Uncategorized Skilled 10000 worker toire korte parle j kono Niche niye kaj korte parbo Keno blogging korbo: manus",
+        "Priyo Grahok,Apnar proshner jonno dhonnobad. gonmogoto vabe ekti ondokosh na thaka eta oneker hoye thake. ei condition k bole cryptorchidism(monorchism) . term baby er khetre 3% abong preterm er khetr",
+        "LYRIC\nklanti te vora haal chhara doshha\nghum e jaar nistaar\nsharadin khete pode pode theke\novagar mana haar\ntobu shurjer alo porbei duar a\njanala pane chao\njotodin khetecho taar phol\nashbe dhoirje row",
+        "Bengali love shayari is the best way to say your love to your beloved person. Love come from heart. Every girl love romantic quotes. So if you have a girlfriend and you want to say your love to her. T",
+        "LYRIC\nDin ke banao raat, Raat ke banao din\nJotoi hashi, jotoi kadi, shob e orthohin\nNotun notun neom banao, amra vangbo bole\nNotun chinta vabte gelei vorbe moder cell e\nOtiter shob hisab nikash, vobis",
+        "Dr. Tah\nRatings:\nQualification: MBBS\nExpert in: Paediatrics\nSpecialized in: MBBS\nQuote: health is wealth\nDr. Tah has answered total 58882 questions\nPriyo Grahok,Apnar proshner jonno dhonnobad.1.5 thek",
+        "Question:26march period dae amr .period ses hobr por april er 7, 11,14,16 sx kori bby nauyar jnno but tobu 25 april amr bleeding hoi night e nxt din hoina abr night e hoi aivbe 3days e olpo olpo hoi t",
         "2010, aamar jeebon-er sera bochhor\nAamar anyotomo priyo kaaj list banano.\nJekono rokom-er list. ki ki korbo, ki ki khabo (ebong ki ki chhNuyeo dekhbona), kake kake shubho bijoya, happy new year, happy",
-        "Kajir gaan\nKi theke je ki mone poRbe kokhon, se ek rohosyo.\nJemon dhorun, kaal saradin dibbi gechhe jemon jawar. sara diner nishkormota sere ghore dhuke, haat theke ghoRi khule rekhe, 1992 saale Kulu ",
-        "Grahok apnake kichu proshno kori?Apnar ki prosrab dhore rakhte kono shomoshhsa hoy? Shorir e ki jor ache?Durgondho jukto prosrab hoy ki?Prosrab korar shomoy ki jalapora hoy?Grahok, apnar UTI hote pare",
-        "Dr. R Kazi\nQualification: MBBS MPH\nExpert in: Teaching, Research, Public health\nSpecialized in: Occupational & Environmental Health\nQuote: NULL\nDr. R Kazi has answered total 1842 questions\nGrahok, apn",
-        "Alvi Khan – Tomar Jonno Chords and Lyrics Artist : Alvi Khan Song : Tomar Jonno [Verse] : Bm G D A Tomay chara hashar cheye to tomar pashe kadbo Bm G D A Tomar ekti hashir jonno puro jibon opekkha kor",
-        "Problem er suru amar monitor niye. Samsung 933 SN , sob kichu thik but dos e gele skin char vag hoye jai proti vag e picchi pichhi kore dos er lekha gulu ase.\nDOS mode er like Turbo c er khetreoe same",
-        "Md Shanto এর মাধ্যমে বিক্রির জন্য16 জানু 9:22 পিএমধাপ, রংপুর\nfull fresh & new condition ...amr onk favourite akta tablet pc 😢...\nlaptop hishebe er theke low price a r better kisu hoy bole amr mone hoi",
-        "grahok keno apnar songi crimir medicine kheyeche? grahok bacca thakbe ki na ba bacca truti purno hobe ki na ta age thekei bola somvob noy. tobe gorvabosthay daktarer poramorsho chara kono medicine kha",
-        "Priyo Grahok,\nApnar proshner jonno dhonnobad.\nGay ba lesbian howa kono rog ba mental problem na.Eti ashole ekti manoshik obsta. Chele-cheler proti kingba meye-meyer proti akorshon holo shomokamita.Tad",
-        "Amar boyos tokhon 14. Boudir boyos 26 ebong boudir meyer boyos 8. Ami schoole prochur dustumi kore6ilam tai school er madam amar guardian call kore6ilo ar boudi gele boudi ke bolo6ilo ei cheler ar kon",
-        "jodi mone pore sei din gulo kono din o..tahole vebo eta tomar jonno lekha.\nBondhu\nvorer halka howay tomay peyechi khuje\nsedin akasher nil rong chilo dhusor\njibon ta mone hoto katar stup\nBondhu num e c",
-        "*Tor ktha aj o mne pore*\nAj tui boddo dure, chaileo hoyto parbona toke dhorte. Aj tui arekjoner shami ar ami ek ma.\nJiboner prothom prem, colleger shei senior! Thik cinema gulor moto, jar deewana full",
-        "Priyo Grahok, Apnar proshner jonno dhonnobad. Ai boyose asolei nijekee control rakha ektu kostokor.tobe apni nijer somporrke positive dharona rakhar cesta korun.Mone kono kotha na jomiye rekhe ta shar",
-        "Bhai , Couldn't have said it better myself. Baktigoto porzaye porichito na hole , zekono boyos er ze kauke \"Apni\" bole sombodhon korata Holo Ekta sadharon bhodrota. Ar Esob self claimed elite gentlema",
-        "Many nice bangla status for whatsapp is here for you. You will get here all bangla status about life, love and fun. Some people search for good quotes for update their whatsapp wall and to share with ",
-        "Joto bhalobasa peyechi tomar kach thake;\nDustu aii mon chai aro besi pete;\nki jani tomar modhe ki achhe;\nke mon chai tomake aro besi kore kache pete.!!\nKhusbhu er moto tomar modhe miliye jabo;\nSukun h",
-        "Bisri ekta shopno dekhe aj ghum vanglo. Bisri holew shopno ta khub’e shabhabik ar bastob mone hochchilo. Tobe shob shopnoi amar kache shabhabik ar bastob mone hoy. Jei shopne ami ar Hussain Muhammad E",
-        "Amar god a onek ros\nboudir kotha sune amio hate chand peye gelam, eto boro sujog je eto sohoje pabo vebei pai ni.\nAmar hatru upor ekta towel rekhe tar upor boudir ekta ekta pa tule valo kore towel diy",
-        "Tumi r ami boltesilam…amrao ashbo ekdin evabe! I wanted Tanin to start the procedure of divorce…. Tomar ekta step-er sathe arekta step milena. Jeta tomar abbu bolsilo…ami naki unar charpasher lokjonde",
-        "Amio asha kori hobe bhai. Just khaleda zia ke chhara zabe na. Se holo cult leader like Hasina.\nTareq chora hobe leader ,public dekhbe ze chora leadership er jonno tar maake bondi thakte sahajjo korchh",
-        "tora probably kichui bujhbi na, but ami tao korte chai!! first e j gula dichhi ota jei manga-r shetai main chele tar nam SHINDOU, main meye- TAKAMURA URU, ar shindou er adoptive father holo MANAGER. <",
-        "Jibone prothombarer jonno period ba mashik oneker jonnoi voyaboho oviggota hote pare,kintu eshomoi ki kora ucit ta jana thakle dushchinta kom hote pare.Jokhon period hoi tokhon porishkar poricchonnota",
-        "Priyo grahok, aapnar proshner jonno dhonnobaad. Aapnar boyos koto? Kono doctor er poramorshe oshudh sebon korchen ki? Doctor er poramorsho bihin jekono oshudh sebone shasthojhuki thake. Dukkhito graho",
-        "1 - 24of 94ads\nSiraji price in Bangladesh\nSilver siraji\n3 bar dim bacca korce... Koi akdin modde abr korbe.. Bari ala palte dibe na... Tay sell dibo..\nRed siraji\nFull fresh & healthy\nBlowbar siraji no",
-        "Barandai dariye achi. Kaje berobo khali ga. Snan korte jabo. Ei paraimas duek\nesechi. Sabar sathe alap porichoi hoi ni. Ekhankar barigulo ekdom pasapasi.\nBesh valo valo boudi ache ekhane. Kintu alap h",
-        "prothome ekta kothha bola dorkar je cinematar title ki?10% acion,30% comedy,60% emotion but 100% love.ei naam thekei bojha jaai je ei cinemate emotion entertainment-er theke onek beshi.otocho ami anek",
-        "Sommanito grahok,Apnar proshner jonno apnake dhonnobad. Bivinno dhoroner chinta ghumer somoy apnar mathay ashe je karone apnar ghumer somossha hocche bujhte parchi. Ei obosthar moddheo jokhon apni ghu",
-        "Sobar life e onk mojar ekta ghotona ase ja keo jane na , othoba sobai jane bt apnar oi bondhu ti ba oi manushti janle somossa hobe . Ei typ confession guli amader kase pathan.\nR prai sob chele campus ",
-        "ta thik ache kintu tara ekhono otota unnoti o oggoti orjon korte pareni jemonta sohorer chele meyera koreche . to sorkar ebong international organization jodi cesta kore tahole druto tarao egiye jabe ",
-        "Priyo Grahok,Apnar proshner jonno dhonnobad.Proti ti manush unique. chele meye sobar majhei abeg royeche. cultural provaber karone setir prokash vinno vabe hoye thake. jemon, amader desher culture a c",
-        "putul ta-ke bhalobashar tar bishesh kon karoN chilo na. kintu roj hNata pothe, putul ta-r mon bholano hashi dekhei tar jibon obhyosto hoye uthechilo. ashe pashe aro onek, pray ek i rokom, emonki aro o",
-        "In view of the recent heat wave you are authorized to change school hours from the day shift to the morning shift in Primary and Upper Primary Schools in consultation with the Chairman, DPSC and the c",
-        "This action might not be possible to undo. Are you sure you want to continue?\nBela egarota. Chatoki ar Jerinder roome boshe golpo korchhe. Jerin khutiye khutiuye or shathe Saifullah rat ar shokaler sh",
-        "Boloto Superman r normal man er majhe tofat ki? Upload a funny pic you come across internet and get paid to do so. Sir uni apnr boyose nobel prize peyeche, R apni ki peyechen? Play Daily Games Playing",
-        "Priyo Grahok, Apnar proshner jonno dhonnobad. onuvuti theke hormone secretion ebong jononge hat deyar karone ekdhoroner torol nisrito hoy joni poth diye. onek somoy kichu sukranu o ashe toroler sathe.",
-        "rabby এর মাধ্যমে বিক্রির জন্য 9 অক্টো 3:03 পিএমখিলগাঁও, ঢাকা\nআলোচনা সাপেক্ষে\nami 2 er moton hoyeche 7inches tab kinechi. ami akti mobile kinbo, tai tab ta korbo,akdom fresh,ami student tai taka short ",
-        "Hey,If you are looking for Bangla Valobashar SMS, then this is the right place. You will find here some romantic sms for boyfriend girlfriend also with Valobashar SMS. So keep visiting our site to get",
-        "To find out whether you or your child is maintaining a healthy weight\n|Interpretation||BMI Score|\n|Underweight||less than 18.5|\n|Healthy Weight||18.5 to 24.9|\n|Overweight||25 to 30|\n|Obese||above 30|\n",
-        "Subreply To: Appointment of Primary Teachers by DPSCs\nKeu bolche aj berobe keu bolche Lokkhi pujor por berobe. Akash apni bolchen Lokkhi pujor por berobe abar niche ekta post e likhechen chithi chara ",
-        "Priyo Grahok, Apnar proshner jonno dhonnobad. Apnar boyos koto?Apni chele na meye?Apni kno ai somondhe jante chan?Ei medicine khub e sasther jonno jhuki bohon kore thake.Jemon prochur bleeding,Tibro p",
-        "[QUOTE=kalpurush;1289860]We still have three match to play.\nWe will be at the QF inshAllah\n[/QUute\nVhai,quater finaler kotha ar boilenna, Next winner jonno ar koto match titherkaker moto boshe thakbo,",
-        "Kiyiya Vuran Insanlik\nboka chhele-Ta shudhu hese chole\nchhobi-Ta sobai dekhechhe\nTiki aar Tupi niye golmaal\ntarpor ke beshi khabe aar ke kom\nesob dike karnapat na kore\nchhele-Ta hese chole\nsobai jene "
+        "Grahok koto din dhore ei somossa?Grahok sinusitis er somossa mane hocche apnar naker ba galer har gulor majhe kof jatiyo kichu jome thake.Se jonno apni kane veja veja feel korte paren.Abar kane infect",
+        "You can access the distribution details by navigating to\nMy pre-printed books\n> Distribution\nTomate amate howk du fota jol binimoy. Hoy bokkhasru, noy kokkhasru.\nIngreji sahitto, shikkha biggan o prok",
+        "eta amar notun laptop theke prothom post. :-)\nnotun kyano? kenoki purono ta mara geche. tar joubon onek kaal holo periye giyechilo, onek din dhorei bhugchilo. prothomei gyalo webcam. tarpor rog choRiy",
+        "2023 e dariye ekhon kintu sokolei nijeder jibon niye khub e socheton, shey arthik dik diye hok, manoshik ba sharirik. Tai ekhon sobai bojhe je ekti poribar shuru korar aage anek gulo jinish e mathaye ",
+        "Ei shmossa koto din dhore? Ei gulo ki chulkai, kono puj ba rosh pore? Chulkale ki rokto pore? Gota gulor akriti kemon? Apner ki onno koo shomossa ache? Apner ki diabetes ache?\nApner ei shomossa gula n",
+        "Prio grahok, apnar bektigoto bishoyti amader sathe share korar jonno dhonnobad. apni bolechen je apni kichui mone rakhte paren na.grahok, apnake ki koyek yi prosno korte pari? age age koto? kobe theke",
+        "2me amr GP,ROBI,Banglalink Collection\n2me amr GRPS,2me amr EDGE\n2me amr hridoy hore Network coverage\n* Tor Jonno ante pare akash theke tara\nToi Bolle bachte pare oxyzen chara\nProthibi takao Lutate par",
+        "Please connect to Internet to continue\nCooking Time\nPreparation Time : 10\nCook Time : 5\nTotal Time : 15\nIngredients\nServes 1\nBread slices 4, jam 4 tablespoon ,dairymilk chocolate 1 small size\nDirectio",
+        "priyo grahok,apnar proshner jonno dhonnobad. apni porashonay monojog dite chacchen kintu meyeder niye chinta ashar karone parchen na. apnije poray monojog dite chacchen seta etibachok, mone hocche apn",
+        "Lunch box competetion : Vat,potol posto, macher jhol\nপ্র সময় 60 min\nরান্নার সময় 45 min\nপরিবেশন করা 3 people\nRice,potol posto,macher jhol সম্বন্ধে\nIngredients to make Rice,potol posto,macher jhol in ",
+        "Priyo Grahok,Apnar proshner jonno dhonnobad.apnar hormoner shomoshar jonno mashik niyomito hoina. apni ullekh koren ni apnar boyosh koto? onek shomoi boyosher shathe shathe eti emnitei thik hoye jai. ",
+        "Priyo Grahok,\napnar proshner jonno dhonnobad. apni druto ghumate chacchen. apnar ki ghumate kono somosaa hocche? majhe majhe oirikto dushchintar jonno amra ghumate pari na, seta ki hocche apnar sathe.",
+        "Priyo Grahok, Apnar proshner jonno dhonnobad. Grahok,apnake shuveccha apnar stri ma hote cholechen,apnar stri ebong apnar hobu shontaner shundor shastho kamona korchi. Grahok, pregnancy er period e ai",
+        "apni kno code den ni tai bujte problem hosse je apni ki dhoroner project a kaj korsen. apni ki parmalink ti avabe set koresen? je kno akta page er akta link er moddhe\n<a href=\"category.php?id=<?php ec",
+        "Dear viewers, I am back to getting your favorite site lovesms2fun.com. Today I write only for you & your cute person about bangla sms. To begin, I want to say Bengali sms for love is the first action ",
+        "wah wah...abar ullas ebong anonde,miliye chhondo tomari chhonde,JD, BL ar Chivas-er gondhe,chhoriye cholechhi horsho...bangla'r thek miss kori boro,biliti-ta thik jome na ko khuro,tobuo matal matal-i ",
+        "Ami dekhechi tomay, Tumi dekhecho aral theke Valobasha chilo chokhey.. Faka Class Room Sheet-ghum aar mitthey bahaduri Patar por pata ultay tobu mon chay lukochuri Ekta bikel nondon chottorey veja cho",
+        "Valobasha Dibosh Picture! Hello Guys, Welcome to Valobasha Dibosh picture 2019. Are you looking Valobasha Dibosh picture? Dear Friend, we provide in this post the latest Connection Valobasha Dibosh pi",
+        "Item will be delivered by Bikroy\nFor sale by niloy ahmed27 Oct 11:36 pmWari, Dhaka\nJara med nia chintay achen.tader chintar din ses.apnader jonno eshe gelo swat slim belt.ja bebohare apni apnar med ko",
+        "Welcome everyone ,\naikhan e apna ra dekhte paben $ky Rider's Group er shokol Apna mal / GANG memberDer , Abong amder addar regular userder PHOTO -Video-Intro-Nijer shomporke nijer Description . Amra k",
+        "Jokhon Mp3 Download\nবৈশাখী মেলাতে যখন প্রাথম হল দেখা, Bangla Song Boshakhi Melate Jokhon prathom hol dekha by shanto\nBhul Bhangbe Jokhon\nBangla Islamic Song 2016 | Ondhokar Oi Koboreri Kotha Mone Jokh",
+        "Partha Da apnar jonno question:\n01.Concept r Idea r moddha difference ki?\n02.Apnake jodi bola hoi apple r site ta redesign korte, tahole apni ki ki step niben?\n03.Nijer skills develop korar jonno regu",
+        "Dhon chosha gay sex ar akti prodhan ango. Jara sex koreco tara ata valoi jano.\n*tumi jokhon kaoke oral suck dibe tokhon emon onek bekti ase jara tomake dekhte chaibe. tai emon akta sthane boshar chest",
+        "Quote:\n\nOriginally Posted by Zeeshan\nchehara potro to bhaloi...poisha pati kemon kaman? pochondor keu ache naki... bc no bc... doesnt matter.... dekhi ki kora jay\nahem...academic related thread ta aca",
+        "Tor Sathe Song Lyrics Bole dili tui, ami kichchu pari na. Saada kalo somaje, Ami banchte janina. Taratey parina amay, tor kach theke. Sottyi na holey, Baniye boley dey tui.\nTor Sathe Song Lyrics Bole ",
+        "prio grahok apnar moner kothati amar shathe share korar jonno dhonnobad. grahok ami ki apnar boyosh jante pari? ar apnader relation break up howar karonti ki amakey trust kore bolajay? Asholey relatio",
+        "Eti sotto ghotona- amar boyas tokhon 10 bosor, Ekdin ame r ma sue ase, amebollam: ma ame tomar dudu khabo, ma bollo na baba tumi ekhon boro hoyaso, esob bolte hoina. ame bollal keno ma boro hole khaua",
+        "Sexwebcam bonka Mobile texting adult free dating sites\nAmar mone hoi er moddhay tar ek bar ber hoya geche.\nThap kore dap marar sathay sathay mota mathata dukay gelo or futatay amar pura dandar mathata",
+        "erpor samne theke moloy er mukher opor eker por ek lathi marte thake snigdha. boom, boom boom, boom, lathi marar awaj gulo por por hoye chole, kono biroti chharai. moloy er naak fete rokto porte thake",
+        "Priyo Grahok,Apnar proshner jonno dhonnobad.Grahok, Onar kaner pordar chiddro hoar karon ta ki chilo? Onugroho kore shei bishoye amader bistarito janaben. Grahok, bhalo hoy jodi apni apnar husband ke ",
+        "Priyo Grahok, Dhonnobad apnar proshner jonno . Scabo -6 ivermectin tablet hocche anti helminthic mane kirminashok. Bibhinno dhoroner worms ba krimi jake bola hoy egulo shongkramon domone eshob medicin",
+        "Dr. Tah\nRatings:\nQualification: MBBS\nExpert in: Paediatrics\nSpecialized in: MBBS\nQuote: health is wealth\nDr. Tah has answered total 47593 questions\n23 Dec 2018\nApnakeo dhonnobaad. apnar jekono shariri",
+        "Toggle Navigation\nলগইন\nরেজিস্ট্রেশন\nমন্তব্য লিখতে লগইন অথবা রেজিস্টার করুন\nলগইন\nরেজিস্ট্রেশন\nমন্তব্যের তালিকা\nSumon Shikder,\n১৯ এপ্রিল, ২০১৯\nDC office theke prothomei to todonto kora uchit chilo tahol",
+        "Aaj amr akashe tomar jonno ek fali megh\nShei megh chuyi chuyi koreo chute parchina\nTumi bolechile Ashbe shorate oi megh\nShoriye dibe amr elo chul, Choker shamne taa boddo jontrona dicche…\nShob ki taho",
+        "Shamna shamni bolte parchina tai,sms e bolchi \"bhalobashi tomai\"\nShamna shamni bolte parchina tai,sms e bolchi \"bhalobashi tomai\"\ntumi amar borshar bristi, tomai chara ki kore kori nobo jiboner srisht",
+        "Saal ta jotodur mone porche 2010. Class 10 er student . Jibone sopno bole khli ektay jinis kokhn cricket bat hate chakka marbo.\nKaj bolte oi brush kora, tuition jawa, school jawa r majhe modhye bazar ",
+        "Priyo Grahok,Apnar proshner jonno dhonnobad.Diabetes er jonno ekti niyontrito jibonjapon kora proyojon- mishti fol,foler rosh, shukna fol(khejur ,kismis),vat,moidar ruti,mangsher chorbi eriye cholte h",
+        "Subho Noboborsho sms: Subho noboborsho 1426 text messages, Subho noboborsho Whatsapp Status: Greatest circumstances we look that individuals utilize the Event sort Profile Picture on the social Accoun",
+        "Sex chat with bengali girl\nNeuf cases constituent chacune de ces divisions.• Le but du jeu est de remplir toutes les cases vides avec un chiffre de 1 à 9, jusqu’à ce que la grille soit complète.• Ça s",
+        "Razzaq: kire Rajib,tui prothom prem er kotha bhuila geli?\nRajib: bhuli nai boilai to tumi biye korar shathey shathey amio biye koira fellam, etake boley \"Revenge biya\"\nMushy: dosto,shudhu ajker jonno ",
+        "Apni ki praptoboyshko ? Apni prapto boyoshko hole prem korar bepare vebe dekhte paren. Pem shudhui abeger bohiprokash noy. Borong premer somporke valo thakar jonne jotheshto manoshik poripokkotar proy"
       ]
     },
     "wikipedia_bn": {
@@ -718,8 +719,8 @@
         "median": 197,
         "p95": 1092
       },
-      "seconds": 351.1,
-      "peak_rss_mb": 805.7,
+      "seconds": 332.8,
+      "peak_rss_mb": 809.9,
       "spot_check_kept": [
         "মন্ট্রিয়ল\nমন্ট্রিয়ল (, ) বা মোঁরেয়াল (, ) কেবেক প্রদেশের বৃহত্তম, কানাডার দ্বিতীয় বৃহত্তম এবং উত্তর আমেরিকার নবম বৃহত্তম শহর। এটির মূল নাম ছিল ভিল দ্য মারি বা মেরির নগরী। শহরটির বর্তমান নামটি এসেছ",
         "শিহাবউদ্দিন বায়েজিদ শাহ\nশিহাবউদ্দিন বায়েজিদ শাহ (শাসনকাল ১৪১৩-১৪১৪) ছিলেন ইলিয়াস শাহি রাজবংশের সুলতান। তিনি এক বছরের মত সংক্ষিপ্ত সময় সুলতান ছিলেন। তিনি তার পিতা সাইফউদ্দিন হামজা শাহর উত্তরাধিকারী",
@@ -775,114 +776,115 @@
     },
     "fineweb2_ben_beng": {
       "docs_in": 322000,
-      "docs_kept": 320912,
+      "docs_kept": 321230,
       "dropped": {
-        "nsfw_url": 1071,
-        "nsfw_terms": 17
+        "nsfw_url": 537,
+        "nsfw_bengali_terms": 198,
+        "nsfw_terms": 35
       },
       "duplicates_first_seen_in": {},
       "leakage_excluded_copy_ids": [],
-      "chars": 742836156,
-      "words": 113242329,
+      "chars": 743909028,
+      "words": 113408955,
       "doc_script": {
-        "bengali": 317500,
-        "mixed": 3412
+        "bengali": 317806,
+        "mixed": 3424
       },
       "word_script": {
-        "bengali": 110567778,
-        "latin": 1392290,
-        "mixed": 36259,
-        "other": 1246002
+        "bengali": 110730397,
+        "latin": 1394383,
+        "mixed": 36282,
+        "other": 1247893
       },
       "words_per_doc": {
-        "mean": 352.9,
+        "mean": 353.0,
         "median": 234,
         "p95": 943
       },
-      "seconds": 888.3,
-      "peak_rss_mb": 805.7,
+      "seconds": 855.1,
+      "peak_rss_mb": 809.9,
       "spot_check_kept": [
-        "বৃষ্টি এলো … বহু প্রতীক্ষিত বৃষ্টি! – পদ্মা মেঘনার দুপাশে আবাদী গ্রামে, বৃষ্টি এলো পুবের হাওয়ায়, বিদগ্ধ আকাশ, মাঠ ঢেকে গেল কাজল ছায়ায়; বিদ্যুৎ-রূপসী পরি মেঘে মেঘে হয়েছে সওয়ার।\nদিকদিগন্তের পথে অপ",
-        "আজহারুল ইসলাম সাদী, স্টাফ রিপোর্টারঃ\nঅস্ত্র মামলায় ১০ দিনের রিমান্ড শেষে করোনার ভূয়া রিপোর্ট দেয়া আলোচিত প্রতারক ও রিজেন্ট গ্রুপের চেয়ারম্যান সাহেদ করিমকে সাতক্ষীরা আদালতে হাজির করা হয়েছে।\nআজ বুধ",
-        "মো. মাইদুল ইসলাম: ঢাকা বিশ্ববিদ্যালয়ের অধিভুক্ত সরকারি সাত কলেজের শিক্ষার্থীদের করোনা টিকা প্রদানের জন্য ডিপার্টমেন্টগুলোকে শিক্ষার্থীদের বিস্তারিত তথ্য দিতে বলা হয়েছে।\nবিষয়টি নিশ্চিত করেছেন সরকারি",
-        "সান নারায়ণগঞ্জ টুয়েন্টিফোর ডটকম:\nনারায়ণগঞ্জ জেলার সোনারগাঁ উপজেলা পরিষদ নির্বাচনে ভোট গ্রহণ শেষে ফেরার পথে শম্ভুপুরা ইউনিয়নের চরহোগলা এলাকায় মেঘনা নদীতে ঝড়ের কবলে পড়ে ট্রলার ডুবিতে নিখোঁজ তিন জ",
-        "লক্ষীপুর চরকাদিরা ইউনিয়নের মসজিদের খতিব চেয়ারম্যান, ইমাম মেম্বার (বাবা-ছেলে)\n- বাংলাদেশে হয়তো এই প্রথম একই মসজিদের খতিব বাবা চেয়ারম্যান আর ছেলে ইমাম সে মেম্বার। ঐ ইউনিয়নের জনগন সৌভাগ্যবান বলতেই হ",
-        "রাজবাড়ীর পৃথক অভিযানে ইয়াবা ও গাঁজা সহ তিন মাদক কারবারিকে গ্রেপ্তার করেছে পাংশা মডেল থানা পুলিশ।\nমঙ্গলবার (৫ মার্চ) দুপুরে পাঠানো এক বিজ্ঞপ্তি`র মাধ্যমে বিষয়টি নিশ্চিত করেন, পাংশা মডেল থানার অফিসার",
-        "সবুজ কানন স্কুল অ্যান্ড কলেজের আয়োজনে শিক্ষার্থীদের মহান মুক্তিযুদ্ধের বিজয়গাঁথা ও ১৬ ডিসেম্বর মহান বিজয় দিবস সম্পর্কে সুস্পষ্ট ধারণা প্রদানের জন্য জাতির বীরসন্তানদের নিয়ে মুক্তিযুদ্ধের গল্পশুনি ম",
-        "ধামরাই (ঢাকা) উপজেলা সংবাদদাতা\nঢাকার ধামরাইয়ে ৮শ’ পিস ইয়াবা ও একশ’ পুড়িয়া হেরোইনসহ ৪ মাদক বিক্রেতাকে আটক করেছে ঢাকা জেলা উত্তরের গোয়েন্দা পুলিশ (ডিবি)। গতকাল সোমবার ভোররাতে ধামরাই পৌরসভার ইসলামপু",
-        "ডলারের দামে নতুন রেকর্ড\nব্যাংকিং চ্যানেলে রেমিট্যান্স পাঠালেই আড়াই শতাংশ প্রণোদনা দিচ্ছে সরকার। এর বাইরে বর্তমানে বাড়তি আড়াই শতাংশ প্রণোদনা দিয়ে প্রবাসীদের পাঠানো ডলার কিনতে পারে দেশের ব্যাংকগুলো।",
-        "নিউজস্বাধীন বাংলা: রেজিস্ট্রেশন কমপ্লেক্স নারায়ণগঞ্জ-এ যথাযোগ্য মর্যাদায় মুজিববর্ষ উদযাপনে বিভিন্ন কর্মসূচী বাস্তবায়নের নির্দেশ প্রদান করেছেন জেলা রেজিস্ট্রার নারায়ণগঞ্জ। গতকাল এক বিজ্ঞপ্তিতে তিনি",
-        "রোনালদোর রাতে জুভেন্টাসের টানা নবম শিরোপা\nশিরোপা জয়ের মঞ্চ তৈরিই ছিল। ভক্তদের হতাশ করেন নি জুভেন্টাসের ফুটবলাররা। সেরি এ-তে রোববার রাতে নিজেদের মাঠে ২-০ ব্যবধানে জিতেছে তুরিনোর ওল্ড লেডি খ্যাত দলটি। ",
-        "খুলনা প্রতিনিধি: মুক্তিযুদ্ধ বিষয়ক মন্ত্রী আ.ক.ম মোজাম্মেল হক বলেছেন, বঙ্গবন্ধু শেখ মুজিবুর রহমানের ডাকে সাড়া দিয়ে বীর মুক্তিযোদ্ধারা যুদ্ধ করে আমাদের এ দেশ উপহার দিয়েছেন। তাদের অবদান দেশের সবকিছু",
-        "ওয়ানডে ক্রিকেটে বাংলাদেশের হয়ে সবচেয়ে বেশি উইকেট শিকারের কীর্তি এখন সাকিবের। একদিনের আন্তর্জাতিক ক্রিকেটে তার মোট উইকেট সংখ্যা ২৭০টি। এই ফরম্যাটে মাশরাফি দেশের হয়ে শিকার করেছেন ২৬৯টি উইকেট।\nশুক্রব",
-        "Neteller Skrill New Update | Verification Change | Bet365 Marchet Deposit problem Fix\nনতুন Neteller অথবা Skrill একাউন্ট ওপেন করতে গেলে এখন থেকে ভিডিও ভেরিফিকেশন করতে হবে ।\nযেমনঃ আপনি যার আইডি কার্ড দি",
-        "গুঞ্জনই সত্যি হলো। এশিয়া কাপের এবারের আসর শ্রীলঙ্কায় হচ্ছে না। দ্বীপ দেশটিতে সরে টি-টোয়েন্টি সংস্করণের এশিয়া কাপ হতে যাচ্ছে সংযুক্ত আরব আমিরাতে। তবে এশিয়ার শ্রেষ্ঠত্বের লড়াইয়ের আয়োজক থাকছে শ্র",
-        "অ্যালগ্রেভের কোন সৈকতে সবচেয়ে উষ্ণ জল রয়েছে?\nযদিও অনেকে অ্যালগ্রেভে (পর্তুগালের পর্যটন অঞ্চল) জনপ্রিয় সৈকত খোঁজেন, সেখানে একটি লুকানো আশ্রয়স্থল রয়েছে যা বেশিরভাগ মানুষের জানার বাইরে থাকে।\nইলহা ডে",
-        "অবৈধভাবে পাহাড় কেটে মাটি পাচারের সময় একটি ডাম্পার (মিনি ট্রাক) জব্দ করেছে কক্সবাজার দক্ষিণ বনবিভাগের স্পেশাল টিম। সোমবার (৩০ নভেম্বর) সকালে কক্সবাজার শহরের বার্মিজ মার্কেট রোড থেকে পাহাড়ের মাটি পাচ",
-        "দেখতে দেখতে ঘনিয়ে এলো সময়। হিন্দু সম্প্রদায়ের সবচেয়ে বড় ধর্মীয় উৎসব শারদীয় দুর্গাপূজা শুরু হচ্ছে আজ থেকে। দুর্গাপূজা বাঙালি হিন্দু সম্প্রদায়ের সবচেয়ে বড় ধর্মীয় উৎসব হলেও বর্তমানে এটি বেশ জম",
-        "December 30, 2021 | 2:39 pm\nসিনিয়র করেসপন্ডেন্ট\nঢাকা: শুধু একগাদা পাঠ্যপুস্তক পড়াই শিক্ষা নয় বলে মন্তব্য করেছেন প্রধানমন্ত্রী শেখ হাসিনা। তাই সকল শিক্ষার্থীদের মানবিক হওয়ার শিক্ষা দেওয়া জন্য আহ্ব",
-        "Heng Xing অফিস আসবাবপত্র লিমিটেড নেতৃস্থানীয় চীন স্টাফ চেয়ার hx-yk009 নির্মাতারা এবং সরবরাহকারী, পেশাদার স্টাফ চেয়ার এইচএক্স yk009 কারখানা ব্যবস্থাসহ এক আমরা আপনার সেবা সবসময় হয়।\nজনপ্রিয় স্টাইল ",
-        "কান্নার শব্দের প্রায় প্রতিদিন রাতে ভারি হয়ে উঠছে শাহজালাল আন্তর্জাতিক বিমানবন্দর ।এই কান্না মধ্যপ্রাচ্যের রেমিট্যান্স যোদ্ধাদের। আরো সুনির্দিষ্ট করে বলে সৌদি ফেরত প্রবাসী শ্রমিকদের। বিভিন্ন সময় অত্",
-        "প্রাথমিক শিক্ষক নিয়োগ: প্রথম ধাপের চূড়ান্ত ফল চলতি মাসে\nসরকারি প্রাথমিক বিদ্যালয়ের সহকারী শিক্ষক নিয়োগ পরীক্ষার প্রথম ধাপের মৌখিক পরীক্ষা নেওয়া শেষে চূড়ান্ত ফল চলতি ফেব্রুয়ারি মাসে প্রকাশ করা হ",
-        "#নয়াদিল্লি: নিরাপদ জল এবং স্যানিটেশনের যথাযথতা যে কোনও দেশের সুস্থ অর্থনীতির মেরুদণ্ড। তবুও বহুল জনসংখ্যার কারণে আমাদের দেশে এখনও স্যানিটেশনের অভাব রয়েছে। কেন্দ্র এবং রাজ্য সরকারগুলি ছাড়াও বেশ কয়ে",
-        "শনিবার ভিয়েতনাম সরকার নিজ ওয়েবসাইটে এক বিবৃতিতে জানিয়েছে, উত্তর রাজ্য বাক গিয়াংয়ে কারখানাটি গড়ে তুলবে ফুকাং টেকনোলজি। প্রতি বছর আট কোটি ইউনিট তৈরি হবে কারখানাটিতে।\nভিয়েতনাম সরকারের বরাত দিয়ে র",
-        "সিরিয়া সেনা প্রত্যাহারের কথা বলেননি ট্রাম্প!\nআন্তর্জাতিক ডেস্ক: সিরিয়া থেকে মার্কিন সেনা প্রত্যাহারের কোনো নির্দিষ্ট সময়সীমা বেঁধে দেয়া হয়নি বলে দাবি করেছেন প্রেসিডেন্ট ডোনাল্ড ট্রাম্প। হোয়াইট হ",
-        "সেবার মাধ্যমে জনগণকে খুশি করতে পারলেই আমি ধন্য: আইনমন্ত্রী\nপ্রকাশ : ২৫ মে ২০১৮, ২৩:৪৩ | অনলাইন সংস্করণ\nযুগান্তর রিপোর্ট\nআইনমন্ত্রী অ্যাডভোকেট আনিসুল হক বলেছেন, আমি জনগণের সেবক এবং জনগণের সেবা করাই আমা",
-        "অনলাইনে আবেদন করে ভর্তির সুযোগ না পাওয়া ২৫ জন শিক্ষার্থীকে অফলাইনে (সরাসরি) ভর্তি করার কথা বলে টাকা নেন কলেজের দুই কর্মচারী। দুই বছর ক্লাস করে এইচএসসি পরীক্ষার দিন জানতে পারলেন তারা উক্ত কলেজের শিক্ষ",
-        "তিনটি আন্তর্জাতিক সম্মাননা গ্রহণ করলেন প্রধানমন্ত্রী\n– নীলফামারি বার্তা নিউজ ডেস্ক –\nপ্রকাশিত: ৫ নভেম্বর ২০১৯\nপ্রধানমন্ত্রী শেখ হাসিনা তিনটি আন্তর্জাতিক সম্মাননা গ্রহণ করেছেন। আইসিটি খাতে বাংলাদেশের অ",
-        "১৯৭১ সালের ৯ ডিসেম্বর, বিজয় যখন নিশ্চিত\nবরিশাল প্রতিবেদন\nপ্রকাশিত: ৯ ডিসেম্বর ২০২৩\n১৯৭১ সালের ডিসেম্বরের শুরু থেকেই বাঙালি বুঝতে পারে খুব শীঘ্রই বিজয় আসতে চলেছে। তবে, ১৬ ডিসেম্বরই যে কাঙ্ক্ষিত সেই দ",
-        "‘দিলীপ বড়ুয়া ও এইচ টি ইমামের আওয়ামী লীগে আমি নেই’\nএককালের তুখোড় ছাত্রনেতা সুলতান মোহাম্মদ মনসুর আহমেদ বলেছেন, “মুজিবকোট পরে রাজনীতি করার অঙ্গীকার করেছিলাম দেশবাসীর কাছে। মুজিবকোট পরেই রাজনীতি করব।",
-        "ডেক্স রিপোর্টঃ\nতালাবদ্ধ স্বাস্থ্য কেন্দ্র, ব্যহত হচ্ছে স্বাস্থ্য সেবা শিরোনামে সংবাদ প্রকাশ হলে উপজেলা স্বাস্থ্য কর্মকর্তা শোকজ করে অফিস আদেশ দেন সুলতানাবাদ উপ স্বাস্থ্য কেন্দ্রের অফিস সহায়ক কালাম সি",
-        "‘সরকারি উন্নয়ন প্রকল্পের দুর্নীতি অভ্যাসে পরিণত হয়েছে’\nসরকারি উন্নয়ন প্রকল্পে দুর্নীতির অভিযোগ অস্বীকার করছেন না অর্থ প্রতিমন্ত্রী এমএ মান্নান। তিনি বলেন, ‘দুর্নীতির বিষয়টি অস্বীকার করা যায় না। এ",
-        "নাঙ্গলকোট প্রতিনিধি:\n৪ জুলাই কুমিল্লার নাঙ্গলকোট উপজেলার পেরিয়া ইউনিয়ন চাঁনদুর গ্রামের দিনমজুর আব্দুল মোতালেবের স্ত্রী রাজিয়া বেগম ও তাঁর মেয়ে মারজাহান কে লাঠি ও ইট দিয়ে এলোপাতাড়ি মারধর করে মাথা",
-        "অন্যের স্ত্রীকে নিয়ে হোটেলে রাত যাপন, কথিত সাংবাদিক আটক\nঅনলাইন ডেস্ক: সাতক্ষীরার একটি আবাসিক হোটেলে অন্যের স্ত্রীকে ব্লাক মেইল করে অবৈধ মেলামেশায় সময় কালিগঞ্জের কথিত সাংবাদিক হাফিজকে আটক করে পুলিশ ",
-        "বংনিউজ২৪x৭ ডিজিটাল ডেস্কঃ ভোজপুরী অভিনেতা তথা সাংসদ রবি কিষাণের জন্য আনন্দ ও গর্বের বিষয়। রবি কিষাণের ২১ বছরের কন্যা ঈশিতা শুক্লা, যিনি কিনা একজন এনসিসি ক্যাডেট, তিনি এবার ভারতীয় সেনাবাহিনীর অংশ হতে",
-        "বরিশাল শের-ই বাংলা মেডিকেল কলেজ হাসপাতালের (শেবাচিম) করোনা ওয়ার্ডে চিকিৎসাধীন অবস্থায় গত ২৪ ঘণ্টায় রেকর্ড সংখ্যক ২৩ জন রোগীর মৃত্যু হয়েছে। আজ সোমবার সকাল পর্যন্ত করোনা ওয়ার্ডে চিকিৎসাধীন ছিলেন ৩১",
-        "পলাতক ওই নারী গাজীপুরের কাপাসিয়া উপজেলার নলী পলাশ গ্রামের নজরুল ইসলামের মেয়ে।\nআজ সোমবার (১৮ সেপ্টেম্বর) দুপুর ২ টায় পলাতক স্ত্রী’র সন্ধানে কাপাসিয়া থানায় একটি অভিযোগ দিয়েছেন স্বামী মোবারক।থানার ",
-        "মোটরসাইকেলের ধাক্কায় যুবক নিহত\nআব্দুল বাশির, চাঁপাইনবাবগঞ্জ থেকে: চাঁপাইনবাবগঞ্জে উচ্চ গতিতে তিন আরোহী নিয়ে যাওয়ার পথে আরেক মোটরসাইকেলের ধাক্কায় এক যুবক নিহত হয়েছে। আজ বুধবার (৯ নভেম্বর) বিকেল সা",
-        "স্বাস্থ্য ও পরিবার কল্যাণ মন্ত্রী মোহাম্মদ নাসিম আজ বলেছেন, প্রতিশ্রুতি অনুযায়ী ৯ হাজার ৪৮৪ জন সিনিয়র স্টাফ নার্স নিয়োগ দেশের জনগণ ও বেকার নার্সদের জন্য প্রধানমন্ত্রী শেখ হাসিনার ‘ঈদ উপহার’।\nতিনি ব",
-        "ইউক্রেনের যুদ্ধ কেবল কূটনীতির মাধ্যমে বন্ধ হতে পারে। ইউক্রেনের প্রেসিডেন্ট ভলোদিমির জেলেনস্কি এই মন্তব্য করেছেন। কিয়েভ ও মস্কোর মধ্যে আলোচনার অচলাবস্তার মধ্যে জেলেনস্কি এমন মন্তব্য করলেন। খবর আল জাজি",
-        "- পণের দাবি না-মেটায় বধূকে মুখে অ্যাসিড ঢালার অভিযোগ উঠল শ্বশুরবাড়ির বিরুদ্ধে।\n- মঙ্গলবার ২১ বছরের মেয়েটির মৃত্যু হয়েছে।\n- উত্তরপ্রদেশের বহেদি এলাকায় ঘটেছে এই মর্মান্তিক ঘটনা।\nমৃত যশোদা দেবীর বাব",
-        "বুকের বাম পাশে ব্যাথা মানব শরীরের জন্য একটি অশনি সংকেত। যাকে ইমার্জেন্সি কন্ডিশন হিসাবে বিবেচনা করা হয়ে থাকে। কোন ধরণের কারণ ছাড়া অনেকে বুকের বামদিকে ব্যাথা অনুভব করে থাকেন। আমাদের জানার সীমা কম হওয",
-        "মহামারি করোনাভাইরাসের সংক্রমণ রোধে চলমান বিধিনিষেধের কারণে স্থগিত হওয়া সিনিয়র নার্স নিয়োগের ভাইভা পরীক্ষার নতুন তারিখ ধার্য করেছে সরকারি কর্ম কমিশন (পিএসসি)। সোমবার (২ আগস্ট) পিএসসির এক বিজ্ঞপ্তিতে",
-        "নারায়ণগঞ্জ সিটি করপোরেশন নির্বাচন জমে উঠেছে প্রচার-প্রচারণায়। ১৬ জানুয়ারি অনুষ্ঠেয় এ নির্বাচনের দিকে রাজধানীর পড়শি এই বন্দর ও শিল্পনগর শুধু নয়, তাকিয়ে আছে সারা দেশের মানুষ। নির্বাচন কমিশনের ওপর",
-        "সৈয়দপুর নিবার্হী অফিসে ডিজিটাল হাজিরা মেশিনের উদ্বোধন নীলফামারী /\nসৈয়দা রুখসানা জামান শানু, নীলফামারীর সৈয়দপুর থেকে : ডিজিটাল হাজিরা মেশিনের বদৌলতে দেরি করে অফিসে প্রবেশ করার দিন ফুরিয়ে এলো। সৈয়দ",
-        "স্পোর্টস ডেস্কঃ লিওনেল মেসি-আশরাফ হাকিমির গোলে লিগ ওয়ানে জিতল পিএসজি। এ জয়ে লিগ টেবিলে শীর্ষস্থান আরও সংহত করল চ্যাম্পিয়নরা। চোটের কারণে অভিজ্ঞ ডিফেন্ডার সার্জিও রামোস, দুই ফরোয়ার্ড কিলিয়ান এমবাপ",
-        "বাগমারা প্রতিনিধি:\nরাজশাহীর বাগমারায় একটি বাড়িতে ভুয়া ওষুধ কারাখানার সন্ধান পেয়ে বিপুল পরিমান নকল ওষুধ জব্দ করেছে থানা পুলিশ।\nমঙ্গলবার গোপন সংবাদের ভিত্তিতে জানতে পেরে উপজেলার বড় বিহানালী এলাকার ",
-        "দীর্ঘদিন ধরে বন্ধ রয়েছে বেসিরকারি শিক্ষক নিয়োগ। জানা গেছে এ মাসের মধ্যেই কিংবা আগামের মাসের প্রথম সপ্তাহেই নিয়োগ প্রক্রিয়া শুরু করবে বেসরকারি শিক্ষক নিবন্ধন ও প্রত্যয়ন কর্তৃপক্ষ (এনটিআরসিএ)। সূত্",
-        "যেসব বিশেষ মর্যাদা হারাল কাশ্মীরবাসী\nপ্রকাশিত : ১৪:০০ ৫ আগস্ট ২০১৯\nভারতীয় সংবিধানের ৩৭০ অনুচ্ছেদ বিলোপ করেছে দেশটির সরকার, যেটা কাশ্মীরকে বিশেষ মর্যাদা দেয়।\nসোমবার জম্মু-কাশ্মীর সংরক্ষণ সংশোধনী বিল ",
-        "স্লিউইং রিং বিয়ারিং হল এক ধরনের বড় বিশেষ কাঠামো সহ ভারবহন যা একই সময়ে বড় অক্ষীয় লোড, রেডিয়াল লোড এবং উল্টে যাওয়ার মুহূর্ত এবং অন্যান্য ব্যাপক লোড সহ্য করতে পারে। এটা ব্যাপকভাবে শিল্প বা সরঞ্জাম"
+        "ভারতে, সকল মেডিকেল কলেজের রেডিও থেরাপী য়ুনিটে নিরাপত্তা বাড়ানোর ওপর জোর দিতে মেডিকেল কলেজগুলোর অধ্যক্ষদের চিঠি দিয়েছে দেশটির পরমানূ শক্তি সংস্থা- জানাচ্ছেন কলকাতা থেকে পরমাশিস ঘোষরায়।\nঅবিলম্বে কলক",
+        "নোবেলজয়ী অর্থনীতিবিদ অধ্যাপক ড. মুহাম্মদ ইউনূস জার্মানির মর্যাদাপূর্ণ ‘কার্ল কুবল’ পুরস্কার পেয়েছেন। গত ৩০ সেপ্টেম্বর জার্মানির বেনশাইমে আয়োজিত অনুষ্ঠানে তাকে এ পুরস্কারে ভূষিত করে ‘কার্ল কুবল ফাউন",
+        "অর্থনৈতিক প্রতিবেদক : গাবতলী গরু হাটের ইজারাদারদের অত্যাচার, নির্যাতন বন্ধের দাবিতে পূর্বঘোষণা অনুযায়ী গরুর মাংসের দোকান বন্ধ রাখার কারণে বাজারে গরুর মাংসের সঙ্গে খাসির মাংসও পাওয়া যাচ্ছে না।\nগরুর ম",
+        "টাঙ্গাইলে সড়ক দুর্ঘটনায় নিহত ৬\nটাঙ্গাইলের মির্জাপুর উপজেলায় সড়ক দুর্ঘটনায় ছয় জন নিহত হয়েছেন। আজ শুক্রবার সকাল ৭টার দিকে উপজেলার কুর্নি এলাকার ঢাকা-টাঙ্গাইল মহাসড়কে এ দুর্ঘটনা ঘটে।\nবিষয়টি দ্য ",
+        "রাতভর বিষাক্ত পরিত্যক্ত খনিতে থাকার পরেও জীবিত তরুণ! রাতের অন্ধকারে চলল উদ্ধার১ মিনিটে পড়ুন . Updated: 18 Jan 2022, 04:41 PM IST\n- খনিতে বিষাক্ত গ্যাস ভর্তি থাকার পরেও পুরোপুরিভাবে সুস্থ রয়েছেন মানস",
+        "আজ ২৫ শে মার্চ ‘গণহত্যা দিবস’। মানব সভ্যতার ইতিহাসে একটি কলঙ্কিত হত্যাযজ্ঞের দিন। ১৯৭১ সালের ২৫ মার্চ দিবাগত রাতে পাক-হানাদার বাহিনী ‘অপারেশন সার্চ লাইট’-এর নামে নিরস্ত্র বাঙালির উপর নির্বিচারে চালায়",
+        "নিজেরা বারবার বিদেশে চিকিৎসা করালেও খালেদা জিয়াকে যেতে দিচ্ছে না: ফখরুল\nযে সরকারের অধীনে নির্বাচনে গেলে জনগণ ভোট দিতে পারে না, ভোট চুরি হয়ে যায়, ডাকাতি হয়ে যায়, সেই সরকারের অধীনে নির্বাচনে যাওয়া",
+        "দেশের অর্থনীতিতে গুরুত্বপূর্ণ অবদানের স্বীকৃতিস্বরূপ ২০১৭ সালের জন্য বৈধ চ্যানেলে সর্বাধিক রেমিট্যান্স প্রেরণকারী অনিবাসী বাংলাদেশি ক্যাটাগরিতে ৩৬ জন এবং বিদেশে বাংলাদেশি পণ্যের আমদানিকারক অনিবাসী ক্য",
+        "দখল-দূষণে বিপর্যস্ত হয়ে পড়ছে দেশের খরস্রোতা নদী কর্ণফুলী ও প্রাকৃতিক মত্স্য প্রজনন ক্ষেত্র হালদা। বছর বছর নদী দুটির উভয় পাড়ে দখল ও দূষণের মাত্রা বেড়েছে। গত কয়েক বছরে আড়াই হাজারেরও বেশি প্রতিষ্ঠ",
+        "আসন্ন ঈদকে কেন্দ্র করে ‘সুপার হিরো’ ছবিটি মুক্তি দেওয়ার প্রস্তুতি চলছে। হার্টবিট প্রোডাকশনের প্রযোজনায় ছবিটি পরিচালনা করছেন আশিকুর রহমান। গতকাল ছবির প্রথম টিজার প্রকাশ করা হয়েছে। ১ মিনিট ৪৭ সেকেন্ড",
+        "অনলাইন ডেস্ক : চেকপোস্টে পুলিশের গুলিতে সেনাবাহিনীর অবসরপ্রাপ্ত মেজর সিনহা মোহাম্মদ রাশেদ খান নিহতের ঘটনায় ঘটনাস্থল পরিদর্শনে যাচ্ছেন সেনাবাহিনী প্রধান জেনারেল আজিজ আহমেদ ও পুলিশের মহাপরিদর্শক (আইজিপ",
+        "শঙ্কার সব মেঘ কেটে গেছে। ক্রিকেট অস্ট্রেলিয়া (সিএ) ও অস্ট্রেলিয়ান ক্রিকেটার্স অ্যাসোসিয়েশনের (এসিএ) মধ্যকার দ্বন্দ্ব আপাতত সমঝোতায় এসেছে। এতে নির্ধারিত সময়ে দুই ম্যাচের টেস্ট সিরিজ খেলার জন্য বাং",
+        "এক সময়ের জনপ্রতিনিধির জীবনের শেষ চাওয়া একটি সরকারি ঘর\nফরিদপুরের মধুখালীর লিটন মিয়া। আর দশজন মানুষের মতো স্বাভাবিকভাবে জন্ম হলেও এখন পঙ্গু জীবনযাপন করছেন। ভাগ্যের নির্মম পরিহাসে বর্তমানে পঙ্গুত্ব আর",
+        "মায়ের সঙ্গে বিশ্বাসঘাতকতা করলে কেউ ছেড়ে দেবে না! হুঁশিয়ারি অভিষেকের\nসাঁতরাগাছি: আজ একেবারে হাইভোল্টেজ রবিবার। একদিকে মহিষাদলে সভা ছিল শুভেন্দু অধিকারীর, অন্যদিকে সাঁতরাগাছিতে জনসভা করলেন তৃণমূল সাং",
+        "জাতীয় বাজেট ২০২২-২৩ হোক জনসাধারণের বাজেট\n—হুমায়রা আঞ্জুমী নাবিলা\nগবেষক, রিসার্চ অ্যান্ড পলিসি ইন্টেগ্রেশন ফর ডেভলপমেন্ট (র্যাপিড)\nস্বাধীনতার পাঁচ দশক পেরিয়ে বাংলাদেশের অর্থনীতি যখন দুর্বার গতিতে টে",
+        "কলকাতা থেকে নিউজ দাতা মনোয়ার ইমাম।।\nকলকাতা মাউন্টেন ক্লাবের সদস্যদের নিয়ে উত্তরাখণ্ডের হরিদ্বার থেকে রাইওয়ালা হয়ে গঙ্গোত্রী দিকে যাওয়ার পথে উত্তরকাশী র ৯৮,নম্বার, জাতীয় সড়কের পাশে কান্দি সৌদ বে",
+        "তাইওয়ান আসলে চীন (Taiwan and China) থেকে বেরিয়ে যাওয়া একটি প্রদেশ। তাইওয়ান দেশে কোন দল ও জনগণের একটি অংশ তাইওয়ানকে একটি …\nনিজস্ব সংবাদদাতা: আগ্রাসনী চীন মনে করে তাইওয়ান তাদের দেশের অংশ। তাইওয়ান",
+        "স্পোর্টস ডেস্ক: কাতারে শুরু হচ্ছে বিশ্ব ফুটবলের বড় আসর। কাতার বিশ্বকাপ শুরু হওয়ার আগে ফুটবল রাজপুত্র দিয়েগো মারাদোনার ১৯৮৬ সালের সেই বিখ্যাত ‘হ্যান্ড অব গড’ বল নিলামে রেকর্ড অর্থে বিক্রি হল।\n১৯৮৬ স",
+        "স্বপন কুমার রায় খুলনা ব্যুরো প্রধান\nবাংলাদেশ আওয়ামীলীগের কেন্দ্রীয় কার্যনির্বাহী কমিটির সদস্য,ও আইন বিচার বিভাগীয় স্হায়ী কমিটির অন্যতম সদস্য অ্যাডঃ গ্লোরিয়া ঝর্ণা সরকার এমপি বলেছেন ,বঙ্গবন্ধু হত",
+        "আলু উত্তোলেনের পর বস্তায় ঢুকাতে ব্যস্ত কৃষকরা। ছবি: বাংলানিউজ\nলালমনিরহাট: বিকল্প ফসল হিসেবে আলু চাষ করে গত বছর লোকসান হওয়ায় এ বছর লালমনিরহাটে বেড়েছে বিষবৃক্ষ তামাক চাষ। এভাবে ক্ষতি পুষিয়ে নিতে ও ",
+        "এ সবের সঙ্গে যোগ হয়েছে নয়া বিতর্ক। টিমের ব্যাটিং অর্ডার নিয়েই প্রশ্ন তুলে দিয়েছেন আন্দ্রে রাসেল। রয়্যাল চ্যালেঞ্জার্স বেঙ্গালুরুর কাছে হারের পর ইডেনেই রাসেল বলেছিলেন, 'আমাকে চারে নামানো উচিত ছিল।",
+        "ইন্টিগ্রেটেড সোলার স্ট্রিট লাইট হল এক ধরনের রোড লাইটিং সিস্টেম যা বিদ্যুত উৎপন্ন করতে সৌর শক্তি ব্যবহার করে। সৌর প্যানেল, চার্জ কন্ট্রোলার, লাইটিং ফিক্সচার এবং ব্যাটারির মতো উপাদানগুলিকে একক ইউনিটে এক",
+        "মুহাম্মাদ আবু মুসাঃ দুর্যোগ ব্যবস্থাপনা ও ত্রাণ মন্ত্রনালয় প্রদত্ত শনিবার বগুড়া গাবতলীর পীরগাছা স্কুল মাঠে দুঃস্থদের মাঝে প্রধানমন্ত্রী শেখ হাসিনা’র উপহার সামগ্রী বিতরণ করা হয়েছে। উপজেলা আওয়ামী লী",
+        "সোশ্যাল ইসলামী ব্যাংক লিমিটেড (এসআইবিএল) এর দুই দিনব্যাপী ‘বার্ষিক ব্যবসায় সম্মেলন ২০২১’ ভার্চুয়াল প্লাটফর্মে ১৬ জানুয়ারি শেষ হয়েছে। সম্মেলনে প্রধান অতিথি হিসেবে অংশগ্রহণ করেন ব্যাংকের পরিচালনা পর",
+        "চিরায়ত মুরগীর ঝাল রান্না কিংবা চিকেন ফ্রাই খেতে বিরক্তি চলে আসলে ট্রাই করতে পারেন ওভেন বেকড বারবিকিউ চিকেন ড্রামস্টিকস। অল্প কয়েকটি উপাদানে খুব সহজেই মজাদার এই খাবারটি তৈরি করে নেওয়া যাবে রাতের খাব",
+        "ঢাকা: ফ্রান্সে ‘রোহিঙ্গা শরণার্থী এবং শেখ হাসিনার মানবতা’ শীর্ষক একটি সেমিনার অনুষ্ঠিত হতে চলেছে। মঙ্গলবার (২ অক্টোবর) বিকাল ৩টায় প্যারিসের গার দু লিস্ট এলাকার একটি অভিজাত হোটেলের সম্মেলন কক্ষে এ সেম",
+        "পরাগজ্যোতি ঘোষ: দক্ষিণ চব্বিশ পরগনা জেলার কাকদ্বীপ, নামখানা, সাগরদ্বীপ, পাথরপ্রতিমা ব্লকে সুপার সাইক্লোন আমফান সব লন্ডভন্ড করে দিয়েছে সোনালী ফসল পানগাছ। সব মাটিতে মিশিয়ে দিয়ে লন্ডভন্ড করেছে। এর ফলে",
+        "Just In\nDon't Miss\nআজ পাকিস্তানের \"মাদার তেরেসা\" নামে খ্যাত ডঃ রুথ ক্যাথেরিনা মার্থা ফাও-এর ৯০ তম জন্মবার্ষিকী। সেই উপলক্ষ্যে গুগল তাঁর জীবনের প্রতি শ্রদ্ধা জানিয়ে একটি হৃদয়স্পর্শী ডুডল তৈরি করেছে। ",
+        "প্রবীণ আদিবাসী সাংবাদিক স্ট্যান গ্রান্ট যুক্তরাজ্যের রাজা চার্লসের রাজ্যাভিষেক সম্প্রচারকারীর কভারেজের সময় বর্ণবাদী হামলার শিকার হয়ে অস্ট্রেলীয় সম্প্রচার কর্পোরেশন (এবিসি) এর প্রোগ্রাম হোস্ট ও কলাম",
+        "করোনাভাইরাস পরিস্থিতিতে ২ জনের মৃত্যু ও ১১ জনের করোনায় আক্রান্ত শনাক্তের ঘটনায় নারায়ণগঞ্জ সিটি ও সদর উপজেলা এলাকা (সদর, ফতুল্লা ও সিদ্ধিরগঞ্জ) পুরোপুরি অঘোষিত লকডাউন থাকবে বলে জানিয়েছেন জেলা প্রশা",
+        "#ইসলামপুর: করোনার আবহে চলতি বছরও দোল উৎসবে সাধারণ মানুষকে ভেষজ আবির ব্যবহার করারই পরামর্শ দিচ্ছেন বিজ্ঞানীরা। কৃষি বিজ্ঞান কেন্দ্রের থেকে প্রশিক্ষন নিয়ে তাদের পরামর্শে এবং প্রযুক্তি ব্যবহার করে ভেষজ ",
+        "পিএনএস ডেস্ক: মৌসুমের শুরু থেকে দারুণ ছন্দে এগিয়ে চলা ম্যানচেস্টার সিটির অজেয় পথচলার ইতি টানলো শাখতার দোনেৎস্ক। ইংলিশ প্রিমিয়ার লিগের দলটিকে হারিয়ে উয়েফা চ্যাম্পিয়ন্স লিগের শেষ ষোলোয় উঠেছে ইউক্",
+        "ঢাকা-বরিশাল নৌ-রুটের বিলাসবহুল একেকটি লঞ্চের ধারণক্ষমতা সর্বোচ্চ ১ হাজার ৫০০। কিন্তু ঈদ মৌসুমসহ বিভিন্ন মৌসুমেই ধারণক্ষমতার কয়েকগুণ বেশি যাত্রী পরিবহন করে থাকে লঞ্চগুলো। বৈরী আবহাওয়ার মধ্যেও শনিবার ",
+        "বৈধভাবে ২ বছর থাকলেই পাবেন রাশিয়ার নাগরিকত্ব; নতুন আইন কার্যকর\nরুশ সংবাদমাধ্যম আরটির এক প্রতিবেদনে বলা হয়েছে, উচ্চ দক্ষতাসম্পন্ন বিদেশিদের স্থায়ীভাবে বসবাসের সুযোগ দিতে নতুন আইন কার্যকর করেছে রাশিয",
+        "আগামী জাতীয় সংসদ নির্বাচনে সিলেট-৩ ফেঞ্চুগঞ্জ, বালাগঞ্জ, দক্ষিণ সুরমা উপজেলা নির্বাচনী আসন থেকে সংসদ সদস্য পদে সোমবার সকালে ঢাকাস্থ আওয়ামী লীগ এর কার্যালয়ে মনোনয়নপত্র জমা দিলেন সিলেট জেলা যুবলীগের",
+        "আইনমন্ত্রী আনিসুল হক জানিয়েছেন, বিএনপি চেয়ারপারসন খালেদা জিয়া তার বিরুদ্ধে আনা অভিযোগ স্বীকার করে প্রধানমন্ত্রী বা রাষ্ট্রপতি বরাবর ক্ষমা প্রার্থনা ...বিস্তারিত\nউন্নত চিকিৎসা না পেলে বিএনপি চেয়ারপ",
+        "দলীয় ভোটে রোখা যাচ্ছে না প্রাক্তন মার্কিন প্রেসিডেন্ট ডোনাল্ড ট্রাম্প (Donald Trump)-কে। রিপাবলিকান প্রতিপক্ষ নিক হ্যালিকে তার নিজের গড়ে হারিয়ে ট্রাম্প বুঝিয়ে দিলেন মার্কিন প্রেসিডেন্ট নির্বাচনে এ",
+        "মৌলভীবাজার প্রতিনিধি;\nমৌলভীবাজারের রাজনগরে আসামী ধরে থানায় ফেরার পথে সড়ক দুর্ঘটনায় সমীরণ দাস (৪০) নামে রাজনগর থানার এসআই নিহত হয়েছেন। এঘটনায় আসামী সহ ৮ জন আহত হয়েছেন। আহতদের উদ্ধার করে সিলেট এমএ",
+        "সদরপুরে পদ্মার চরে গণডাকাতি যুবতী অপহরণ\nপ্রকাশ : ৩০ নভেম্বর ২০১৬, ০০:০০\nফরিদপুরের সদরপুর উপজেলার পদ্মার চরাঞ্চলের চর নাছিরপুর ইউনিয়নের ইব্রাহিম মুন্সির কান্দি গ্রামের ইউপি সদস্য জব্বার হাওলাদারের বাড",
+        "পি কে হালদারের বিরুদ্ধে গ্রেপ্তারি পরোয়ানা\nপ্রায় তিন হাজার ৬০০ কোটি টাকা পাচারের ঘটনায় ইন্টারন্যাশনাল লিজিং অ্যান্ড ফাইন্যান্স সার্ভিস লিমিটেডের পরিচালক প্রশান্ত কুমার (পি কে) হালদারের বিরুদ্ধে গ্র",
+        "আপনার প্রশ্নের উত্তর দেওয়া হয় না, তাহলে দয়া করে আমাদের সাথে যোগাযোগ করুন.\n- আপনি একটি জমা দিতে একটি নিবন্ধিত ব্যবহারকারী হতে হবে ICO. রেজিস্টার করতে এখানে ক্লিক করুন (আপনার অ্যাকাউন্ট যাচাই করার জন",
+        "অস্ট্রেলিয়ার কাছে সেমিফাইনালে হারার পরে পাকিস্তান ক্রিকেট দলের সাজঘরের অবস্থা কী হয়েছিল জানালেন ম্যাথু হেডেন। ভারতের বিরুদ্ধে ম্যাচের আগে একই সাজঘরের পরিবেশ কতটা আলাদা ছিল, সেটিও পাকিস্তান দলের ব্যা",
+        "আন্তর্জাতিক ডেস্ক:\nমহামারি করোনাভাইরাস চীনের একটি সামরিক জীবাণু অস্ত্র গবেষণাগার থেকে ছড়িয়ে পড়ার যে অভিযোগ বেইজিংয়ের বিরুদ্ধে উঠেছিল তা নাকচ করে দিয়েছে বিশ্ব স্বাস্থ্য সংস্থা। বিশ্ব স্বাস্থ্য সংস",
+        "Palash Biswas\nAssam experiment of creating communal conflict to win North East extended across the Indo Bangla Border to provoke Anti India activities in Bangladesh, persecution of minorities across t",
+        "<![CDATA[\nপাকিস্তানকে দুইশ কোটি ডলার দেওয়ার ঘোষণা দিয়েছে বিশ্ব ব্যাংক। জলবায়ুজনিত দুর্যোগের মুখোমুখি হওয়ার পর থেকেই ফান্ড চেয়ে আসছিল দেশটি। যদিও বন্যা শুরু হওয়ার আগেই চরম অর্থনৈতিক সংকটে পড়ে পা",
+        "গত বছরের অগস্টে তালিবান আফগানিস্তান দখল করে। এরপর এই প্রথমবারের মতো ভারত সরকারের কোনও প্রতিনিধি দল আফগানিস্তান সফরে গেল। কেন্দ্রীয় বিদেশ মন্ত্রকের এক ঊর্ধ্বতন কর্মকর্তার নেতৃত্বে এই প্রতিনিধি দলটি আফ",
+        "স্পোর্টস ডেস্ক: এবারের বিশ্বকাপে ফেবারিট হিসেবে পথ চলা স্বাগতিক ইংল্যান্ড ইতোমধ্যেই দুটি ম্যাচ হেরে বেশ সমালোচনার মুখে পড়েছে। এমন অবস্থায় আজ মঙ্গলবার ইয়োইন মরগানের দলটি মুখোমুখি হচ্ছে চিরপ্রতিদ্বন্",
+        "ডেস্ক: প্রধানমন্ত্রী শেখ হাসিনাকে বহনকারী বিমান বাংলাদেশ এয়ারলাইন্সের প্লেনে ইঞ্জিন ট্যাংকির নাটবল্টু ঢিলা পাওয়ার ঘটনার পেছনে নাশকতার চেষ্টা থাকতে পারে বলে ধারণা করা হচ্ছে।\nএ বিষয়কে সামনে নিয়েই এখ",
+        "হরতালে যাহবাহন চলাচল স্বাভাবিক\nরাজধানীর উত্তর ও দক্ষিণ সিটি করপোরেশন নির্বাচনে কারচুপির অভিযোগে রোববার সকাল-সন্ধ্যা হরতালের ডাক দিয়েছে বিএনপি।\nরোববার রাজধানীর চিটাগাংরোড, রায়েরবাগ, শনির আখরা,গুলিস্ত",
+        "নিউজনাউ ডেস্ক: ঢাকার কেরানীগঞ্জে বিদ্যুৎস্পৃষ্ট হয়ে বুধবার দিবাগত রাতে এক নবদম্পতির মৃত্যু হয়েছে।\nদম্পতি ইসমাইল (২০) ও তার স্ত্রী কাজল আক্তার (১৮) উপজেলার আটি বাজার সুমন হাউজিং এলাকার বাসিন্দা।\nকেরা"
       ]
     }
   },
   "tokens": {
     "method": "tokens = whitespace words × 2.0 (range 1.6–2.5); exact counts in Prompt 3",
     "words": {
-      "all": 185073779,
-      "target_script": 14611052,
-      "bengali_script": 167983843,
+      "all": 185748507,
+      "target_script": 15113979,
+      "bengali_script": 168147366,
       "word_script_totals": {
-        "bengali": 167983843,
-        "latin": 14546516,
-        "mixed": 64536,
-        "other": 2478884
+        "bengali": 168147366,
+        "latin": 15049416,
+        "mixed": 64563,
+        "other": 2487162
       }
     },
     "tokens_est": {
       "all": {
-        "mid": 370147558,
-        "low": 296118046,
-        "high": 462684448
+        "mid": 371497014,
+        "low": 297197611,
+        "high": 464371268
       },
       "target_script": {
-        "mid": 29222104,
-        "low": 23377683,
-        "high": 36527630
+        "mid": 30227958,
+        "low": 24182366,
+        "high": 37784948
       },
       "bengali_script": {
-        "mid": 335967686,
-        "low": 268774149,
-        "high": 419959608
+        "mid": 336294732,
+        "low": 269035786,
+        "high": 420368415
       }
     },
     "per_source_tokens_mid": {
@@ -890,9 +892,9 @@
       "vashantor": 333522,
       "banglishdepyt": 5588602,
       "banglishrev": 26503274,
-      "fineweb2_ben_latn": 9169636,
+      "fineweb2_ben_latn": 10185840,
       "wikipedia_bn": 101703964,
-      "fineweb2_ben_beng": 226484658
+      "fineweb2_ben_beng": 226817910
     },
     "training_budget": 300000000,
     "tokens_per_param": {
@@ -901,12 +903,12 @@
         "50M": 5.92
       },
       "all_unique_mid": {
-        "30M": 12.34,
-        "50M": 7.3
+        "30M": 12.38,
+        "50M": 7.33
       },
       "target_script_unique_mid": {
-        "30M": 0.97,
-        "50M": 0.58
+        "30M": 1.01,
+        "50M": 0.6
       }
     }
   },
@@ -922,8 +924,9 @@
         "train/containment": 14
       },
       "fineweb2_ben_latn": {
-        "train/exact": 9,
-        "test/exact": 1
+        "train/exact": 10,
+        "test/exact": 1,
+        "train/containment": 1
       },
       "wikipedia_bn": {
         "train/exact": 6
@@ -946,5 +949,5 @@
     "gating_unique_samples": 0,
     "gating_samples_doc_frequency": {}
   },
-  "peak_rss_mb": 805.7
+  "peak_rss_mb": 809.9
 }

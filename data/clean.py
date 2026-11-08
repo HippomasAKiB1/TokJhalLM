@@ -129,27 +129,85 @@ def word_script_counts(text: str) -> dict[str, int]:
     return counts
 
 
+URL_TOKEN_RE = re.compile(r"[a-z0-9]+")
+
+
+@dataclass(frozen=True)
+class NsfwRules:
+    """NSFW filter settings from configs/data.yaml `nsfw` (D16)."""
+
+    url_exact: frozenset[str]
+    url_affix: tuple[str, ...]
+    url_prefix: tuple[str, ...]
+    url_substring: tuple[str, ...]
+    terms: frozenset[str]
+    density: float
+    bengali_terms: frozenset[str]
+    bengali_min_distinct: int
+    bengali_density: float
+
+
 @lru_cache(maxsize=1)
-def _nsfw() -> tuple[tuple[str, ...], frozenset[str], float]:
+def _nsfw() -> NsfwRules:
     cfg = _cfg()["nsfw"]
-    return (
-        tuple(s.lower() for s in cfg["url_substrings"]),
-        frozenset(t.lower() for t in cfg["romanized_terms"]),
-        float(cfg["terms_per_100_words"]),
+    return NsfwRules(
+        url_exact=frozenset(s.lower() for s in cfg["url_tokens_exact"]),
+        url_affix=tuple(s.lower() for s in cfg["url_tokens_affix"]),
+        url_prefix=tuple(s.lower() for s in cfg["url_tokens_prefix"]),
+        url_substring=tuple(s.lower() for s in cfg["url_tokens_substring"]),
+        terms=frozenset(t.lower() for t in cfg["romanized_terms"]),
+        density=float(cfg["terms_per_100_words"]),
+        bengali_terms=frozenset(unicodedata.normalize("NFC", t) for t in cfg["bengali_terms"]),
+        bengali_min_distinct=int(cfg["bengali_min_distinct_terms"]),
+        bengali_density=float(cfg["bengali_terms_per_100_words"]),
     )
 
 
+def url_tokens(url: str) -> list[str]:
+    """Hostname labels and path segments of a URL, split on non-alphanumerics.
+
+    Percent-encoded bytes are left encoded, so their hex digits never form words.
+    """
+    u = re.sub(r"^[a-z]+://", "", url.lower())
+    return URL_TOKEN_RE.findall(re.sub(r"%[0-9a-f]{2}", " ", u))
+
+
+def nsfw_url_hits(url: str | None) -> list[str]:
+    """URL rule terms that fire on this URL (D16 token rules)."""
+    if not url:
+        return []
+    rules = _nsfw()
+    hits: set[str] = set()
+    for tok in url_tokens(url):
+        if tok in rules.url_exact:
+            hits.add(tok)
+        hits.update(a for a in rules.url_affix if tok.startswith(a) or tok.endswith(a))
+        hits.update(a for a in rules.url_prefix if tok.startswith(a))
+        hits.update(a for a in rules.url_substring if a in tok)
+    return sorted(hits)
+
+
 def nsfw_reason(text: str, url: str | None = None) -> str | None:
-    """Return why a document is adult content ('url' or 'terms'), or None if it passes."""
-    url_subs, terms, density = _nsfw()
-    if url and any(s in url.lower() for s in url_subs):
+    """Why a document is adult content ('url', 'terms' or 'bengali_terms'), or None.
+
+    - url: a URL token equals an exact term, starts/ends with an affix term,
+      starts with a prefix term, or contains a substring term.
+    - terms: romanized explicit terms at or above the configured density.
+    - bengali_terms: >= N distinct Bengali-script explicit terms AND density
+      at or above the threshold (a news report naming one crime never fires).
+    """
+    rules = _nsfw()
+    if nsfw_url_hits(url):
         return "url"
     words = normalize_for_match(text).split()
     if not words:
         return None
-    hits = sum(1 for w in words if w in terms)
-    if hits and hits * 100.0 / len(words) >= density:
+    hits = sum(1 for w in words if w in rules.terms)
+    if hits and hits * 100.0 / len(words) >= rules.density:
         return "terms"
+    beng = [w for w in words if w in rules.bengali_terms]
+    if len(set(beng)) >= rules.bengali_min_distinct and len(beng) * 100.0 / len(words) >= rules.bengali_density:
+        return "bengali_terms"
     return None
 
 

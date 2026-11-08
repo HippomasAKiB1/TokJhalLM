@@ -36,3 +36,6 @@ Thumbs.db
 
 # NSFW spot check: contains explicit excerpts; kept local only (D16)
 docs/nsfw_spotcheck.md
+
+# D16 replay: changed-doc URLs (may name adult sites); local only
+docs/nsfw_replay_local.md

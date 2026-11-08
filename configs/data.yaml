@@ -130,11 +130,43 @@ script:
 
 nsfw:
   # Romanized-Bengali adult content is common in FineWeb-2 ben_Latn (3 of 6 sampled docs).
-  url_substrings: [choti, chod, chud, sex, porn, xxx, gandi, nude, adult, kamuk, chuda]
+  # D16 (Prompt 3): URL rules match URL TOKENS (hostname labels and path segments split
+  # on non-alphanumerics), never raw substrings. `sex` and `chud` are removed: they
+  # fired on newsexpress, Chandrachud, sexual-health and abuse-awareness news.
+  # url_tokens_exact: the token must equal the term (ambiguous English/Banglish words).
+  # url_tokens_affix: the token must START or END with the term. Domains glue words
+  #   together (banglachoti, cosplayfreeporn, chodar), so these unambiguous terms
+  #   are allowed at either token edge, but never mid-token.
+  url_tokens_exact: [gandi, nude, adult, kamuk, chuda]
+  url_tokens_affix: [choti, chod, xxx]
+  # url_tokens_prefix: token must START with the term. `chud` returns here prefix-only
+  #   (chudlam, chudon, chudar slugs) because removing it cost 3 confirmed TPs in the
+  #   replay; prefix-only never matches Chandrachud, the FP that motivated D16.
+  #   (Deviation from D16's literal "remove chud"; flagged in docs/translit_stage0.md.)
+  url_tokens_prefix: [chud]
+  # url_tokens_substring: anywhere inside a token. `porn` sits mid-token in spam
+  #   domains (prostopornohd, ...antipornography...) and inside no innocent word.
+  url_tokens_substring: [porn]
   # Unambiguous terms only: "gud" (= good), "mal" (= product), "dhon", "bara" are
   # deliberately excluded because they are common in ordinary Banglish.
   romanized_terms: [choda, chodar, chodlam, chudlam, chudte, chodachudi, chuda, chude, choti, magi, khanki, sex, sexy, porn]
   terms_per_100_words: 1.0            # drop a doc at or above this density of terms
+  # D16: Bengali-script explicit vocabulary (whole words after match-normalization).
+  # Reporting vocabulary (ধর্ষণ "rape", যৌন "sexual", নির্যাতন "abuse") is deliberately
+  # absent, so news about crimes, health or abuse is never dropped by this check.
+  # Ambiguous words are absent too: চটি (also "slipper"), বাড়া (also "increase"/"serve"),
+  # মাল ("goods"), ধন ("wealth").
+  bengali_terms: [চোদা, চুদা, চোদাচুদি, চোদাচুদির, চুদে, চুদি, চুদছে, চুদতে, চুদলাম, চুদল, চোদন, চোদার,
+                  ঠাপ, ঠাপাতে, ঠাপিয়ে, ঠাপানো, গুদ, গুদে, গুদের, গুদটা, ধোন, ধোনটা, ধোনের,
+                  পোঁদ, পোঁদে]
+  # Slurs (মাগী, খানকি) are NOT terms: news quotes them in abuse reports (replay found an
+  # amadershomoy.com news article dropped by them).
+  bengali_min_distinct_terms: 2       # a doc needs at least this many DIFFERENT terms ...
+  bengali_terms_per_100_words: 0.5    # ... and at least this density to be dropped
+  # Pre-D16 rule, kept ONLY so scripts/nsfw_spotcheck.py --replay can reproduce the
+  # Prompt 2 spot-check sample exactly. Never used for filtering.
+  legacy:
+    url_substrings: [choti, chod, chud, sex, porn, xxx, gandi, nude, adult, kamuk, chuda]
   spot_check_samples: 50
 
 minhash:
