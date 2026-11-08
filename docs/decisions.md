@@ -208,6 +208,170 @@ Fix, executed in Prompt 3 with a re-run of scripts/nsfw_spotcheck.py:
 The full spot-check file (docs/nsfw_spotcheck.md) contains explicit excerpts
 and stays local (gitignored); the committed report carries a redacted table.
 
+**Verification requirement (Akib, 2026-11-08, Prompt 2 review):** when the fix
+lands in Prompt 3, re-run the spot-check on the SAME 20 samples per source and
+confirm the 7 `ben_Beng` news FPs are now kept. If word-boundary matching
+doesn't recover them, the fix isn't done. Record this verification in the
+Prompt 3 report.
+
+## Prompt 2 review confirmations (2026-11-08)
+
+- Extra excluded document `banglishrev 119136:788` (exact copy of approved #5):
+  confirmed. Content-based exclusion is the correct implementation.
+- `configs/base.yaml` switched to 30M dims: confirmed (corollary of D15).
+- NSFW spot-check verdicts: confirmed, with the D16 verification requirement
+  above.
+
+## D17 — Transliteration target is WER-gated, not fixed at 200M
+
+Stage 0 of Prompt 3 MUST measure transliteration quality before bulk
+generation:
+- Use Vashantor test split (already held out from training)
+- Compute WER AND chrF (character-level similarity)
+- Report both, plus 10 example outputs, before generating bulk
+- STOP for Akib's review
+
+Thresholds:
+- WER <20% AND chrF >0.70 → proceed with 200M target
+- WER 20-30% OR chrF 0.55-0.70 → proceed with 150M, flag caveat
+- WER >30% OR chrF <0.55 → STOP and propose alternative approach
+  (small seq2seq trained on Vashantor+Aksharantar, or pivot to
+  Bengali-script-first narrative)
+
+Rationale: The 200M transliteration target from Prompt 2's recommendation is
+conditional on transliteration quality. WER >30% means the generated text is
+essentially random from the model's perspective and won't help. chrF is the
+secondary metric because WER is strict — natural Banglish has variable
+spellings, so chrF captures "close enough" better. The Vashantor test split is
+the right evaluation set because it's parallel Bengali/Banglish with real
+Banglish spellings, held out from training.
+
+## D18 — BanglishRev shared-source control experiment
+
+Prompt 7 (fine-tuning) must produce a THREE-row win table, not two:
+
+| Model | Pretraining corpus | BnSentMix F1 (±CI) |
+| --- | --- | --- |
+| BanglishBERT baseline | N/A (external) | [measured] |
+| TokJhalLM-control | Corpus WITHOUT BanglishRev | [measured] |
+| TokJhalLM-full | Corpus WITH BanglishRev | [measured] |
+
+Rationale: The audit found 34 hard train hits between BanglishRev and BnSentMix
+train rows, indicating shared source sites. This is not test-set leakage
+(confirmed via the D14 gate), but it means TokJhalLM-full gets free
+pretraining on the target distribution that BanglishBERT does not. The
+control experiment isolates the "shared-source boost" from the model's
+actual capability. If the boost is large (+5 F1), report it honestly
+("BanglishRev coverage accounts for X points"); if small (<2 F1), the
+architectural choices stand on their own. Preempting this criticism is more
+valuable than avoiding it.
+
+Implementation choice (a: two corpus variants in Prompt 3; b: checkpoint at
+the point BanglishRev enters the curriculum; c: second pretraining run) is
+deferred to the Prompt 3 plan.
+
+**Implementation (Prompt 3 plan, approved 2026-11-08): branched final phase.**
+BanglishRev stays out of the shared first 80% of pretraining. At the branch
+point, two final phases run with identical token counts and schedules: *full*
+adds BanglishRev to the final mix; *control* replaces BanglishRev's share
+proportionally with the other real code-mixed sources and transliterated text.
+Extra cost: one final phase (≈ 20% of pretraining), not a second full run.
+Plain (a) still needs a second pretraining run; plain (b) compares against a
+checkpoint that has simply seen less training.
+
+**Disclosure requirement (Akib).** The Prompt 7 report win-table caption and
+the release README win-table caption must state, in exactly this language:
+"TokJhalLM-full vs TokJhalLM-control measures the effect of adding BanglishRev
+to the final 20% of pretraining. Because both models share the same first 80%
+without BanglishRev, this comparison isolates the final-phase effect. A model
+trained with BanglishRev across all 100% of pretraining would likely differ;
+that variant is not tested here."
+
+**Tokenizer (approved decision 4).** BanglishRev is excluded from tokenizer
+training so the control is not advantaged through the vocabulary. Coverage
+guard: report Bengali-script fertility on held-out BanglishRev with a tokenizer
+trained before AND after the exclusion. If the exclusion degrades
+Bengali-script fertility by more than 2% on that sample, revisit the decision.
+This is an if-then rule, not a gate: surface the number, apply the rule,
+proceed.
+
+## D7-amended — Trained character model in the primary transliteration path
+
+Approved 2026-11-08 (Prompt 3 plan, decision 1). Reasoning, verbatim from the
+plan: "D7 says 'rules second' and D17 lists a seq2seq only as the fallback if
+the gate fails. The probes show the fallback handles about half of all bulk
+tokens and that raw Aksharantar scores 83% WER, so I want the trained character
+model built and measured in Stage 0 alongside the rules, not after a failure.
+Stage 0 reports both and picks the better one by measurement."
+
+Evidence (read-only probes, 2026-11-08): the Vashantor lexicon covers 41.9% of
+Wikipedia and 51.5% of FineWeb-2 `ben_Beng` tokens, so 48–58% of bulk tokens go
+through the fallback; Aksharantar used as-is scores 82.7% WER on Vashantor test
+(standard rows); BnSentMix train tokens match Vashantor's romanized vocabulary
+(56.2%) far more than Aksharantar's (30.4%).
+
+Design: T1 Vashantor lexicon (attested spelling) → T2 character-level
+encoder–decoder trained from scratch (Aksharantar pretraining, Vashantor
+fine-tuning, so output follows the natural convention) → T3 rule mapper. The
+character model is a data tool trained from random initialization; it is not
+part of the released encoder, and no pretrained transliteration model is used.
+
+## D17 implementation — gate definition (approved 2026-11-08)
+
+- **Gate on the worse of two rows** (decision 2): "full system, standard rows"
+  on Vashantor test, and "projected bulk" = c × WER(T1) + (1 − c) ×
+  WER(fallback on unseen words), with c the measured T1 token coverage of the
+  bulk pool (chrF projected the same way). Dialect rows are reported, not
+  gated. Reason: on the test set the fallback handles only 3.5% of words; on
+  bulk text it handles about half.
+- **Pre-registered thresholds** in `configs/translit.yaml`, committed before
+  Stage 0 runs, not negotiated afterwards: WER < 20% AND chrF > 0.70 → 200M;
+  WER 20–30% OR chrF 0.55–0.70 → 150M (with the calibration check); WER ≥ 30%
+  OR chrF < 0.55 → STOP. Worst case of the two rows governs.
+- **Stage 0.5 calibration check (Addition 1)**, its own gate after Stage 0
+  passes: transliterate 500 randomly sampled Wikipedia docs from the pool
+  (never the Vashantor test set), hand-review 50 and rate Good / Marginal /
+  Bad; report counts and 10 examples. Good + Marginal ≥ 40/50 → proceed as
+  planned; 30–39/50 → proceed with the bulk target cut by 25% (200M → 150M,
+  150M → 112M); < 30/50 → STOP and apply the Prompt 3 plan's §4 fallbacks.
+  Rationale: the projected-bulk formula is a linear approximation; calibration
+  tells us whether it holds.
+
+## D19 — Emoji: keep, normalized
+
+Approved 2026-11-08 (Prompt 3 plan, decision 6). Emoji are kept in
+pretraining, fine-tuning and inference with identical normalization
+everywhere: runs of more than 3 identical emoji are capped at 3; ZWJ and
+skin-tone sequences stay intact. No vocabulary slots are reserved; the
+tokenizers learn frequent emoji and byte fallback covers the rest.
+
+- Resolves PRD §6.2 (byte fallback so emoji never become `<unk>`) vs §7.2
+  ("strip emojis consistently"): §7.2's real requirement is consistency.
+- BnSentMix contains 0 emoji in 19,740 rows (stripped upstream), so the
+  headline metric is unaffected; demo input and secondary tasks do contain
+  emoji.
+- The run cap lives in tokenizer-side normalization, NOT in
+  `data.clean.clean_text`: changing `clean_text` would change the cleaned-text
+  hashes the approved leakage exclusion list is pinned to.
+
+## D20 — Tokenizer training sample: 25% native Bengali script
+
+Approved 2026-11-08 (Prompt 3 plan, decision 5). The tokenizer training
+sample (≈ 40M words, fixed seed) is real code-mixed 40%, transliterated 35%,
+native Bengali script 25%. Overrides PRD §6.2's "5–10% Wikipedia/BanglaC4":
+native Bengali is ≈ 35% of the pretraining mix, and at 5–10% a 12K vocabulary
+would fragment it.
+
+## Prompt 3 plan approvals — other points (2026-11-08)
+
+- **No tokenizer winner in Prompt 3** (decision 7): Prompt 3 produces an
+  intrinsic report only; Phase 0 run 3 decides BPE vs Unigram (D15).
+- **Phase 0 subset uses identical documents for both tokenizers (Addition 3):**
+  `data/pipeline.py` samples the 25M-token Phase 0 subset by doc_id once and
+  tokenizes that same document set with BPE and with Unigram; a test asserts
+  the two subsets have identical doc_id sets. Otherwise the Phase 0 comparison
+  would be confounded by data.
+
 ---
 
 ## Amendment A1 — PRD §12 timeline

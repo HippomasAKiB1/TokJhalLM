@@ -187,15 +187,17 @@ A new session (or a new agent) resumes by:
 
 ## Part 11 — Current State
 
-Prompt 2 (data download + audit) complete; report docs/prompt2_report.md 
-awaiting Akib's review. Leakage gate PASS (0 gating hits). Corpus ≈ 370M 
-tokens (estimate), of which ≈ 29M target-script. Phase 0 reduced to 3 runs 
-at 30M (D15). Prompt 3 (transliteration, critical path, + tokenizers) is 
-next and does not start until the Prompt 2 report is reviewed. Precision: 
-fp32 primary, fp16 fallback, to be confirmed at Prompt 4.
+Prompt 2 (data download + audit) complete and APPROVED (2026-11-08). Leakage 
+gate PASS (0 gating hits). Corpus ≈ 370M tokens (estimate), of which ≈ 29M 
+target-script. Phase 0 reduced to 3 runs at 30M (D15). D17 (WER-gated 
+transliteration target) and D18 (BanglishRev control experiment) recorded. 
+Prompt 3 plan APPROVED (2026-11-08; D7-amended, D17 gate definition, D18 
+branched control, D19, D20 recorded). Executing Stage A (NSFW fix) and 
+Stage 0 (transliteration quality gate), then STOP. Stage 0.5 (calibration), 
+Stage 1 (bulk) and later stages each need Akib's explicit approval. 
+Precision: fp32 primary, fp16 fallback, to be confirmed at Prompt 4.
 
-Open items for Akib: confirm the 1 extra leakage exclusion (exact copy of
-approved #5); confirm NSFW spot-check verdicts; send the two author emails
-(drafts in the report, §8).
+Open items for Akib: send the two author emails (drafts in
+docs/prompt2_report.md §8).
 
-Last updated: 2026-11-08, after the Prompt 2 commits on main.
+Last updated: 2026-11-08, Prompt 3 plan stage.

@@ -11,10 +11,10 @@ from scratch on 4GB VRAM.
 - Current phase: Phase 0 ablation not yet started. Prompt 1 (scaffold) 
   is complete and verified.
 - Prompt sequence in flight: 11 prompts total (amended 2026-11-07, see 
-  docs/decisions.md A1). Prompts 1–2 done (Prompt 2 report under review). 
-  Prompt 3 (transliteration + tokenizers) is next. Phase 0 ablation runs 
+  docs/decisions.md A1). Prompts 1–2 done (Prompt 2 approved 2026-11-08). 
+  Prompt 3 (transliteration + tokenizers) is in planning. Phase 0 ablation runs 
   after Prompt 4, not first.
-- Binding decisions D1–D16, amendment A1, constraint C1: docs/decisions.md. 
+- Binding decisions D1–D18, amendment A1, constraint C1: docs/decisions.md. 
   These override the PRD on the specific points they record.
 - Execution plan: docs/IMPLEMENTATION_PLAN.md (prompt-by-prompt scope and 
   exit criteria). Current state: docs/EXECUTION_PROTOCOL.md.
@@ -105,7 +105,7 @@ Last scanned: 2026-11-08 (end of Prompt 2).
     (data.common.setup_env). Console is cp1252: scripts force UTF-8.
   - scripts/: smoke_test.py, bench_precision.py, nsfw_spotcheck.py, 
     report_tables.py. runs/: .gitkeep + README.md (contents gitignored).
-  - docs/: PRD.md (v2.0), decisions.md (D1–D16, A1, C1), 
+  - docs/: PRD.md (v2.0), decisions.md (D1–D18, A1, C1), 
     IMPLEMENTATION_PLAN.md, EXECUTION_PROTOCOL.md, prompt2_report.md, 
     leakage_removals.md, README.md. docs/nsfw_spotcheck.md is local only.
 - Configs: base.yaml, phase0.yaml, data.yaml, model_30m.yaml, model_50m.yaml
